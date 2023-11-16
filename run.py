@@ -10,7 +10,7 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('pp3_quiz')
+SHEET = GSPREAD_CLIENT.open('quizgamepp3')
 
 teams = SHEET.worksheet('teams')
 records = teams.get_all_values()
