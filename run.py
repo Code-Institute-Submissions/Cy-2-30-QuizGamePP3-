@@ -1,6 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from colorama import Fore
+#from colorama import Fore
 import random
 
 SCOPE = [
@@ -122,10 +122,7 @@ for question in questions:
         print("GAME OVER!")
 print("Play Again!")
 
-    
-    
-    
-   
+
 
 """
         guesses = input("Enter your answer (A, B, C, D): ").upper()
@@ -146,9 +143,6 @@ print("Play Again!")
             break
     print("******************************")
 
-       
-    #  
-       
         #if option == answers.len():
          #   print("Next question!")
     print("Wrong answer Try again!")
