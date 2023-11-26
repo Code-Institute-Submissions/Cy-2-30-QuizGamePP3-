@@ -189,6 +189,123 @@ Would compose of player's indivisual score, previous player's score ranking and 
 
 
 
+ </details>
+
+
+ [Table of Content](#table-of-content):arrow_up: 
+
+
+
+ ## Deployment 
+
+
+### Heroku
+* Adding the project to [Heroku](https://dashboard.heroku.com/) would need to be done after the project has been completed building and the requiremnts file has been added with the project dependancies. 
+* To do this after coding has been complete, on the terminal type __pip3 freeze requiremnts.txt__ a list of required dependancies for the project would be listed. 
+* Copy and paste into the __requiremnts.txt. file__, add, commit and push to github. 
+* Opern the [Heroku](https://dashboard.heroku.com/) website to log into your account.
+
+![Dashboard Menu](assets/images/deployment/dashboard.png)
+
+* After opening your account, click the menu on the right top-corner. 
+* From the menu options choose the first onption __Dashboard__.
+
+
+![Name the App](assets/images/deployment/create.png)
+* Choose an app option, to create a new application. 
+
+
+![Add App Name](assets/images/deployment/addname.png)
+
+* When creating a new app, you would have to add a unique app name, choose your region and click __Create the App__. 
+
+![Choose Settings](assets/images/deployment/choosesetting.png)
+
+* Look at the menu options on the top and choose __Settings__ first.
+* Here will be setting the auth file code, choosing the bulding pack for the environment and adding the __Port 8000__. 
+
+![Create the App](assets/images/deployment/config.png)
+* Under Config Vars store any sensitive data in _JSON File__.
+* Click on the __Configure__ to open.
+* Here you would need to add two keys, first the __CREDS File__ holding the key auth access to add data on google sheets and __PORT 8000__ for anavailable page. 
+
+![Add Auth Key](assets/images/deployment/authkeyfile.png)
+
+* Would need to type the __CREDS__ as key and add the __CREDS.JSON__ file code as the value. 
+* Add click on add to save it. 
+* Then type __PORT__ as key and add __8000__ as value.
+* And click add to save it. 
+
+
+![Add the Package for Environment](assets/images/deployment/addbuildingpack.png)
+
+* Scroll down to adding the package for building environment. 
+* For this project, you would need to choose __NODE.JS__ and __PYTHON__ to build the environment. 
+
+![The Buildingpack](assets/images/deployment/putpackinorder.png)
+* The buildingpack would need to be in the right order as __PYTHON__ and __NODE.JS__  to follow as that is how I did it when uploading the project. 
+
+![Choose Settings](assets/images/deployment/choosesetting.png)
+
+* Scroll up back to the top menu and click on __Deploy__.
+
+![Choose GitHub](assets/images/deployment/fromgihubrepository.png)
+
+* Go to __Deploy__ and select __GitHub__ in __Deployment method__.
+* Below the Github repository will appear with your github user account. 
+* You can then enter your repository name, click __Search__ and then __Connect__ when it shows below.
+
+![Connected to GitHb](assets/images/deployment/connectgithub.png)
+
+* Github would show in green that you are connected. 
+* The repository name would appear to show you are connected and you could disconnect with the red corner button. 
+
+![Choose a branch](assets/images/deployment/choosebranch.png)
+
+* If prefered, click on __Enable Automatic Deploys__, which keeps the app up to date with your GitHub repository
+* Scroll down to choose the branch form github repository to deploy. 
+* Once you have selected the branch, click __Deploy Branch__.
+
+![Deployment Building Environment](assets/images/deployment/deployment.png)
+
+* Once you clicked __Deploy Branch__, it would take a minute to build the the environment for the app. 
+
+![After Deployment](assets/images/deployment/viewdeployedproject.png)
+
+* Once everything is successfully deployed on cloud, you would see __Deployed to Heroku__ in green and everything else ticked in green. 
+* However if you see any red errors, you need to go back to your code and check if there is anything you might have missed. 
+* If you would like to view the app you could click on __View__ to open it live. 
+
+
+
+![Link to Live App](assets/images/deployment/link.png)
+
+* The link to the live could be found under settings, when you scroll all the way down. 
+* The link can be copied.
+
+
+
+### Fork Repository
+
+Follow the steps to fork the repository:
+
+* Go to the [GitHub](https://github.com/Cy-2-30/QuizGamePP3) repository. 
+* Locate the __Fork Button__ on the top-right and click it. 
+
+
+### Clone Repository
+
+You can clone the repository by following these steps:
+
+* Go to the [GitHub](https://github.com/Cy-2-30/QuizGamePP3) repository. 
+* Or you could select __Code__ above the code to clone.
+* Select if you prefere to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard.
+* Open Git Bash.
+* Change the current working directory to the one where you want the cloned directory
+* Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY) 
+* Press Enter to create your local clone.
+
+
+
 [Table of Content](#table-of-content):arrow_up: 
 
- </details>
