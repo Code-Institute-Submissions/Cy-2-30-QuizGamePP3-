@@ -2,7 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 #from colorama import Fore
 import random
-import methods
+#import methods
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",

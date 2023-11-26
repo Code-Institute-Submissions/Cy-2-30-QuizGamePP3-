@@ -1,14 +1,14 @@
-![Chrisma Quiz Logo]()
+![Festive Spirit, Chrismas Quiz](assets/images/images)
 
-Chrisma Quiz,
+Who is in the __Festive Spirit__, __Chrismas Quiz__.
 
-# Welcome to Python Project 3 Chrismass themed Quiz Game
-
-
-The project is quiz game, created around the chrismass vocabulory. It is a light-hearted fun game that can be played with friends or family. It is a fun and cheerful game! The programming languages used in this quiz are **HTML**, **CSS**, **Python** and **JavaScript**. To showcase what I have learned so far with the program.   
+# Welcome to Python Project 3 Inpired by Chrismas Spirit. 
 
 
-![Chrisma Quiz Game]()
+The project is a multiple question quiz game, created around the chrismas vocabulory and historic origin. It is a light-hearted fun game that can be played with friends or family. It is a fun and cheerful game, with educational fun facts. The programming languages used in this quiz are **HTML**, **CSS**, **Python** and **JavaScript**. To showcase what I have learned so far with the program.   
+
+
+![Festive Spirit, Chrismas Quiz](https://quizgamepp3-505317fd75c2.herokuapp.com/)
 
 
 
@@ -52,8 +52,10 @@ The project is quiz game, created around the chrismass vocabulory. It is a light
 ### Project Goals 
 
 
-* To have a fun, chrismass spirit and engaging website. 
-* To have easy to follow, light-hearted game with some chrismass warmth. 
+* To have a fun, __Festive Spirit__, __Chrismas Quiz__ and engaging game. 
+* To have fun entertaining game that is interactive to the user.
+* To display the basic use of the Python language.
+* To give user fun educational facts while playing.  
 * To keep record of all the scores and rate them as per ranking.  
 * To provide a game break down score record at the end. 
 * To provide the necessary information to make the game clear and intuitive to play. 
@@ -73,38 +75,44 @@ The project is quiz game, created around the chrismass vocabulory. It is a light
 * As a user, I want to see the comparison of my final score with other players, as well as others final scores at the end of the game.  
 * As a user, I want to intuitively navigate through the website. 
 * As a user, I want to give my feedback at the end of the game.  
+* As a user, I want to reach out to the game creator. 
 
 
 
 ### Color Scheme Used 
 
 
-I choose chrismass theme to represent the the festive season spirit.
+I choose chrismas theme to represent the festive seasonal spirit. The color choice of the images and colors used are chrismas colors inpired. 
+
+__CSS HEX__
+* __Fern-Green__: #4e6e30ff;
+* __Dun__: #e3cdb2ff;
+* __Cambridge-Blue__: #97b18eff;
+* __Dark-Green__: #011805ff;
+* __Lion__: #c8a369ff;
+* __hestnut__: #9e3f27ff;
+* __Linen__: #f4ece2ff;
+* __Old-Rose__: #c98a85ff;
 
 
 
-![Color Palette]() 
-
-
-
-### Typography
-
-
+![Color Palette](assets/images/color-palette.png)
 
 
 
 
 ### Flowchart
+Menu would be a drop down form displaying the information about the game. 
 
+![Menu Flowchart](assets/flowchart/menu-flochart.png)
 #### Menu 
-
-* __Game__ - 
-* __About__ - 
-* __Contact__ - 
-* __Thank you__ - 
-![Menu]() 
+* __Info__ - diplays information about the game inspiration, rules, and how to play instructions. 
+* __Game__ - terminal game. 
+* __Contact__ - displays contact details for anyone who would like to reach out. 
+* __Thank you__ - pop up after submitting the contact form.  
 
 
+![Game Flowchart](assets/flowchart/algorithm.png) 
 
 
 #### Team Players 
@@ -120,11 +128,7 @@ I choose chrismass theme to represent the the festive season spirit.
 
 
 ### Planning Stage
-
-
-#### Wireframe 
-
-![Wireframe](assets/wireframe/desktopview.png) 
+ 
 
 
 
@@ -158,13 +162,13 @@ I choose chrismass theme to represent the the festive season spirit.
 
 ### Features
 
-#### Landing Window
+#### Landing Form
 
 
-#### Game Window
+#### Game Form
 
 
-#### About Game Window
+#### Information Game Form
 
 
-#### Contact Us Window
+#### Contact Us Form
