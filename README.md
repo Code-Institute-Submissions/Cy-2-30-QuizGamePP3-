@@ -8,8 +8,8 @@ Who is in the __Festive Spirit__, __Chrismas Quiz__.
 The project is a multiple question quiz game, created around the chrismas vocabulory and historic origin. It is a light-hearted fun game that can be played with friends or family. It is a fun and cheerful game, with educational fun facts. The programming languages used in this quiz are **HTML**, **CSS**, **Python** and **JavaScript**. To showcase what I have learned so far with the program.   
 
 
-![Festive Spirit, Chrismas Quiz](https://quizgamepp3-505317fd75c2.herokuapp.com/)
-
+[Festive Spirit, Chrismas Quiz](https://quizgamepp3-505317fd75c2.herokuapp.com/)
+(Note: Ctrl + click to open in a new tab)
 
 
 
@@ -62,6 +62,7 @@ The project is a multiple question quiz game, created around the chrismas vocabu
 * Provides input validation to help the user input the correct data and information. 
 * The program should keep running until the user decides otherwise. 
 * The user should have full control over the game.
+* Store all players names and scores.
 
 
 
@@ -77,6 +78,10 @@ The project is a multiple question quiz game, created around the chrismas vocabu
 * As a user, I want to give my feedback at the end of the game.  
 * As a user, I want to reach out to the game creator. 
 
+
+
+### Tarket Audience 
+The game is for anyone in the festive spirit. 
 
 
 ### Color Scheme Used 
@@ -98,6 +103,7 @@ __CSS HEX__
 
 ![Color Palette](assets/images/color-palette.png)
 
+[Table of Content](#table-of-content):arrow_up: 
 
 
 
@@ -114,61 +120,75 @@ Menu would be a drop down form displaying the information about the game.
 
 ![Game Flowchart](assets/flowchart/algorithm.png) 
 
-
-#### Team Players 
-![Teams Algorithm Flow]( ) 
-
 [Table of Content](#table-of-content):arrow_up: 
 
 
 
 
 ## Project Design
-
-
-
 ### Planning Stage
- 
-
-
-
 #### Landing Window
-
-
-
-
-
 #### Game Window
-
-
-
- 
-
-
 #### About Window 
-
-
-.  
-
-
-
 #### Contact Us Window 
-
-
-
-
-
-
-
 ### Features
-
 #### Landing Form
-
-
 #### Game Form
-
-
 #### Information Game Form
-
-
 #### Contact Us Form
+
+
+
+## Game Manual
+
+
+<details><summary>Click here to view the game manual.</summary>
+
+
+### Player Validation
+
+The player would be asked to edit their name. The name would need to have a combination of more than 3 letters and numbers to be consired valid. Otherwise the player would be required to input their name until the name meets the requirements. 
+
+### Main Menu
+
+Has the __Menu__ option for the player to choose from:- 
+* __Info__ - opens the information window, leads back to the __Menu__ and __Game__ . 
+* __Game__ - opens the terminal window and has the __Menu__ button on the top. 
+* __Thank you__- opens the after submitting the contact form and leads back to main __Menu__ . 
+
+
+### How the game works?
+
+* When the player press start, game intructions appears. 
+* After, the user is requested to inputs their name and the name is verified with requirements of more than 3 letters and number combination. 
+* The user will go throught this loop until they fully meet the requirements.
+* When the requirements has been been met, the would be a welcome message. 
+* The first questio would appear. 
+* It is a total 20 questions with fun facts appearing before each question. 
+* Fun facts are based on information about __Chrismas__.
+* When the user choose an option answer for the question, the answer would be verified.
+* The user is given 3 guesses thoughout the game to use, when they run out, there would be no more and the next question would automatically be appear without providing a second try.
+* For every correct answer the user user would get 1 point each. 
+* At the end of 20 questions, the user name and score would be added on google sheets. 
+* The final score would be displayed together with previous player and raked according to the score and time to complete the game. 
+
+
+### Scoreboard
+
+Would display percentage score, name of player, time it took to complete the game and the player raking compared to previos player. 
+
+
+### How to Play
+
+The player has to answer 20 questions by choosing one answer from an option of e options. The player is given 3 guesses throughout the whole game. The are fun facts about Chrismas thoughout the game, presented before each question and some provide hints for upcoming questions.  
+
+
+### Stats
+
+Would compose of player's indivisual score, previous player's score ranking and compare the player to other players. The data would be stored on google sheets. 
+
+
+
+[Table of Content](#table-of-content):arrow_up: 
+
+ </details>
