@@ -198,11 +198,7 @@ Would compose of player's indivisual score, previous player's score ranking and 
 
  ## Deployment 
 
-<details>
-
-<summary>
-Click here to view the deployment instruction to __Heroku Cloud__.
-</summary>
+<details><summary>Click here to view the deployment instruction to Heroku Cloud.</summary>
 
 ### Heroku
 * Adding the project to [Heroku](https://dashboard.heroku.com/) would need to be done after the project has been completed building and the requiremnts file has been added with the project dependancies. 
