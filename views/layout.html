@@ -14,30 +14,47 @@
         /**
         CSS HEX 
             --fern-green: #4e6e30ff;
-            --dun: #e3cdb2ff;
+            --dun: #e3cdb2ff; PAGE BACKGROUND*****
             --cambridge-blue: #97b18eff;
-            --dark-green: #011805ff;
+            --dark-green: #011805ff; FONT COLOR*****
             --lion: #c8a369ff;
             --chestnut: #9e3f27ff;
-            --linen: #f4ece2ff;
+            --linen: #f4ece2ff; WINDOW BACKGROUND ****
             --old-rose: #c98a85ff;
         */
        
         body {
             font-family: Arial;
             background-color: #e3cdb2ff;
-            color: #011805ff;
+            color: #011805ff;            
+            display: flex;
+            flex-direction: column;
         }
 
         a{
             text-decoration: none;
             cursor: auto;
             z-index: 1;
-            }
+        }
+
+        /*Hide all menu button information*/
+        .btn-container{
+            background-color: #f4ece2ff;;
+            display: none;
+            position: relative;
+            color: #011805ff;
+            border: 3px solid #c8a369ff;
+            box-shadow: -2px -1px 6px 4px #9e3f27ff, 5px 4px 5px 4px #c8a369ff, -5px -4px 5px 4px  #c8a369ff;
+            border-radius: 10px;
+        }
 
         /*Menu container*/
+        #menuWindow{
+            display: none;
+            position: relative;
+        }
+
         #menu-box{
-            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -50,17 +67,17 @@
             padding: 10px;
         }
 
-        /*Menu Buttons*/
+        /*Menu buttons*/
         .menu-btn{
-            font-size: 30px;
+            font-size: 35px;
             text-align: center;
             color: #f4ece2ff;
             background-color: #9e3f27ff;
             border: 3px solid #4e6e30ff;
-            box-shadow: -2px -1px 3px 2px #97b18eff, 2px 1px 2px 1px #c8a369ff, -2px -1px 3px 2px  #97b18eff;
+            box-shadow: -2px -1px 3px 2px #c8a369ff, 2px 1px 2px 1px #97b18eff, -2px -1px 3px 2px  #97b18eff;
             border-radius: 10px;
             width: 200px;
-            height: 40px;
+            height: 50px;
             margin: 20px;
             padding: 10px;
         }
@@ -72,21 +89,43 @@
             box-shadow: -2px -1px 3px 2px  #9e3f27ff
         }
 
-        /*Information window*/
+        /*Information container*/
         #info{
-            display: none;
-            position: static;
             text-align: left;
             overflow: hidden;
             overflow-y: scroll;
-            color: #011805ff;
-            border: 3px solid #c8a369ff;
-            box-shadow: -2px -1px 6px 4px #9e3f27ff, 5px 4px 5px 4px #c8a369ff, -5px -4px 5px 4px  #c8a369ff;
-            border-radius: 10px;
-            height: 200px;
-            width: 300px; 
+            height: 500px;
+            width: 600px; 
             bottom: 0;
-            z-index: 9;
+            z-index: 1;
+            padding:10px;
+        }
+
+        /*Contact us form container*/
+        #form{
+            height: 400px;
+            width: 300px; 
+            padding: 5px;
+        }
+
+        fieldset{
+            border: 1px solid #4e6e30ff;
+        }
+
+        input, textarea{
+            background-color: #4e6e30ff;;
+            border:  #e3cdb2ff;
+        }
+
+        textarea{
+
+        }
+
+        input:hover{
+            background-color: #c98a85ff;
+            color: #011805ff;
+            border: #9e3f27ff;
+            border-radius: 2px;
         }
         
 
