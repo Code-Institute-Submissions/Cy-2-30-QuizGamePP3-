@@ -51,9 +51,8 @@
         }
 
         /*Menu Buttons*/
-        
-        
         .menu-btn{
+            font-size: 30px;
             text-align: center;
             color: #f4ece2ff;
             background-color: #9e3f27ff;
@@ -67,10 +66,27 @@
         }
 
         .menu-btn:hover{
-        background-color: #c98a85ff;
-        border: 2px solid #9e3f27ff;
-        color: #011805ff;
-        box-shadow: -2px -1px 3px 2px  #9e3f27ff
+            background-color: #c98a85ff;
+            border: 2px solid #9e3f27ff;
+            color: #011805ff;
+            box-shadow: -2px -1px 3px 2px  #9e3f27ff
+        }
+
+        /*Information window*/
+        #info{
+            display: none;
+            position: static;
+            text-align: left;
+            overflow: hidden;
+            overflow-y: scroll;
+            color: #011805ff;
+            border: 3px solid #c8a369ff;
+            box-shadow: -2px -1px 6px 4px #9e3f27ff, 5px 4px 5px 4px #c8a369ff, -5px -4px 5px 4px  #c8a369ff;
+            border-radius: 10px;
+            height: 200px;
+            width: 300px; 
+            bottom: 0;
+            z-index: 9;
         }
         
 
@@ -229,12 +245,12 @@
 
         /*Button styling*/
         button {
-            width: 200px;
-            height: 40px;
-            background-color: #9e3f27ff;
-            border: 2px solid #4e6e30ff;
             color: #f4ece2ff;
             text-transform: uppercase;
+            background-color: #9e3f27ff;
+            border: 2px solid #4e6e30ff;
+            width: 200px;
+            height: 40px;
             margin: 10px;
             border-radius: 8px;
         }
