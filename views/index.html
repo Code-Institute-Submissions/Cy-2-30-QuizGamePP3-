@@ -5,19 +5,23 @@
     </header>
     -->
 
-    <dev id="btn-box">
-        <button id="btn" onclick="window.location.reload()">Start Game!</button>
-        <button id="menu-but" onclick="openMenu()">Back Home</button>
-            <div>
-                <!--Menu set up-->
-                <div id="menu" class="menu-btn">
-                    <a href="#info" target="_blank" rel="noopener" aria-label="How to play the game (opens a window)">Info</a>
-                    <div id="info">
-                            <h2>Game Inspiration</h2>
-                            <p>The game is inspired by festive season spirit. All the questions are based on the <strong>Chrismas</strong> and everything that has to do with the <strong>festive holiday</strong>.</p>
-                            <h2>How to play the game?</h2>
-                            <p>
-                                <ul>
+    <!--Menu button option window-->
+    <dev id="menu-box">
+        <div class="menu-btn info">
+            <a href="#info" target="_blank" rel="noopener" aria-label="How to play the game (opens a window)">
+                Info
+            </a>
+                 
+                <!--info window-->
+                <div id="info">
+                    <h2>Game Inspiration</h2>
+                        <p>
+                            The game is inspired by festive season spirit. All the questions are based on the <strong>Chrismas</strong> and everything that has to do with the <strong>festive holiday</strong>.
+                        </p>
+                    
+                    <h2>How to play the game?</h2>
+                        <p>
+                            <ul>
                                 <li>
                                     When the player press start, game intructions appears.
                                 </li>
@@ -40,8 +44,8 @@
                                     Fun facts are based on information about Chrismas.
                                 </li>
                                 <li>
-                                     When the user choose an option answer for the question, the answer would be verified.
-                                    </li>
+                                    When the user choose an option answer for the question, the answer would be verified.
+                                </li>
                                 <li>
                                     The user is given 3 guesses thoughout the game to use, when they run out, there would be no more and the next question would automatically be appear without providing a second try.
                                 </li>
@@ -54,29 +58,49 @@
                                 <li>
                                     The final score would be displayed together with previous player and raked according to the score and time to complete the game.
                                 </li>
-                                </ul>
-                            </p>
-                            <h2>Tips!</h2>
-                            <p>
-                                The player has to answer 20 questions by choosing one answer from an option of e options. The player is given 3 guesses throughout the whole game. The are fun facts about Chrismas thoughout the game, presented before each question and some provide hints for upcoming questions.
-                            </p>
-                            <div>
-                                <button onclick="openMenu()">
-                                    <a href="#menu-btn" target="_blank" rel="noopener" aria-label="Leads back to the menu window (opens a window)">Back home</a>
-                                </button>
-                                <button onclick="()">
-                                    <a href="#terminal" target="_blank" rel="noopener" aria-label="Leads to the game window (opens a window)">Game</a>
-                                </button>   
-                            </div>
+                            </ul>
+                        </p>
+
+                    <h2>Tips!</h2>
+                        <p>
+                            The player has to answer 20 questions by choosing one answer from an option of e options. The player is given 3 guesses throughout the whole game. The are fun facts about Chrismas thoughout the game, presented before each question and some provide hints for upcoming questions.
+                        </p>
+                        
+                    <div class="btn-in-menu">
+                        <button onclick="openMenu()">
+                            <a href="#menu-btn" target="_blank" rel="noopener" aria-label="Leads back to the menu window (opens a window)">
+                                Back home
+                            </a>
+                        </button>
+
+                        <button onclick="()">
+                            <a href="#terminal" target="_blank" rel="noopener" aria-label="Leads to the game window (opens a window)">
+                                Game
+                            </a>                        
+                        </button>   
                     </div>
                 </div>
-                
-                <div>
-                    <a href="#terminal" target="_blank" rel="noopener" aria-label="Leads to the game window (opens a window)">Game</a>
-                </div>
+        </div>    
 
-                <div>
-                    <form>
+        <!--Terminal window-->
+        <div class="menu-btn terminal">
+            <a href="#terminal" target="_blank" rel="noopener" aria-label="Leads to the game window (opens a window)">
+                Game
+            </a>
+                <div id="btn-box">
+                    <button id="btn" onclick="window.location.reload()">Start Game!</button>
+                    <button id="menu-but" onclick="openMenu()">Back Home</button>
+                </div>
+            
+                <div id="terminal"></div>
+        </div>
+
+        <!--Contact window-->
+        <div class="menu-btn contact-us">
+            <a href="#contact-us" target="_blank" rel="noopener" aria-label="Leads to the game window (opens a window)">
+                Contact Us
+            </a>
+                <form>
                         <fieldset>
                             <legend>Contact us here</legend>
                             <label for="fname">First name:</label><br>
@@ -87,25 +111,25 @@
                             <textarea type="text" id="message" name="message" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
                             <input type="submit" value="Submit" onclick="thankfunc()">
                         </fieldset>
-                    </form>
+                            <div id="thankfunc">
+                                <h2>Thank you for your feedback!</h2>
+
+                                <button onclick="openMenu()">
+                                    <a href="#menu-btn" target="_blank" rel="noopener" aria-label="Leads back to the menu window (opens a window)">Back home</a>
+                                </button>
+                            </div>
+                </form>
+                <div>
                     <button onclick="openMenu()">
                         <a href="#menu-btn" target="_blank" rel="noopener" aria-label="Leads back to the menu window (opens a window)">Back home</a>
                     </button>
-                </div>
-
-                <div id="thankfunc">
-                    <h2>Thank you for your feedback!</h2>
-
-                    <button onclick="openMenu()">
-                        <a href="#menu-btn" target="_blank" rel="noopener" aria-label="Leads back to the menu window (opens a window)">Back home</a>
-                    </button>
-                </div>
-            </div>
+                </div>      
+        </div>
     </dev>
-    <div ></div>
-    <div id="terminal"></div>
-
     <script>
+
+
+
         var term = new Terminal({
             cols: 80,
             rows: 24
