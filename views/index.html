@@ -4,16 +4,14 @@
         <img src="assets/images/backgroundimg.jpg" alt="Crismas Ornaments">
     </header>
     -->
-    <div id="terminal"></div>
+    
      <!--Terminal window-->
-     <div type="button" class="menu-btn" onclick="closeMenuBox()">Game</div>
      <div id="terminal-box">
          <button id="btn" onclick="window.location.reload()">Start Game!</button>
-         <button id="menu-but" onclick="openMenu()">Score Board</button>
- 
+         <button id="starts" onclick="openStats()">Score Board</button>
+        <div id="terminal"></div>
          
      </div>
- 
 
     <!--Menu button option window-->
     <dev id="menuWindow">
@@ -84,6 +82,23 @@
                     </div>
                 </div>
 
+            <!--Terminal window-->
+            <div id="terminal-box">
+                <button id="btn" onclick="window.location.reload()">Start Game!</button>
+                <button id="menu-but" onclick="openStats()">Score Board</button>
+
+                <div id="terminal"></div>
+            </div>
+
+                <div id="stats" class="game-stats" onclick="openStats()"></div>
+                    <h2>Raking Statistics</h2>
+                        <div id="pname">Name</div>
+                        <div id="pscore">Score</div>
+                        <div id="pppecen">%</div>
+                        <div id="ptime">Time</div>
+                        <div id="prank">Rank</div>
+                <div type="button" class="menu-btn" onclick="openMenuWindow()">Back Home</div>       
+
             <!--Contact window-->
             <div type="button" class="menu-btn" onclick="openForm()">Contact Us</div>    
                 <div id="form" class="btn-container">
@@ -91,14 +106,15 @@
                          <fieldset>
                             <legend>Contact us here</legend>
                                 <label for="fname">First name:</label><br>
-                                <input type="text" id="fname" name="fname" value="John"><br>
+                                <input type="text" id="fname" name="fname" value="John" required><br>
                                 <label for="lname">Last name:</label><br>
-                                <input type="text" id="lname" name="lname" value="Smith"><br>
+                                <input type="text" id="lname" name="lname" value="Smith" required><br>
                                 <label for="email">Email:</label><br>
-                                <input type="email" id="email" name="email" placeholder="email@example.ie"><br>
+                                <input type="email" id="email" name="email" placeholder="email@example.ie" required><br>
                                 <label for="message">Message:</label><br>
-                                <textarea type="text" id="message" name="message" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
-                                <input type="submit" value="Submit" onclick="openThankU()" action="addStats()">
+                                <input type="text" id="message" name="message" value="Game Issue" required><br>
+                                <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
+                                <input type="submit" id="submitForm" value="Submit" onclick="openThankU()" action="addStats()">
                         </fieldset>
                     </form>
                     <div id="form-btn">
@@ -111,24 +127,6 @@
                     <button type="button" class="btn" onclick="closeThankU()">Back home</button>
                 </div>     
         </dev>
-
-    <!--Terminal window-->
-    <div type="button" class="menu-btn" onclick="closeMenuBox()">Game</div>
-    <div id="terminal-box">
-        <button id="btn" onclick="window.location.reload()">Start Game!</button>
-        <button id="menu-but" onclick="openMenu()">Score Board</button>
-
-        <div id="terminal"></div>
-    </div>
-
-    <div id="stats" class="game-stats" onclick="openStats()">
-        <h2>Raking Statistics</h2>
-        <div id="pname"></div>
-        <div id="plastname"></div>
-        <div id="pemail"></div>
-        <div id="pmessagehead"></div>
-        <div id="pmessage"></div>
-    </div>
 
     <!--JavaScript-->
     <script>

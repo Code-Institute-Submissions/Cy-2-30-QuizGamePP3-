@@ -1,6 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-#from colorama import Fore
+from colorama import Fore
 import random
 #import methods
 #import classes 
@@ -19,7 +19,24 @@ SHEET = GSPREAD_CLIENT.open('quizgamepp3')
 teams = SHEET.worksheet('teams')
 records = teams.get_all_values()
 
+#Introductions and Rules
+print(Fore.GREEN + "Welcome to 'Who is in the Festive Spirit?' quiz game!")
+print(Fore.CYAN +"******************************")
+print(Fore.RED +"Game Rules!")
+print(Fore.CYAN +"******************************\n" + Fore.RED)
+print("\nThere are 20 questions in total to complete the game.")
+print("\nThere are 3 guesses allocated, to complete all questions.")
+print("\nIf all guesses are finished, ")
+print("\nafter each wrong answer the game will pass to the next question.")  
+print("\nThere is a timer when completing the questions.")
+print("\nThe score percentage would be given at the end with ratings compared to other players.")  
+print(Fore.MAGENTA + "\nExtra Notes!")
+print("\nThere are random facts about the game, ")
+print("\nWhich some of them give hints to some questions in the game.") 
+print(Fore.CYAN +"******************************")
 
+#Player names
+print(f"Choose number of players 1) or 2):" + {})
 
 #game random fun facts
 fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be unlucky to eat a mince pie with a knife.", 
@@ -42,10 +59,10 @@ fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be u
 
 random_fact = random.choice(fun_facts)
 
-print("Did you know!")
-print("******************************")
+print(Fore.YELLOW + "Did you know!" + Fore.CYAN)
+print("******************************" + Fore.GREEN)
 print(random_fact)
-print("******************************")
+print(Fore.CYAN + "******************************" + Fore.RESET)
 
 #change of game content filling missing words to multiple questions quiz
 """
