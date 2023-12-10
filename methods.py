@@ -1,9 +1,9 @@
-#import classes
+import classes
 
-def validate_name(name):
-    return len(name) > 3 
+def ValidateName(name):
+    return  
   
-player_name = input("Enter name : ")
+    while len(name) > 3
 
 if validate_name(player_name):
     print(f'Welcome to the "Who is in the festive spirit!"{player_name}')
