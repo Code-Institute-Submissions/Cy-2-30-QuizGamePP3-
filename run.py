@@ -2,8 +2,10 @@ import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore
 import random
-#import methods
+import methods
 import classes 
+import time 
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -19,27 +21,17 @@ SHEET = GSPREAD_CLIENT.open('quizgamepp3')
 teams = SHEET.worksheet('teams')
 records = teams.get_all_values()
 
-#Player names
-print(classes.PlayerName)
 
-print(f"Choose number of players 1) or 2):" )
+
+#Player names
 
 #Introductions and Rules
-print(Fore.GREEN + "Welcome to 'Who is in the Festive Spirit?' quiz game!")
-print(Fore.CYAN +"******************************")
-print(Fore.RED +"Game Rules!")
+print(methods.gameIntro)
+print(methods.gameRules)
+
 print(Fore.CYAN +"******************************" + Fore.RED)
-print("\n There are 20 questions in total to complete the game.")
-print("\n There are 3 guesses allocated, to complete all questions.")
-print("\n If all guesses are finished, ")
-print("\n after each wrong answer the game will pass to the next question.")  
-print("\n There is a timer when completing the questions.")
-print("\n The score percentage would be given at the end with ratings compared to other players.")  
-print(Fore.MAGENTA + "\nExtra Notes!")
-print(Fore.CYAN +"******************************" + Fore.MAGENTA)
-print("\n There are random facts about the game, ")
-print("\n Which some of them give hints to some questions in the game.") 
-print(Fore.CYAN +"******************************\n")
+print(Fore.CYAN +"******************************")
+
 
 
 
