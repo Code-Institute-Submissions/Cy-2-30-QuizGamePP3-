@@ -1,140 +1,147 @@
 <body>
-    <!--NOT WORKING
-        <header id="background">
-        <img src="assets/images/backgroundimg.jpg" alt="Crismas Ornaments">
-    </header>
-    -->
-    
-     <!--Terminal window-->
-<<<<<<< HEAD
-     <div id="terminal-box">
-         <button id="btn" onclick="window.location.reload()">Start Game!</button>
-         <button id="starts" onclick="openStats()">Score Board</button>
-        <div id="terminal"></div>
-         
-=======
-        <button id="btn" onclick="window.location.reload()">Start Game!</button>
-        <button id="menu-but" onclick="openMenu()">Score Board</button>
->>>>>>> 21bab102941fd4b6e0a5222d856ba4b1250083de
-     </div>
+    <!--Menu Buttons-->
+    <dev id="menuButtons" class="menu-box">
 
-    <!--Menu button option window-->
-    <dev id="menuWindow">
+        <!--info button-->
+        <div  role="button" class="menu-btn" onclick="openInfo()">Info</div>
 
-        <div id="menu-box">
-            <!--info window-->
-            <div type="button" class="menu-btn" onclick="openInfo()">Info</div>
-                <div id="info" class="btn-container">
-
-                    <!--not working-->
-                    <img src="assets/images/logo.jpg" alt="Chrismass picture">
-                    <h2>Game Inspiration</h2>
-                        <p>
-                            The game is inspired by festive season spirit. All the questions are based on the <strong>Chrismas</strong> and everything that has to do with the <strong>festive holiday</strong>.
-                        </p>
+            <!--Info window-->
+            <div id="info" class="btn-container">
+                <h2 class="heading">Game Inspiration</h2>
+                    <p>
+                        The game is inspired by festive season spirit. All the questions are based on the <strong>Chrismas</strong> and everything that has to do with the <strong>festive holiday</strong>.
+                    </p>
                         
-                    <h2>How to play the game?</h2>
-                        <ul>
-                            <li>
-                                When the player press start, game intructions appears.
-                            </li>
-                            <li>
-                                After, the user is requested to inputs their name and the name is verified with requirements of more than 3 letters
-                                and number combination.
-                            </li>
-                            <li>
+                <h2 class="heading">How to play the game?</h2>
+                    <ul>
+                        <li>
+                            When the player press start, game intructions appears.
+                        </li>
+                        <li>
+                            After, the user is requested to inputs their name and the name is verified with requirements of more than 3 letters
+                            and number combination.
+                        </li>
+                        <li>
                                 The user will go throught this loop until they fully meet the requirements.
-                            </li>
-                            <li>
-                                When the requirements has been been met, the would be a welcome message.
-                            </li>
-                            <li>
-                                The first questio would appear.
-                            </li>
-                            <li>
-                                It is a total 20 questions with fun facts appearing before each question.
-                            </li>
-                            <li>
-                                Fun facts are based on information about Chrismas.
-                            </li>
-                            <li>
-                                When the user choose an option answer for the question, the answer would be verified.
-                            </li>
-                            <li>
-                                The user is given 3 guesses thoughout the game to use, when they run out, there would be no more and the next
-                                question would automatically be appear without providing a second try.
-                            </li>
-                            <li>
-                                For every correct answer the user user would get 1 point each.
-                            </li>
-                            <li>
-                                At the end of 20 questions, the user name and score would be added on google sheets.
-                            </li>
-                            <li>
-                                The final score would be displayed together with previous player and raked according to the score and time to
-                                complete the game.
-                            </li>
-                        </ul>
+                        </li>
+                        <li>
+                            When the requirements has been been met, the would be a welcome message.
+                        </li>
+                        <li>
+                            The first questio would appear.
+                        </li>
+                        <li>
+                            It is a total 20 questions with fun facts appearing before each question.
+                        </li>
+                        <li>
+                            Fun facts are based on information about Chrismas.
+                        </li>
+                        <li>
+                            When the user choose an option answer for the question, the answer would be verified.
+                        </li>
+                        <li>
+                            The user is given 3 guesses thoughout the game to use, when they run out, there would be no more and the next
+                            question would automatically be appear without providing a second try.
+                        </li>
+                        <li>
+                            For every correct answer the user user would get 1 point each.
+                        </li>
+                        <li>
+                            At the end of 20 questions, the user name and score would be added on google sheets.
+                        </li>
+                        <li>
+                            The final score would be displayed together with previous player and raked according to the score and time to
+                            complete the game.
+                        </li>
+                    </ul>
 
-                    <h2>Tips!</h2>
-                        <p>
-                            The player has to answer 20 questions by choosing one answer from an option of e options. The player is given 3 guesses throughout the whole game. The are fun facts about Chrismas thoughout the game, presented before each question and some provide hints for upcoming questions.
-                        </p>
+                <h2 class="heading">Tips!</h2>
+                    <p>
+                        The player has to answer 20 questions by choosing one answer from an option of e options. The player is given 3 guesses throughout the whole game. The are fun facts about Chrismas thoughout the game, presented before each question and some provide hints for upcoming questions.
+                    </p>
                             
-                    <div class="btn-in-menu">
-                        <button type="button" class="btn" onclick="closeInfo()">Back home</button>
-                        <button type="button" class="btn" onclick="closeMenuWindow()">Game</button>   
-                    </div>
-                </div>
-
-            <!--Terminal window-->
-            <div id="terminal-box">
-                <button id="btn" onclick="window.location.reload()">Start Game!</button>
-                <button id="menu-but" onclick="openStats()">Score Board</button>
-
-                <div id="terminal"></div>
+                <div role="button" class="btn-small" onclick="closeInfo()">Exit</div>
             </div>
 
-                <div id="stats" class="game-stats" onclick="openStats()"></div>
-                    <h2>Raking Statistics</h2>
-                        <div id="pname">Name</div>
-                        <div id="pscore">Score</div>
-                        <div id="pppecen">%</div>
-                        <div id="ptime">Time</div>
-                        <div id="prank">Rank</div>
-                <div type="button" class="menu-btn" onclick="openMenuWindow()">Back Home</div>       
+        <!--Statistic button-->
+        <div role="button" class="menu-btn" onclick="openStats()">Score Board</div>
+            
+            <!--Statistic window-->
+            <div id="stats" class="btn-container">
+                <h2 class="heading">Raking Statistics</h2>
+                    <table id="stats-table">
+                        <tr id="rows">
+                            <th id="prank">Rank</th>
+                            <th id="pname">Name</th>
+                            <th id="pscore">Score</th>
+                            <th id="pppecen">%</th>
+                            <th id="ptime">Time</th>
+                        </tr>
+                        <tr id="newplayer">
+                            <td id="rank"></td> 
+                            <td id="name"></td>  
+                            <td id="score"></td> 
+                            <td id="%"></td> 
+                            <td id="time"></td> 
+                        </tr>
+                    </table>        
+                <div role="button" class="btn-small" onclick="closeStats()">Exit</div>     
+            </div>
 
+        <!--Contact button-->
+        <div role="button" class="menu-btn" onclick="openForm()">Contact Us</div>    
+                
             <!--Contact window-->
-            <div type="button" class="menu-btn" onclick="openForm()">Contact Us</div>    
-                <div id="form" class="btn-container">
-                    <form>
-                         <fieldset>
-                            <legend>Contact us here</legend>
-                                <label for="fname">First name:</label><br>
+            <div id="form" class="btn-container">
+                <form>
+                    <fieldset>
+                        <legend>Contact us here</legend>
+                            <label for="fname">First name:</label><br>
                                 <input type="text" id="fname" name="fname" value="John" required><br>
-                                <label for="lname">Last name:</label><br>
+                            <label for="lname">Last name:</label><br>
                                 <input type="text" id="lname" name="lname" value="Smith" required><br>
-                                <label for="email">Email:</label><br>
+                            <label for="email">Email:</label><br>
                                 <input type="email" id="email" name="email" placeholder="email@example.ie" required><br>
-                                <label for="message">Message:</label><br>
+                            <label for="message">Message:</label><br>
                                 <input type="text" id="message" name="message" value="Game Issue" required><br>
-                                <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
-                                <input type="submit" id="submitForm" value="Submit" onclick="openThankU()" action="addStats()">
-                        </fieldset>
-                    </form>
-                    <div id="form-btn">
-                        <button type="button" class="btn" onclick="closeForm()">Back home</button>
-                    </div>           
-                </div>
+                            <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
+                            
+                            <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you')" action=""></button>
+                    </fieldset>
+                </form>
 
-                <div id="thanku">
-                    <h2>Thank you for your feedback!</h2>
-                    <button type="button" class="btn" onclick="closeThankU()">Back home</button>
-                </div>     
-        </dev>
+                <div role="button" class="btn-small" onclick="closeForm()">Exit</div>         
+            </div>   
+    </div>
 
+    <!--Game buttons-->
+    <div role="button" class="menu-btn" onclick="openTerminalButtons()">Game</div>
+
+        <!--Buttons window while game plays-->    
+        <div id="terminal-btn" class="game-btn">
+            <!--Start game button-->
+            <button id="btn" type="button" onclick="window.location.reload()">Start Game!</button>
+                
+            <!--shows menu buttons-->
+            <button id="btn" type="button" onclick="closeTerminalButtons()">Menu</button>
+        </div>
+
+    </div>
+         
+    <!--Terminal-->
+    <div id="terminal"></div>
+    
     <!--JavaScript-->
     <script>
+        //Open and close the menu buttons options
+        function openMenuButtons() { 
+            document.getElementById("menuButtons").style.display = "block";
+        }
+
+        function closeMenuButtons() { 
+            document.getElementById("menuButtons").style.display = "none";
+        }
+
         //Open and close the information window
         function openInfo() { 
             document.getElementById("info").style.display = "block";
@@ -142,33 +149,6 @@
 
         function closeInfo() {
             document.getElementById("info").style.display = "none";
-        }
-
-        //Open the terminal window
-        function openMenuWindow() { 
-            document.getElementById("menuWondow").style.display = "block";
-        }
-
-        function closeMenuWindow() { 
-            document.getElementById("menuWondow").style.display = "none";
-        }
-
-        //Open and close the form window
-        function openForm() { 
-            document.getElementById("form").style.display = "block";
-        }
-
-        function closeForm() {
-            document.getElementById("form").style.display = "none";
-        }
-
-        //Open and close the thank you window
-         function openThankU() { 
-            document.getElementById("thanku").style.display = "block";
-        }
-
-        function closeThankU() {
-            document.getElementById("thanku").style.display = "none";
         }
 
         //Open and close the statistics window
@@ -179,7 +159,26 @@
         function closeStats() {
             document.getElementById("stats").style.display = "none";
         }
+        
+        //Open and close the form window
+        function openForm() { 
+            document.getElementById("form").style.display = "block";
+        }
 
+        function closeForm() {
+            document.getElementById("form").style.display = "none";
+        }
+
+        //Open and close the thank you window
+         function openTerminalButtons() { 
+            document.getElementById("terminal-btn").style.display = "block";
+        }
+
+        function closeTerminalButtons() {
+            document.getElementById("terminal-btn").style.display = "none";
+        }
+
+        //Terminal settings 
         var term = new Terminal({
             cols: 80,
             rows: 24
@@ -198,6 +197,7 @@
         ws.onerror = function (e) {
             console.log(e);
         };
+
         // Set focus in the terminal
         document.getElementsByClassName("xterm-helper-textarea")[0].focus();
     </script>
