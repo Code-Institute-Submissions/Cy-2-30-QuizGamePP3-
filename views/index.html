@@ -138,42 +138,70 @@
         //Open and close the information window
         function openInfo() { 
             document.getElementById("infoBtn").style.display = "none";
+            document.getElementById("statsBtn").style.display = "none";
+            document.getElementById("contactBtn").style.display = "none";
+            document.getElementById("gameBtn").style.display = "none";
             document.getElementById("info").style.display = "block";
         }
 
         function closeInfo() {
             document.getElementById("info").style.display = "none";
+            document.getElementById("infoBtn").style.display = "block";
+            document.getElementById("statsBtn").style.display = "block";
+            document.getElementById("contactBtn").style.display = "block";
+            document.getElementById("gameBtn").style.display = "block";
+
         }
 
         //Open and close the statistics window
         function openStats() { 
+            document.getElementById("infoBtn").style.display = "none";
             document.getElementById("statsBtn").style.display = "none";
+            document.getElementById("contactBtn").style.display = "none";
+            document.getElementById("gameBtn").style.display = "none";
             document.getElementById("stats").style.display = "block";
         }
 
         function closeStats() {
             document.getElementById("stats").style.display = "none";
+            document.getElementById("infoBtn").style.display = "block";
+            document.getElementById("statsBtn").style.display = "block";
+            document.getElementById("contactBtn").style.display = "block";
+            document.getElementById("gameBtn").style.display = "block";
         }
         
         //Open and close the form window
         function openForm() { 
+            document.getElementById("infoBtn").style.display = "none";
+            document.getElementById("statsBtn").style.display = "none";
             document.getElementById("contactBtn").style.display = "none";
+            document.getElementById("gameBtn").style.display = "none";
             document.getElementById("form").style.display = "block";
         }
 
         function closeForm() {
             document.getElementById("form").style.display = "none";
+            document.getElementById("infoBtn").style.display = "block";
+            document.getElementById("statsBtn").style.display = "block";
+            document.getElementById("contactBtn").style.display = "block";
+            document.getElementById("gameBtn").style.display = "block";
         }
 
         //Open and close the thank you window
-         function openTerminalButtons() { 
+        function openTerminalButtons() { 
+            document.getElementById("infoBtn").style.display = "none";
+            document.getElementById("statsBtn").style.display = "none";
+            document.getElementById("contactBtn").style.display = "none";
             document.getElementById("gameBtn").style.display = "none";
             document.getElementById("terminalBtn").style.display = "block";
          }
 
-            function closeTerminalButtons() { 
+        function closeTerminalButtons() { 
             document.getElementById("terminalBtn").style.display = "none";
-            document.getElementById("menuButtons").style.display = "block";
+            document.getElementById("infoBtn").style.display = "block";
+            document.getElementById("statsBtn").style.display = "block";
+            document.getElementById("contactBtn").style.display = "block";
+            document.getElementById("gameBtn").style.display = "block";
         }
 
         //Terminal settings 
