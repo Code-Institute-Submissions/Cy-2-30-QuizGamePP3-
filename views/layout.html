@@ -45,6 +45,8 @@
             border: 3px solid #c8a369ff;
             box-shadow: -2px -1px 6px 4px #9e3f27ff, 5px 4px 5px 4px #c8a369ff, -5px -4px 5px 4px  #c8a369ff;
             border-radius: 10px;
+            width: 750px;
+            height: 600px;
         }
 
         /*Menu buttons container*/
@@ -68,7 +70,7 @@
             flex-direction: row;
             justify-content: space-around;
             padding: 20px;
-            width: 700px;
+            width: 730px;
         }
 
         /*Menu buttons*/
@@ -83,7 +85,6 @@
             width: 110px;
             height: 25px;
             padding: 10px;
-            z-index: 0;
         }
 
         .menu-btn:hover{
@@ -95,12 +96,10 @@
 
         /*Information container*/
         #info{
+            position: absolute;
             text-align: left;
             letter-spacing: 1.5px;
             overflow-y: scroll;
-            height: 600px;
-            width: 750px;
-            bottom: 0;
             z-index: 13;
             padding: 40px;
         }
@@ -118,24 +117,33 @@
 
         /*Statistics container*/
         #stats{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: auto;
-            width: 750px;
-            height: 600px;
+            position: absolute;
+            padding: 40px;
             z-index: 13;
+        }
+
+        table,
+        th,
+        td{
+            border: 1px solid #4e6e30ff;
+            border-radius: 2px;
+        }
+        th,
+        td{
+            width: auto;
+            padding: 10px;
         }
 
 
         /*Contact us form container*/
         #form{
-            flex-direction: column;
-            justify-content: center;
+            display: flex;
+            position: absolute;
             height: 700px;
             width: 500px; 
             padding: 15px;
             margin: auto;
+            z-index: 13;
         }
 
         fieldset{
@@ -163,14 +171,7 @@
             color: #011805ff;
         }
 
-        /*Statistics container*/
-        table,
-        th,
-        td{
-            border: 2px solid #4e6e30ff;
-            border-radius: 2px;
-        }
-
+        
         /*Game display buttons container*/
         #terminalBtn{
             flex-direction: row;
