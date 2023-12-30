@@ -3,7 +3,7 @@
     <dev id="menuButtons" class="menu-box">
 
         <!--info button-->
-        <div  role="button" class="menu-btn" onclick="openInfo()">Info</div>
+        <div id="infoBtn" role="button" class="menu-btn" onclick="openInfo()">Info</div>
 
             <!--Info window-->
             <div id="info" class="btn-container">
@@ -64,7 +64,7 @@
             </div>
 
         <!--Statistic button-->
-        <div role="button" class="menu-btn" onclick="openStats()">Score Board</div>
+        <div id="statsBtn" role="button" class="menu-btn" onclick="openStats()">Score Board</div>
             
             <!--Statistic window-->
             <div id="stats" class="btn-container">
@@ -89,7 +89,7 @@
             </div>
 
         <!--Contact button-->
-        <div role="button" class="menu-btn" onclick="openForm()">Contact Us</div>    
+        <div id="contactBtn" role="button" class="menu-btn" onclick="openForm()">Contact Us</div>    
                 
             <!--Contact window-->
             <div id="form" class="btn-container">
@@ -106,7 +106,7 @@
                                 <input type="text" id="message" name="message" value="Game Issue" required><br>
                             <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
                             
-                            <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you')" action=""></button>
+                            <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action=""></button>
                     </fieldset>
                 </form>
 
@@ -115,7 +115,7 @@
     </div>
 
     <!--Game buttons-->
-    <div role="button" class="menu-btn" onclick="openTerminalButtons()">Game</div>
+    <div id="gameBtn" role="button" class="menu-btn" onclick="openTerminalButtons()">Game</div>
 
         <!--Buttons window while game plays-->    
         <div id="terminal-btn" class="game-btn">
@@ -123,10 +123,8 @@
             <button id="btn" type="button" onclick="window.location.reload()">Start Game!</button>
                 
             <!--shows menu buttons-->
-            <button id="btn" type="button" onclick="closeTerminalButtons()">Menu</button>
+            <button id="btn" type="button" onclick="openMenuButtons()">Menu</button>
         </div>
-
-    </div>
          
     <!--Terminal-->
     <div id="terminal"></div>
@@ -135,7 +133,7 @@
     <script>
         //Open and close the menu buttons options
         function openMenuButtons() { 
-            document.getElementById("menuButtons").style.display = "block";
+            document.getElementsByClassName("menu-btn").style.display = "block";
         }
 
         function closeMenuButtons() { 
@@ -144,6 +142,7 @@
 
         //Open and close the information window
         function openInfo() { 
+            document.getElementById("infoBtn").style.display = "none";
             document.getElementById("info").style.display = "block";
         }
 
@@ -153,6 +152,7 @@
 
         //Open and close the statistics window
         function openStats() { 
+            document.getElementById("statsBtn").style.display = "none";
             document.getElementById("stats").style.display = "block";
         }
 
@@ -162,6 +162,7 @@
         
         //Open and close the form window
         function openForm() { 
+            document.getElementById("contactBtn").style.display = "none";
             document.getElementById("form").style.display = "block";
         }
 
@@ -171,6 +172,7 @@
 
         //Open and close the thank you window
          function openTerminalButtons() { 
+            document.getElementById("gameBtn").style.display = "none";
             document.getElementById("terminal-btn").style.display = "block";
         }
 
