@@ -112,30 +112,29 @@
 
                 <div role="button" class="btn-small menu-btn" onclick="closeForm()">Exit</div>         
             </div>   
+            
+        <!--Game buttons-->
+        <div id="gameBtn" role="button" class="menu-btn" onclick="openTerminalButtons()">Game</div>
+
+            <!--Buttons window while game plays-->    
+            <div id="terminalBtn" class="btn-container">
+                <!--Start game button-->
+                <button class="btn" type="button" onclick="window.location.reload()">Start Game!</button>
+                    
+                <!--shows menu buttons-->
+                <button class="btn" type="button" onclick="closeTerminalButtons()">Menu</button>
+            </div>
+    
     </div>
 
-    <!--Game buttons-->
-    <div id="gameBtn" role="button" class="menu-btn" onclick="openTerminalButtons()">Game</div>
-
-        <!--Buttons window while game plays-->    
-        <div id="terminalBtn" class="btn-container">
-            <!--Start game button-->
-            <button class="btn" type="button" onclick="window.location.reload()">Start Game!</button>
-                
-            <!--shows menu buttons-->
-            <button class="btn" type="button" onclick="openMenuButtons()">Menu</button>
-        </div>
+    
          
     <!--Terminal-->
     <div id="terminal"></div>
     
     <!--JavaScript-->
     <script>
-         function openMenuButtons() {
-            document.getElementById("terminalBtn").style.display = "none";
-            document.getElementsById("menuButtons").style.display = "block";
-        }
-
+       
         //Open and close the information window
         function openInfo() { 
             document.getElementById("infoBtn").style.display = "none";
@@ -170,6 +169,11 @@
          function openTerminalButtons() { 
             document.getElementById("gameBtn").style.display = "none";
             document.getElementById("terminalBtn").style.display = "block";
+         }
+
+            function closeTerminalButtons() { 
+            document.getElementById("terminalBtn").style.display = "none";
+            document.getElementById("menuButtons").style.display = "block";
         }
 
         //Terminal settings 
