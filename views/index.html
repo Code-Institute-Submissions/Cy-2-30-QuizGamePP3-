@@ -97,16 +97,16 @@
                     <fieldset>
                         <legend>Contact us here</legend>
                             <label for="fname">First name:</label><br>
-                                <input type="text" id="fname" name="fname" value="John" required><br>
+                                <input type="text" id="fname" name="fname" placeholder="John" required><br>
                             <label for="lname">Last name:</label><br>
-                                <input type="text" id="lname" name="lname" value="Smith" required><br>
+                                <input type="text" id="lname" name="lname" placeholder="Smith" required><br>
                             <label for="email">Email:</label><br>
                                 <input type="email" id="email" name="email" placeholder="email@example.ie" required><br>
                             <label for="message">Message:</label><br>
-                                <input type="text" id="message" name="message" value="Game Issue" required><br>
+                                <input type="text" id="message" name="message" placeholder="Game Issues" required><br>
                             <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
                             
-                            <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action=""></button>
+                            <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action="">Submit</button>
                     </fieldset>
                 </form>
 
@@ -118,7 +118,7 @@
     <div id="gameBtn" role="button" class="menu-btn" onclick="openTerminalButtons()">Game</div>
 
         <!--Buttons window while game plays-->    
-        <div id="terminal-btn" class="game-btn">
+        <div id="terminalBtn" class="btn-container">
             <!--Start game button-->
             <button id="btn" type="button" onclick="window.location.reload()">Start Game!</button>
                 
@@ -131,13 +131,9 @@
     
     <!--JavaScript-->
     <script>
-        //Open and close the menu buttons options
-        function openMenuButtons() { 
-            document.getElementsByClassName("menu-btn").style.display = "block";
-        }
-
-        function closeMenuButtons() { 
-            document.getElementById("menuButtons").style.display = "none";
+         function openMenuButtons() {
+            document.getElementById("terminalBtn").style.display = "none";
+            document.getElementsById("menuButtons").style.display = "block";
         }
 
         //Open and close the information window
@@ -173,11 +169,7 @@
         //Open and close the thank you window
          function openTerminalButtons() { 
             document.getElementById("gameBtn").style.display = "none";
-            document.getElementById("terminal-btn").style.display = "block";
-        }
-
-        function closeTerminalButtons() {
-            document.getElementById("terminal-btn").style.display = "none";
+            document.getElementById("terminalBtn").style.display = "block";
         }
 
         //Terminal settings 
