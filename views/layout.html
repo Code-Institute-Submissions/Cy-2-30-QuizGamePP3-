@@ -23,28 +23,20 @@
         */
        
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background-color: #e3cdb2ff;
             color: #011805ff;            
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: auto;
         }
 
         a{
             text-decoration: none;
             cursor: auto;
             z-index: 1;
-        }
-
-        /*Hides all menu buttons information*/
-        #info, 
-        #stats, 
-        #form, 
-        #terminalBtn{
-            display: none;
-            position: relative;
         }
 
         /*Styling for all menu buttons information*/
@@ -59,6 +51,15 @@
         /*Menu buttons container*/
         #menuWindow{
             display: block;
+            position: relative;
+        }
+
+        /*Hides all menu buttons information*/
+        #info, 
+        #stats, 
+        #form, 
+        #terminalBtn{
+            display: none;
             position: relative;
         }
 
