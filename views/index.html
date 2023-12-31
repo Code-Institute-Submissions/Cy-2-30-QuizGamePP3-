@@ -96,19 +96,37 @@
                 <form>
                     <fieldset>
                         <legend>Contact us here</legend>
-                            <label for="fname">First name:</label><br>
-                                <input type="text" id="fname" name="fname" placeholder="John" required><br>
-                            <label for="lname">Last name:</label><br>
-                                <input type="text" id="lname" name="lname" placeholder="Smith" required><br>
-                            <label for="email">Email:</label><br>
-                                <input type="email" id="email" name="email" placeholder="email@example.ie" required><br>
-                            <label for="message">Message:</label><br>
-                                <input type="text" id="message" name="message" placeholder="Game Issues" required><br>
-                            <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
-                              
+                            <div class="row-form">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname" placeholder="John" required>
+                            </div>
+                            
+                            <div class="row-form">
+                                <label for="lname">Last name:</label>
+                                <input type="text" id="lname" name="lname" placeholder="Smith" required>
+                            </div>
+                            
+                            <div class="row-form">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="email@example.ie" required>
+                            </div>
+                            
+                            <div class="row-form">
+                                <label for="message">Message:</label>
+                                <input type="text" id="message" name="message" placeholder="Game Issues" required>
+                            </div>
+                               
+                            <div class="row-form">
+                                <div></div>
+                                <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea>
+                            </div>
+                                                                
+                            <div class="row-form">
+                                <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action="">Submit</button>
+                                <div role="button" class="btn-small menu-btn" onclick="closeForm()">Exit</div> 
+                            </div>
                     </fieldset>
-                    <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action="">Submit</button>
-                    <div role="button" class="btn-small menu-btn" onclick="closeForm()">Exit</div> 
+                    
                 </form>
 
                         
