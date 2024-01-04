@@ -2,9 +2,9 @@
     <!--Menu Buttons-->
     <div id="menuButtons" class="menu-box">
 
-         <!--Start game button-->
-        <button id="gameBtn terminalBtn" class="btn menu-btn" type="button" onclick="window.location.reload()">Start Game!</button>
-
+        <!--Game buttons-->
+        <div id="gameBtn" role="button" class="menu-btn" onclick="openTerminalButtons()">Game</div>
+       
         <!--info button-->
         <div id="infoBtn" role="button" class="menu-btn" onclick="openInfo()">Info</div>
 
@@ -137,35 +137,34 @@
     
             
 
-        <!--Game buttons
-        <div  role="button" class="" onclick="openTerminalButtons()">Game</div>
--->
+        
             <!--Buttons window while game plays  
-            <div id="terminalBtn" class="btn-container">-->  
+            <div  class="btn-container">-->  
                 
         <!--Start game button
-        <button id="gameBtn" class="btn menu-btn" type="button" onclick="window.location.reload()">Start Game!</button>
-                    -->
+        <button id="gameBtn" class="btn " type="button" onclick="window.location.reload()">Start Game!</button>
+          -->          
                 <!--shows menu buttons
                 <button class="btn" type="button" onclick="closeTerminalButtons()">Menu</button>
             </div>-->
     
-
-        <!--Game buttons
-        <div  role="button" class="" onclick="openTerminalButtons()">Game</div>-->
+        
 
 
     </div>
 
-    <!--Buttons window while game plays 
-    <div id="terminalBtn">-->   
+    <!--Buttons window while game plays -->   
+    <div id="terminalBtn">
 
-   
-   
-                    
-        <!--shows menu buttons
+        <!--Start game button-->
+        <button class="btn" type="button" onclick="window.location.reload()">Start Game!</button>
+
+        <!--Game buttons
+        <div  role="button" class="" onclick="openTerminalButtons()">Game</div>-->
+       
+        <!--shows menu buttons-->
         <button class="btn" type="button" onclick="closeTerminalButtons()">Menu</button>
-    </div>-->
+    </div>
          
     <!--Terminal-->
     <div id="terminal"></div>
@@ -225,15 +224,13 @@
             document.getElementById("gameBtn").style.display = "block";
         }
 
-        //Open and close the thank you window
-
-        //function openTerminalButtons() { 
-            //document.getElementById("infoBtn").style.display = "none";
-            //document.getElementById("statsBtn").style.display = "none";
-            //document.getElementById("contactBtn").style.display = "none";
-            //document.getElementById("gameBtn").style.display = "none";
-            //document.getElementById("terminalBtn").style.display = "block";
-         //}
+        function openTerminalButtons() { 
+            document.getElementById("infoBtn").style.display = "none";
+            document.getElementById("statsBtn").style.display = "none";
+            document.getElementById("contactBtn").style.display = "none";
+            document.getElementById("gameBtn").style.display = "none";
+            document.getElementById("terminalBtn").style.display = "block";
+         }
 
         //function openTerminalButtons() { 
            // document.getElementById("infoBtn").style.display = "none";
@@ -244,13 +241,13 @@
         // }
 
 
-        //function closeTerminalButtons() { 
-            //document.getElementById("terminalBtn").style.display = "none";
-           //document.getElementById("infoBtn").style.display = "block";
-            //document.getElementById("statsBtn").style.display = "block";
-            //document.getElementById("contactBtn").style.display = "block";
-           // document.getElementById("gameBtn").style.display = "block";
-        //}
+        function closeTerminalButtons() { 
+            document.getElementById("terminalBtn").style.display = "none";
+            document.getElementById("infoBtn").style.display = "block";
+            document.getElementById("statsBtn").style.display = "block";
+            document.getElementById("contactBtn").style.display = "block";
+            document.getElementById("gameBtn").style.display = "block";
+        }
 
         //Terminal settings 
         var term = new Terminal({
