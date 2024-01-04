@@ -92,28 +92,48 @@
         <div id="contactBtn" role="button" class="menu-btn" onclick="openForm()">Contact Us</div>    
                 
             <!--Contact window-->
-            <div id="form" class="btn-container">
-                <form>
+                            <form id="form">
                     <fieldset>
                         <legend>Contact us here</legend>
-                            <label for="fname">First name:</label><br>
-                                <input type="text" id="fname" name="fname" placeholder="John" required><br>
-                            <label for="lname">Last name:</label><br>
-                                <input type="text" id="lname" name="lname" placeholder="Smith" required><br>
-                            <label for="email">Email:</label><br>
-                                <input type="email" id="email" name="email" placeholder="email@example.ie" required><br>
-                            <label for="message">Message:</label><br>
-                                <input type="text" id="message" name="message" placeholder="Game Issues" required><br>
-                            <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea><br><br>
-                              
+                            <div class="form-column">
+                                <div class="row-form">
+                                    <label for="fname">First name :</label>
+                                    <input type="text" id="fname" name="fname" placeholder="John" required>
+                                </div>
+                            
+                                <div class="row-form">
+                                    <label for="lname">Last name :</label>
+                                    <input type="text" id="lname" name="lname" placeholder="Smith" required>
+                                </div>
+                            
+                                <div class="row-form">
+                                    <label for="email">Email :</label>
+                                    <input type="email" id="email" name="email" placeholder="email@example.ie" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-column">
+                                <div class="row-form">
+                                    <label for="message">Message :</label>
+                                    <input type="text" id="message" name="message" placeholder="Game Issues" required>
+                                </div>
+                               
+                                <div class="row-form">
+                                    <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea>
+                                </div>
+                            </div>                            
                     </fieldset>
-                    <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action="">Submit</button>
-                    <div role="button" class="btn-small menu-btn" onclick="closeForm()">Exit</div> 
+
+                    <div class="row-form" id="submitbtns">
+                        <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action="">Submit</button>
+                        <div role="button" class="btn-small menu-btn" onclick="closeForm()">Exit</div> 
+                    </div>
                 </form>
 
                         
-            </div>   
+    
             
+<<<<<<< HEAD
         <!--Game buttons
         <div  role="button" class="" onclick="openTerminalButtons()">Game</div>
 -->
@@ -127,9 +147,21 @@
                 <button class="btn" type="button" onclick="closeTerminalButtons()">Menu</button>
             </div>-->
     
+=======
+        <!--Game buttons-->
+        <div id="gameBtn" role="button" class="menu-btn" onclick="openTerminalButtons()">Game</div>
+
+>>>>>>> refs/remotes/origin/main
     </div>
 
-    
+    <!--Buttons window while game plays-->    
+    <div id="terminalBtn">
+        <!--Start game button-->
+        <button class="btn" type="button" onclick="window.location.reload()">Start Game!</button>
+                    
+        <!--shows menu buttons-->
+        <button class="btn" type="button" onclick="closeTerminalButtons()">Menu</button>
+    </div>
          
     <!--Terminal-->
     <div id="terminal"></div>
@@ -190,6 +222,7 @@
         }
 
         //Open and close the thank you window
+<<<<<<< HEAD
         //function openTerminalButtons() { 
             //document.getElementById("infoBtn").style.display = "none";
             //document.getElementById("statsBtn").style.display = "none";
@@ -197,6 +230,15 @@
             //document.getElementById("gameBtn").style.display = "none";
             //document.getElementById("terminalBtn").style.display = "block";
          //}
+=======
+        function openTerminalButtons() { 
+            document.getElementById("infoBtn").style.display = "none";
+            document.getElementById("statsBtn").style.display = "none";
+            document.getElementById("contactBtn").style.display = "none";
+            document.getElementById("gameBtn").style.display = "none";
+            document.getElementById("terminalBtn").style.display = "inline";
+         }
+>>>>>>> refs/remotes/origin/main
 
         //function closeTerminalButtons() { 
             //document.getElementById("terminalBtn").style.display = "none";

@@ -65,7 +65,8 @@
         }
 
         /*Location and flow for the buttons*/
-        .menu-box{
+        .menu-box,
+        #terminalBtn{
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -100,8 +101,8 @@
             text-align: left;
             letter-spacing: 1.5px;
             overflow-y: scroll;
-            z-index: 13;
             padding: 40px;
+            z-index: 13;
         }
 
         .heading{
@@ -138,28 +139,71 @@
         /*Contact us form container*/
         #form{
             position: absolute;
-            padding: 50px;
-            z-index: 13;
-        }
-
-        legend{
-            font-size: 25px;
+            background-color: #e3cdb2ff;
+            width: 7500px;
+            height: 600px;
+            padding: 20px;
+            opacity: 0.5;
+            z-index: 12;
         }
 
         fieldset{
-            font-size: 20px;
-            border: 2px solid #4e6e30ff;
-            width: 550px;
-            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            left:290px;
+            top: 70px;
+            background-color: #f4ece2ff;;
+            color: #011805ff;
+            border: 3px solid #c8a369ff;
+            box-shadow: -2px -1px 6px 4px #9e3f27ff, 5px 4px 5px 4px #c8a369ff, -5px -4px 5px 4px  #c8a369ff;
+            border-radius: 10px;
+            width: 640px;
+            height: 440px;
             padding: 40px;
+            z-index: 15;
+        }
+
+        legend{
+            font-size: 20px;
+        }
+
+        fieldset{
+            display: flex;
+            flex-direction: row;
+            font-size: 16px;
+            border: 2px solid #4e6e30ff;
+            width: 440px;
+            padding: 20px;
             margin: auto;
+        }
+
+        .row-form{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+        .form-column{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #submitbtns{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 300px;
+            padding: 20px;
+            padding-left: 40px;
         }
 
         input, textarea{
             background-color: #e3cdb2ff;
             border: 2px solid #4e6e30ff;
-            border-radius: 6px;
+            border-radius: 10px;
             padding: 5px;
+            width: 170px;
         }
 
         textarea:hover{
@@ -177,11 +221,9 @@
         
         /*Game display buttons container*/
         #terminalBtn{
+            display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 500px;
-            height: 100px;
-            margin: auto;
         }
 
         /*Button styling*/
