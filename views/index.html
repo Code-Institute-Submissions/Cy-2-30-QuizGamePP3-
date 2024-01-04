@@ -93,9 +93,10 @@
 
         <!--Contact button-->
         <div id="contactBtn" role="button" class="menu-btn" onclick="openForm()">Contact Us</div>    
-                
+            
             <!--Contact window-->
-                            <form id="form">
+            <div id="form"> 
+                <form>
                     <fieldset>
                         <legend>Contact us here</legend>
                             <div class="form-column">
@@ -124,15 +125,19 @@
                                 <div class="row-form">
                                     <textarea type="text" id="feedback" name="feedback" spellcheck="true" rows="5" cols="21" placeholder="Write your feedback..."></textarea>
                                 </div>
-                            </div>                            
-                    </fieldset>
+                            </div>    
 
-                    <div class="row-form" id="submitbtns">
-                        <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action="">Submit</button>
-                        <div role="button" class="btn-small menu-btn" onclick="closeForm()">Exit</div> 
-                    </div>
+                
+
+                            
+                        </fieldset>
+
+                        <div class="row-form" id="submitbtns">
+                            <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action="">Submit</button>
+                            <div role="button" class="btn-small menu-btn" onclick="closeForm()">Exit</div> 
+                        </div>
                 </form>
-
+            </div> 
                         
     
             
