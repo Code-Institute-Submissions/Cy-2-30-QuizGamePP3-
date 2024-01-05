@@ -20,13 +20,14 @@ def gameRules():
     Game instructions and rules
     """
     print(Fore.RED +"Game Rules!")
-    print(Fore.CYAN +"******************************" + Fore.RED)
+    print(Fore.CYAN +"******************************" + Fore.GREEN )
     print("\nThere are 20 questions in total to complete the game.")
     print("\nThere are 3 guesses allocated, to complete all questions.")
     print("\nIf all guesses are finished, ")
     print("\nafter each wrong answer the game will pass to the next question.")  
     print("\nThere is a timer when completing the questions.")
-    print("\nThe score percentage would be given at the end with ratings compared to other players.")  
+    print("\nThe score percentage would be given at the end with ratings compared")
+    print("\nto other players.")  
     print(Fore.CYAN +"******************************\n")
     time.sleep(3)
     print(Fore.MAGENTA + "Extra Notes!")
@@ -40,7 +41,57 @@ def gameRules():
 gameRules()
 
 
+def checkAlpha():
+    """
+    Checks for alphabets in the name
+    """
+
+checkAlpha()
 
 
+def checkNum():
+    """
+    Checks for numbers in the name
+    """
+
+checkNum()
 
 
+def checkCharc():
+    """
+    Checks for number of charectors in the name
+    """
+
+checkCharc()
+
+
+def questions():
+    """
+    It pulls questions and displays in
+    """
+
+question()
+
+
+def guess():
+    """
+    Checks number of guesses
+    """
+
+guess()
+
+
+def addStats():
+    """
+    Add score to the google sheets
+    """
+
+addstats()
+
+
+def pullStats():
+    """
+    Pulls stats from google sheets 
+    """
+
+pullStats()
