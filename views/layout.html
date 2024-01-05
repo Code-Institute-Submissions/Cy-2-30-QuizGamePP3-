@@ -50,7 +50,7 @@
         }
 
         /*Menu buttons container*/
-        #menuWindow{
+        #menuButtons{
             display: block;
             position: relative;
         }
@@ -65,7 +65,18 @@
         }
 
         /*Location and flow for the buttons*/
-        .menu-box,
+        .menu-box{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            background-color: #f4ece2ff;
+            color: #011805ff;
+            width: 700px;
+            height: 500px;
+            padding: 100px;
+            z-index: 13;
+        }
+
         #terminalBtn{
             display: flex;
             flex-direction: row;
