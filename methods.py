@@ -2,7 +2,6 @@ from colorama import Fore
 import classes
 import time 
 
-
 def gameIntro():
     """
     Welcome message
@@ -13,6 +12,7 @@ def gameIntro():
     time.sleep(5)
 
 gameIntro()
+
 
 
 def gameRules():
@@ -41,12 +41,7 @@ def gameRules():
 gameRules()
 
 
-def checkAlpha():
-    """
-    Checks for alphabets in the name
-    """
 
-checkAlpha()
 
 
 def checkNum():

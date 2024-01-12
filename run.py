@@ -4,7 +4,7 @@ from colorama import Fore
 import random
 import methods
 import classes 
-import time 
+
 
 
 SCOPE = [
@@ -23,19 +23,8 @@ records = teams.get_all_values()
 
 
 
-#Player names
 
-#Introductions and Rules
-print(methods.gameIntro)
-print(methods.gameRules)
-
-print(Fore.CYAN +"******************************" + Fore.RED)
-print(Fore.CYAN +"******************************")
-
-
-
-
-#game random fun facts
+#game random fun facts and hints to the quiz
 fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be unlucky to eat a mince pie with a knife.", 
             "Christmas pudding used to be a soup.", "Candy canes were invented to keep kids quiet in church.", 
             "Instead of turkey at Christmas, it used to be a pigs head and mustard.","People in Japan eat fast-food chicken on Christmas day.",
@@ -61,226 +50,160 @@ print("******************************" + Fore.GREEN)
 print(random_fact)
 print(Fore.CYAN + "******************************" + Fore.RESET)
 
-#change of game content filling missing words to multiple questions quiz
-"""
-# quiz words with 3 levels 1. Easy level 
-easy_words =["Elves", "Merry", "Jolly", "Carols", "Myrrh", 
-"Xmas", "Birth", "Family", "Candy", "Sleigh",
-"Jesus", "Chimney", "Spirit", "Goose", "Angel"
-"Tinsel", "Elf", "Feast", "Sledge", "Holly"]
+quiz_questions = [ 
+    {"question" : "Where did the Christmas tree originate from? :", 
+    "options"   : ["Germany.", "Ireland.", "Canada."], 
+    "answer"    : "Germany."}, 
+    {"question" : "What is the highest-grossing Christmas film of all time? :", 
+    "options"   : ["Home Alone, raking in $300 million.", "The animated Dr Seuss' The Grinch 2018, raking in $512 million.", "Failure to Launch,raking in $100 million."],
+    "answer"    : "The animated Dr Seuss' The Grinch (2018), raking in $512 million."},
+    {"question" : "Where do Christmas gonks come from? :", 
+    "options"   : ["United States.", "Soviet Union.", "Scandinavia.",],
+    "answer"    : "Scandinavia."}, 
+    {"question" : "WIn what film would you hear the greeting 'Merry Christmas, ya filthy animal'? :", 
+    "options"   : ["Home Alone.", "Chrismas with Family.", "Two Half a Men"], 
+    "answer"    : "Home Alone."}, 
+    {"question" : "Before turkey, what was the traditional Christmas Day meal in England? :", 
+    "options"   : ["The traditional Christmas meal in England was rosted turkey.", "The traditional Christmas meal in England was a pig's head and mustard.", "The traditional Christmas meal in England was roasted ham."], 
+    "answer"    : "The traditional Christmas meal in England was a pig's head and mustard."}, 
+    {"question" : "Which artist had the most Christmas No.1 singles? :", 
+    "options"   : ["The Beatles.", "Westlife.", "Boys to Men."], 
+    "answer"    : "The Beatles."}, 
+    {"question" : "Who invented electric lights for the Christmas tree? :", 
+    "options"   : ["Edward Johnson in the US in 1882.", "John Smith in the UK in 1750.", "Edward Dammes in Germany in 1950."], 
+    "answer"    : "Edward Johnson in the US in 1882."}, 
+    {"question" : "How much does the world's most expensive Christmas decoration cost? :", 
+    "options"   : ["", "", "The emu egg set in 24-carat gold cost £8.9 million."], #not finished 
+    "answer"    : "The emu egg set in 24-carat gold cost £8.9 million."}, 
+    {"question" : "When did John Lewis open its online Christmas shop? :", 
+    "options"   : ["31st July 2003.", "31st August 2023.", "31st December 2008."], 
+    "answer"    : "31st August 2023."}, 
+    {"question" : "Where is the UK's tallest Christmas tree situated? :", 
+    "options"   : ["", "", "Wakehurst, West Sussex."], #not finished 
+    "answer"    : "Wakehurst, West Sussex."},  
 
-#middle level
-middle_words = ["Chrismas","Festive", "Reindeer", "Carolling", "Carolers",
-"Frankincense", "Mistletoe", "Nativity", "Tradition", "Fruitcake",
-"Rudolph", "Pinecone", "Presents", "Yuletide", "Stocking",
-"Tidings", "Holiday	","Chestnuts", "Ornaments", "Snowball"]						
-
-#hard level
-hard_words = ["Saint Nicholas", "Santa Claus","Kris Kringle", "Christmas Eve", "Santa\’s helpers",
-"North Pole", "Plum pudding", "Gingerbread house", "Frosty the Snowman", "Santa\’s workshop",
-"Season\’s greetings", "Christmas card", "Christmas carol", "Christmas tree", "Christmas tree stand",
-"December 25", "Jack Frost", "St. Nicks", "Father Christmas", "Sleigh bells"]
-
-#random_word = random.choice(easy_words)
-#print("Guess the words...")
-#print(random_word)
-"""
-
-#Multiple questions quiz change from tuple to dictionaries 
-"""
-questions = ("What was the Home Alone decor inspired by? :", 
-"What fruit is usually placed in stockings? :", 
-"Who wrote A Christmas Carol? :", 
-"Why do we give chocolate coins for Christmas? :",
- "Where does the tradition of hanging gifts on the Christmas tree come from? :", 
- "Who started the tradition of exchanging gifts? :")
+    {"question" : "Where is the oldest Christmas market in the world?  :", 
+    "options"   :  ["Dresden's Striezelmarkt, Germany.", "Oslo street market, Norway.", "Dublin, chrismas market."], 
+    "answer"    : "Dresden's Striezelmarkt, Germany."}, 
+    {"question" : "What is a tree with fake snow called? :", 
+    "options"   : ["A pine tree.", "A flocked Christmas tree.", "Snowy Christmas tree."], 
+    "answer"    : ["A flocked Christmas tree.","Snowy Christmas tree."]}, 
+    {"question" : "How many gifts were given in total in 'The Twelve Days of Christmas' song?  :", 
+    "options"   : ["365.", "366.", "364."], 
+    "answer"    : "364." }, 
+    {"question" : "What color are mistletoe berries? :", 
+    "options"   : ["White.", "Black.", "Yellow."], 
+    "answer"    : "White."}, 
+    {"question" : "What is the most popular Christmas plant in the UK? :", 
+    "options"   : ["Poinsettia.", "Chrismas lights.", "Mexican flame leaf."], 
+    "answer"    : "Poinsettia."}, 
+    {"question" : "How tall is the record holder for the tallest-ever snowman? :", 
+    "options"   : ["200 feet.", "113 feet.", "213 feet."], 
+    "answer"    : "113 feet."}, 
+    {"question" : "How many Christmas puddings are sold in the UK on average? :", 
+    "options"   : ["2 million.", "250 million.", "25 million."], 
+    "answer"    : "25 million."}, 
+    {"question" : "Which country donates the Christmas tree in Trafalgar Square? :", 
+    "options"   : ["Norway.", "France.", "Germany."], 
+    "answer"    : "Norway."},
+    {"question" : "Who invented the Christmas cracker? :", 
+    "options"   : ["Coonectcut-based confectioner Tom Waffles.", "Munich-based confectioner Gerhard Regards.", "London-based confectioner and baker Tom Smith."], 
+    "answer"    : "London-based confectioner and baker Tom Smith."},  
+    {"question" : "Where does the name Boxing Day come from? :", 
+    "options"   : ["Boxing Day was a traditional day off peace.", "Boxing Day was a traditional day off for servants in which they received a 'Christmas Box' from their master.", "Boxing Day was a traditional day off cleaning and resting after Chrismas Day."], 
+    "answer"    : "Boxing Day was a traditional day off for servants in which they received a 'Christmas Box' from their master."},
     
-answers  = ("B", "D", "B", "C", "A", "C")
-
-options = (("A. Someone told the movie director.", "B. Antique cards and Norman Rockwell paintings.", "C. The director dreamt about it.", "D. Inspired idea by a child in the movie"),
-("A. An apple", "B. Bananas", "C. Grapes", "D. An orange."),
-("A. Charles Berry", "B. Charles Dickens.", "C. Donald Trump", "D. Elon Mask"),
-("A. Chocolate is good.", "B. Kids love chocolate.", "C. To honour Saint Nicholas.", "D. It is a tradition."),
-("A. The Druids.", "B. South America", "C. Slovenia", "D. Rassia"),
-("A. African", "B. Brits", "C. The Romans.", "D. Chinese"),)
-
-score = 0
-guess = 3
-guess_storage = []
-question_index = 1
-option_index = 0
-num_questions = 0
-
-for question in questions:
-    print(f"\nQestion {question_index}: {question}")
-    print("\n******************************")
-
-    for option in options[option_index]: 
-        print(option)
-
-    guesses = str(input("Enter your answer (A, B, C, D): ").upper())
-
-    if guesses ==  answers[option_index]:
-        score += 1
-        print("Next question!")
-        print("\n******************************")
-
-    else:
-        print("Play again!")
-
-    guesses = str(input("Enter your answer (A, B, C, D): ").upper())
-    guess_storage.append(guesses)
-    print("\n******************************")
-
-    question_index += 1
-    
-    if  num_questions <= 3:
-        num_questions += 1
-            
-    else: 
-        print("GAME OVER!")
-print("Play Again!")
-"""
-
-quiz_questions = {
-    "question" : ["Where did the Christmas tree originate from? :", " What is the highest-grossing Christmas film of all time? :",
-                "Where do Christmas gonks come from? :", "WIn what film would you hear the greeting 'Merry Christmas, ya filthy animal'? :", 
-                "Before turkey, what was the traditional Christmas Day meal in England? :", "Which artist had the most Christmas No.1 singles? :", 
-                "Who invented electric lights for the Christmas tree? :", "How much does the world's most expensive Christmas decoration cost? :", 
-                "When did John Lewis open its online Christmas shop? :", "Where is the UK's tallest Christmas tree situated? :", 
-
-                "Where is the oldest Christmas market in the world?  :", "What is a tree with fake snow called? :", 
-                "How many gifts were given in total in 'The Twelve Days of Christmas' song?  :", "What color are mistletoe berries? :", 
-                "What is the most popular Christmas plant in the UK? :", "How tall is the record holder for the tallest-ever snowman? :", 
-                "How many Christmas puddings are sold in the UK on average? :", "Which country donates the Christmas tree in Trafalgar Square? :", 
-                "Who invented the Christmas cracker? :", "Where does the name Boxing Day come from? :",
-
-                "When was Christmas first celebrated in the UK? :", "How many tips do traditional snowflakes have? :", 
-                "What is the most popular Christmas tree topper ornament? :", "According to UK traditions, when should Christmas decorations come down? :", 
-                "Who started the tradition of exchanging gifts? :", "Where does the tradition of hanging gifts on the Christmas tree come from? :", 
-                "Why do we give chocolate coins for Christmas? :", "Who wrote A Christmas Carol? :", 
-                "What fruit is usually placed in stockings? :", "What was the Home Alone decor inspired by? :",
-
-                "Who brought the Christmas tree to England? :", "Who invented the Christmas wreath? :", 
-                "What is the most popular Christmas tree in the UK? :", "What was the first Christmas tree decoration? :", 
-                "When do the 12 days (about 1 week 5 days) of Christmas start? :", "In which year was the first Christmas card sent? :", 
-                "Where are the McCallisters going on holiday when they leave Kevin behind in Home Alone? :", "Stollen is the traditional fruit cake of which country? :", 
-                "How many real Christmas trees are sold each year in the UK? :", "What is the name for the period between Christmas and New Year? :",
-
-                "What country started the tradition of hanging stockings? :", "How many Christmas trees are grown in Europe each year? :", 
-                "What does Holy represent? :", "When were electric Christmas tree lights invented? :", 
-                "Before being developed into a toy, how did Elf on the Shelf begin? :", "Which accessory do you add to the base of your Christmas tree to hide the stand or trunk? :", 
-                "When were turkeys first brought to England? :", "Aside from a fireplace mantel, where is the most popular place to use a Christmas garland in the home? :", 
-                "Who designed the upside-down Christmas tree at Claridge's Hotel in 2017? :", "Which country invented glass baubles? :"
-    ],
-
-    "options" : [["Germany.", "Ireland.", "Canada."], ["Home Alone, raking in $300 million.", "The animated Dr Seuss' The Grinch 2018, raking in $512 million.", "Failure to Launch,raking in $100 million."], 
-                ["United States.", "Soviet Union.", "Scandinavia."], ["Home Alone.", "Chrismas with Family.", "Two Half a Men"], 
-                ["The traditional Christmas meal in England was rosted turkey.", "The traditional Christmas meal in England was a pig's head and mustard.", "The traditional Christmas meal in England was roasted ham."], ["The Beatles.", "Westlife.", "Boys to Men."], 
-                ["Edward Johnson in the US in 1882.", "John Smith in the UK in 1750.", "Edward Dammes in Germany in 1950."], ["", "", "The emu egg set in 24-carat gold cost £8.9 million."], 
-                ["31st July 2003.", "31st August 2023.", "31st December 2008."], ["", "", "Wakehurst, West Sussex."],
-
-                ["Dresden's Striezelmarkt, Germany.", "Oslo street market, Norway.", "Dublin, chrismas market."], ["A pine tree.", "A flocked Christmas tree.", "Snowy Christmas tree."], 
-                ["365.", "366.", "364."], ["White.", "Black.", "Yellow."], 
-                ["Poinsettia.", "Chrismas lights.", "Mexican flame leaf."], ["200 feet.", "113 feet.", "213 feet."], 
-                ["2 million.", "250 million.", "25 million."], ["Norway.", "France.", "Germany."], 
-                ["Coonectcut-based confectioner Tom Waffles.", "Munich-based confectioner Gerhard Regards.", "London-based confectioner and baker Tom Smith."], ["Boxing Day was a traditional day off peace.", "Boxing Day was a traditional day off for servants in which they received a 'Christmas Box' from their master.", "Boxing Day was a traditional day off cleaning and resting after Chrismas Day."],
-
-                ["In the 20th century.", "In the 6th century.", "In the 1th century."], ["Six.", "Seven.", "Nine."], 
-                ["The devil.", "The ghost.", "An angel."], ["Twelfth Night, 5th or 6th January.", "Sixth Night, 15th or 16th January.", "twentyfirst Night, 28th or 29th January."], 
-                ["The French.", "The Romans.", "The Rassians."], ["The Druids.", "The magicians.", "The Priest."], 
-                ["To honor Saint Nicholas.", "To honor St Patrick.", "To honor Chrismas father."], ["Tom Hilfigure.", "Charles Dickens.", "Chulk Bass."], 
-                ["An apple.", "An apricot.", "An orange."], ["Antique paintings.", "Antique cards and Norman Rockwell paintings.", "Chrismas cards."],
-
-                ["Queen Charlotte, wife of King George III installed the first indoor tree (a yew tree) at Queen's Lodge, Windsor, in 1800 to mark the festive season", "Princess of Denmark, installed the first indoor tree at Queen's Lodge.", "Prince Albert, who, after importing several spruce firs from Germany in 1840, was credited with introducing the Christmas tree tradition to the masses."], ["An English Lutheran pastor named Jonh Rich.", "A Rassian Lutheran pastor named Piet Norman.", "A German Lutheran pastor named Johann Hinrich Wichern."], 
-                ["Nordmann Smith.", "Nordmann Fir.", "John Norman."], ["Candles, introduced by Martin Luther in Germany.", "Candles, introduced by Martin Luther in USA.", "Candles, introduced by Martin Luther in England."], 
-                ["25th December.", "24th December.", "26th December."], ["1850.", "1980.", "1843."], 
-                ["Greese.", "Norway.", "France."], ["Poland.", "Germany.", "France."], 
-                ["8 million.", "2 million.", "5 million."], ["Twixmas.", "Year end.", "31 celebration."],
-
-                ["Norway.", "Greece.", "Italy."], ["60 million.", "200 million.", "66 million."], 
-                ["Jesus Christ's cross.", "Jesus Christ's crown of thorns.", "Jesus Christ's cloth."], ["1850 by Edward Johnson in the US.", "1881 by Edward Johnson in the US.", "1882 by Edward Johnson in the US."], 
-                ["Elf on the Shelf began as a children's picture book in 2005.", "Elf on the Shelf began as a children's picture book in 2006.", "Elf on the Shelf began as a children's picture book in 2007."], ["Tree skirt.", "Tree star.", "Tree lights."], 
-                ["1950.", "1880.", "1526."], ["The stairs.", "Near the window.", "Next to the wood storage."], 
-                ["Kelvin Cline.", "Tom Ford.", "Karl Lagerfeld."], ["Ireland.", "Germany.", "South America."]
-    ],
-
-    "answers" : ["Germany.", "The animated Dr Seuss' The Grinch (2018), raking in $512 million.", 
-                "Scandinavia.", "Home Alone.", 
-                "The traditional Christmas meal in England was a pig's head and mustard.", "The Beatles.", 
-                "Edward Johnson in the US in 1882.", "The emu egg set in 24-carat gold cost £8.9 million.", 
-                "31st August 2023.", "Wakehurst, West Sussex.", 
-
-                "Dresden's Striezelmarkt, Germany.", ["A flocked Christmas tree.","Snowy Christmas tree."], 
-                "364.", "White.", 
-                "Poinsettia.", "113 feet.", 
-                "25 million.", "Norway.", 
-                "London-based confectioner and baker Tom Smith.", "Boxing Day was a traditional day off for servants in which they received a 'Christmas Box' from their master.",
-
-                "In the 6th century.", "Six.", 
-                "An angel.", "Twelfth Night, 5th or 6th January.", 
-                "The Romans.", "The Druids.", 
-                "To honor Saint Nicholas.", "Charles Dickens.", 
-                "An orange.", "Antique cards and Norman Rockwell paintings.",
-
-                ["Queen Charlotte, wife of King George III, installed the first indoor tree (a yew tree) at Queen's Lodge, Windsor, in 1800 to mark the festive season","Prince Albert, who, after importing several spruce firs from Germany in 1840, was credited with introducing the Christmas tree tradition to the masses."], "A German Lutheran pastor named Johann Hinrich Wichern.", 
-                "Nordmann Fir.", "Candles, introduced by Martin Luther in Germany.", 
-                "25th December.", "1843.", 
-                "France.", "Germany.", 
-                "8 million.", "Twixmas.", 
-
-                "Italy.", "60 million.", 
-                "Jesus Christ's crown of thorns.", "1882 by Edward Johnson in the US.", 
-                "Elf on the Shelf began as a children's picture book in 2005.", "Tree skirt.", 
-                "1526.", "The stairs.", 
-                "Karl Lagerfeld.", "Germany.", 
+    {"question" : "When was Christmas first celebrated in the UK? :", 
+    "options"   : ["In the 20th century.", "In the 6th century.", "In the 1th century."], 
+    "answer"    : "In the 6th century."}, 
+    {"question" : "How many tips do traditional snowflakes have? :", 
+    "options"   : ["Six.", "Seven.", "Nine."], 
+    "answer"    : "Six."}, 
+    {"question" : "What is the most popular Christmas tree topper ornament? :",
+    "options"   : ["The devil.", "The ghost.", "An angel."], 
+    "answer"    : "An angel."}, 
+    {"question" : "According to UK traditions, when should Christmas decorations come down? :", 
+    "options"   : ["Twelfth Night, 5th or 6th January.", "Sixth Night, 15th or 16th January.", "twentyfirst Night, 28th or 29th January."], 
+    "answer"    : "Twelfth Night, 5th or 6th January."}, 
+    {"question" : "Who started the tradition of exchanging gifts? :", 
+    "options"   : ["The French.", "The Romans.", "The Rassians."], 
+    "answer"    : "The Romans." }, 
+    {"question" : "Where does the tradition of hanging gifts on the Christmas tree come from? :", 
+    "options"   : ["The Druids.", "The magicians.", "The Priest."], 
+    "answer"    : "The Druids."},
+    {"question" : "Why do we give chocolate coins for Christmas? :", 
+    "options"   : ["To honor Saint Nicholas.", "To honor St Patrick.", "To honor Chrismas father."], 
+    "answer"    : "To honor Saint Nicholas."}, 
+    {"question" : "Who wrote A Christmas Carol? :", 
+    "options"   : ["Tom Hilfigure.", "Charles Dickens.", "Chulk Bass."], 
+    "answer"    : "Charles Dickens."}, 
+    {"question" : "What fruit is usually placed in stockings? :", 
+    "options"   : ["An apple.", "An apricot.", "An orange."], 
+    "answer"    : "An orange."}, 
+    {"question" : "What was the Home Alone decor inspired by? :", 
+    "options"   : ["Antique paintings.", "Antique cards and Norman Rockwell paintings.", "Chrismas cards."], 
+    "answer"    : "Antique cards and Norman Rockwell paintings."},
+ 
+    {"question" : "Who brought the Christmas tree to England? :", 
+    "options"   : ["Queen Charlotte, wife of King George III installed the first indoor tree (a yew tree) at Queen's Lodge, Windsor, in 1800 to mark the festive season", "Princess of Denmark, installed the first indoor tree at Queen's Lodge.", "Prince Albert, who, after importing several spruce firs from Germany in 1840, was credited with introducing the Christmas tree tradition to the masses."], 
+    "answer"    : ["Queen Charlotte, wife of King George III, installed the first indoor tree (a yew tree) at Queen's Lodge, Windsor, in 1800 to mark the festive season","Prince Albert, who, after importing several spruce firs from Germany in 1840, was credited with introducing the Christmas tree tradition to the masses."]}, 
+    {"question" : "Who invented the Christmas wreath? :", 
+    "options"   : ["An English Lutheran pastor named Jonh Rich.", "A Rassian Lutheran pastor named Piet Norman.", "A German Lutheran pastor named Johann Hinrich Wichern."], 
+    "answer"    : "A German Lutheran pastor named Johann Hinrich Wichern."}, 
+    {"question" : "What is the most popular Christmas tree in the UK? :", 
+    "options"   : ["Nordmann Smith.", "Nordmann Fir.", "John Norman."], 
+    "answer"    : "Nordmann Fir."}, 
+    {"question" : "What was the first Christmas tree decoration? :", 
+    "options"   : ["Candles, introduced by Martin Luther in Germany.", "Candles, introduced by Martin Luther in USA.", "Candles, introduced by Martin Luther in England."], 
+    "answer"    : "Candles, introduced by Martin Luther in Germany."}, 
+    {"question" : "When do the 12 days (about 1 week 5 days) of Christmas start? :", 
+    "options"   : ["25th December.", "24th December.", "26th December."], 
+    "answer"    : "25th December."},
+    {"question" : "In which year was the first Christmas card sent? :", 
+    "options"   : ["1850.", "1980.", "1843."], 
+    "answer"    : "1843."}, 
+    {"question" : "Where are the McCallisters going on holiday when they leave Kevin behind in Home Alone? :", 
+    "options"   : ["Greese.", "Norway.", "France."], 
+    "answer"    : "France."}, 
+    {"question" : "Stollen is the traditional fruit cake of which country? :", 
+    "options"   : ["Poland.", "Germany.", "France."], 
+    "answer"    : "Germany."}, 
+    {"question" : "How many real Christmas trees are sold each year in the UK? :", 
+    "options"   : ["8 million.", "2 million.", "5 million."], 
+    "answer"    : "8 million."},    
+    {"question" : "What is the name for the period between Christmas and New Year? :", 
+    "options"   : ["Twixmas.", "Year end.", "31 celebration."], 
+    "answer"    : "Twixmas."},
+  
+    {"question" : "What country started the tradition of hanging stockings? :", 
+    "options"   : ["Norway.", "Greece.", "Italy."], 
+    "answer"    : "Italy."}, 
+    {"question" : "How many Christmas trees are grown in Europe each year? :", 
+    "options"   : ["60 million.", "200 million.", "66 million."], 
+    "answer"    : "60 million."}, 
+    {"question" : "What does Holy represent? :", 
+    "options"   : ["Jesus Christ's cross.", "Jesus Christ's crown of thorns.", "Jesus Christ's cloth."], 
+    "answer"    : "Jesus Christ's crown of thorns."}, 
+    {"question" : "When were electric Christmas tree lights invented? :", 
+    "options"   : ["1850 by Edward Johnson in the US.", "1881 by Edward Johnson in the US.", "1882 by Edward Johnson in the US."], 
+    "answer"    : "1882 by Edward Johnson in the US."},
+    {"question" : "Before being developed into a toy, how did Elf on the Shelf begin? :", 
+    "options"   : ["Elf on the Shelf began as a children's picture book in 2005.", "Elf on the Shelf began as a children's picture book in 2006.", "Elf on the Shelf began as a children's picture book in 2007."], 
+    "answer"    : "Elf on the Shelf began as a children's picture book in 2005."}, 
+    {"question" : "Which accessory do you add to the base of your Christmas tree to hide the stand or trunk? :", 
+    "options"   : ["Tree skirt.", "Tree star.", "Tree lights."], 
+    "answer"    : "Tree skirt."}, 
+    {"question" : "When were turkeys first brought to England? :", 
+    "options"   : ["1950.", "1880.", "1526."], 
+    "answer"    : "1526."}, 
+    {"question" : "Aside from a fireplace mantel, where is the most popular place to use a Christmas garland in the home? :", 
+    "options"   : ["The stairs.", "Near the window.", "Next to the wood storage."], 
+    "answer"    : "The stairs."}, 
+    {"question" : "Who designed the upside-down Christmas tree at Claridge's Hotel in 2017? :", 
+    "options"   : ["Kelvin Cline.", "Tom Ford.", "Karl Lagerfeld."], 
+    "answer"    : "Karl Lagerfeld."},   
+    {"question" : "Which country invented glass baubles? :", 
+    "options"   : ["Ireland.", "Germany.", "South America."], 
+    "answer"    : "Germany."}
     ]
-}
 
-random_word = random.choice(key.question)
-print("Guess the words...")
-print(random_word)
-
-for question in questions:
-    print(f"\nQestion {question_index}: {question}")
-    print("\n******************************")
-
-    for option in options[option_index]: 
-        print(option)
-
-    guesses = str(input("Enter your answer (A, B, C, D): ").upper())
-
-    if guesses ==  answers[option_index]:
-        score += 1
-        print("Next question!")
-        print("\n******************************")
-
-    else:
-        print("Play again!")
-
-
-#example for the quiz
-"""
-        guesses = input("Enter your answer (A, B, C, D): ").upper()
-        #guesses.append(guesses_num)
-
-        if guesses_num == answers[opt_index]:
-            
-            print("Next question!")
-            break
-        elif:
-            print(f"Wrong answer!")
-            guess -= 1
-            print(f"{guess} left. Try again")
-            guesses = input("Enter your answer (A, B, C, D): ").upper()
-        else:
-            guess == 0
-            print("No more guesses!")
-            break
-    print("******************************")
-
-        #if option == answers.len():
-         #   print("Next question!")
-    print("Wrong answer Try again!")
-    print("******************************")
-"""
