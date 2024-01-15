@@ -19,10 +19,12 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('quizgamepp3')
 
-teams = SHEET.worksheet('teams')
-records = teams.get_all_values()
+ScoreBoard = SHEET.worksheet('gameresults')
+records = ScoreBoard.get_all_values()
 
+print(Fore.GREEN + "Welcome to the Christmas Quiz!")
 
+player_name = input("Please enter your name: ")
 
 
 questions = [ 
@@ -235,7 +237,6 @@ for i, question in enumerate(questions, 1):
         if player_answer.isdigit() and 1 <= int(player_answer) <= 3:
             if question['options'][int(player_answer) - 1] in question['answer']:
                 score += 1 # Adds a point for every correct answer 
-                # break stops the program once the correct answer is given
                 break 
 
             else:
@@ -252,6 +253,6 @@ timer_end = time.time() - timer_start
 
 #Display the player game results
 print("Game Over!")
-print(f"\nHere is your score: {score}/{question_num}")
+print(f"\n{player_name}, here is your score: {score}/{question_num}")
 print(f"Score percentage: {int(score / question_num * 100)}%")
 print(f"Time it took to complete: {timer_end:.2f} seconds")
