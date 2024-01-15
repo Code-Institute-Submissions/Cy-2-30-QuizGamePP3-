@@ -215,8 +215,9 @@ random.shuffle(questions) # Chooses questions randomly from the dictionary
 score = 0
 guesses = 3
 question_num = 20
+timer_start = time.time()
 
-for i, question in enumerate(questions, 1): # questtions just randomly stops at any number before reaching 20 !!!!!
+for i, question in enumerate(questions, 1):
     if i > question_num:
         break # Stops when questions reaches 20
 
@@ -237,4 +238,11 @@ for i, question in enumerate(questions, 1): # questtions just randomly stops at 
 
     time.sleep(2) # Pause the game for 2 sec
 
-print(f"\nGame Over! Here is your score: {score}/{question_num}")
+# Calculates the total time taken to complete the game
+total_time = time.time() - timer_start
+
+#Display the player game results
+print("Game Over!")
+print(f"\nHere is your score: {score}/{question_num}")
+print(f"Score percentage: {score / question_num * 100:.2f}%")
+print(f"Time it took to complete: {total_time:.2f} seconds")
