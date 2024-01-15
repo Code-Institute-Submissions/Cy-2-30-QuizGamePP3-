@@ -27,6 +27,25 @@ print(Fore.GREEN + "Welcome to the Christmas Quiz!")
 
 player_name = input("Please enter your name: ")
 
+# Checks if the player name has more than 3 charectors
+# Checks if the player name has number 
+# checks if the player name has alphabet
+while len(player_name) <= 3 or not any(char.isdigit() for char in player_name) or not any(char.isalpha() for char in player_name):
+    if len(player_name) <= 3:
+        print("Name has to be more than 3 characters.")
+    elif not any(char.isdigit() for char in player_name):
+        print("Name must contain at least one number.")
+    elif not any(char.isalpha() for char in player_name):
+        print("Name must contain at least one alphabet.")
+
+    player_name = input(f"Please enter your name: ")
+
+    # Checks if the player name already exists in the Google Sheets
+    scoreboard_names = [record[1] for record in records]
+    while player_name in scoreboard_names:
+        print("Name already exists! Please choose a different name.")
+        player_name = input(f"Please enter your name: ")
+
 
 questions = [ 
     {"question" : "Where did the Christmas tree originate from? :", 
