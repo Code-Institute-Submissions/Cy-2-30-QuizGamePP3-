@@ -17,10 +17,11 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('quizgamepp3')
+SHEET = GSPREAD_CLIENT.open('quizgamepp3') #file name
 
-ScoreBoard = SHEET.worksheet('gameresults')
-records = ScoreBoard.get_all_values()
+
+ScoreBoard = SHEET.worksheet('gameresults') #table name
+records = ScoreBoard.get_all_values() #pulls all the records from google sheet
 
 print(Fore.GREEN + "Welcome to the Christmas Quiz!")
 
@@ -256,3 +257,6 @@ print("Game Over!")
 print(f"\n{player_name}, here is your score: {score}/{question_num}")
 print(f"Score percentage: {int(score / question_num * 100)}%")
 print(f"Time it took to complete: {timer_end:.2f} seconds")
+
+new_player = [len(records) + 1, player_name, score, f"{int(score / question_num * 100)}%", f"{timer_end:.2f}"]
+ScoreBoard.append_row(new_player) #add records on google sheets
