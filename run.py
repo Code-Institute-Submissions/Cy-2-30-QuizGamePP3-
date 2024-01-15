@@ -1,10 +1,11 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from colorama import Fore
-import random
-import methods
-import classes 
-
+from colorama import Fore # Add color to the font 
+import random # Random selection
+import os # Clears the terminal
+#import methods # All the methods file 
+#import classes # All class objects file
+import time
 
 
 SCOPE = [
@@ -24,7 +25,7 @@ records = teams.get_all_values()
 
 
 
-#game random fun facts and hints to the quiz
+#Game random fun facts and hints to the quiz
 fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be unlucky to eat a mince pie with a knife.", 
             "Christmas pudding used to be a soup.", "Candy canes were invented to keep kids quiet in church.", 
             "Instead of turkey at Christmas, it used to be a pigs head and mustard.","People in Japan eat fast-food chicken on Christmas day.",
@@ -43,14 +44,9 @@ fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be u
             "Robins are a popular symbol of Christmas because of the postmen.","It took the three kings 12 days to reach the baby Jesus Christ.",
             "Evergreens have been a festive symbol since the time of the Romans and the Ancient Egyptians."," Xmas means the same as Christmas."]
 
-random_fact = random.choice(fun_facts)
 
-print(Fore.YELLOW + "Did you know!" + Fore.CYAN)
-print("******************************" + Fore.GREEN)
-print(random_fact)
-print(Fore.CYAN + "******************************" + Fore.RESET)
 
-quiz_questions = [ 
+questions = [ 
     {"question" : "Where did the Christmas tree originate from? :", 
     "options"   : ["Germany.", "Ireland.", "Canada."], 
     "answer"    : "Germany."}, 
@@ -207,3 +203,38 @@ quiz_questions = [
     "answer"    : "Germany."}
     ]
 
+random_fact = random.choice(fun_facts) # becuase of clearing the screen random fact do not show !!!!! fix later
+
+print(Fore.YELLOW + "Did you know!" + Fore.CYAN)
+print("******************************" + Fore.GREEN)
+print(random_fact)
+print(Fore.CYAN + "******************************" + Fore.RESET)
+
+random.shuffle(questions) # Chooses questions randomly from the dictionary
+
+score = 0
+guesses = 3
+question_num = 20
+
+for i, question in enumerate(questions, 1): # questtions just randomly stops at any number before reaching 20 !!!!!
+    if i > question_num:
+        break # Stops when questions reaches 20
+
+    #os.system('clear' if os.name == 'posix' else 'cls') # Clear terminal after each question
+    
+    print(f"\nQuestion {i}: {question['question']}\n")
+    for j, option in enumerate(question['options'], 1):
+        print(f"{j}. {option}") # Print number and option
+
+    player_answer = input("Input your answer (Please enter 1, 2, or 3) : ")
+    
+    if question['options'][int(player_answer) - 1] in question['answer']:
+            score += 1 # Adds a point for every correct answer 
+            # break stops the program once the correct answer is given
+
+    else:
+        print("Incorrect! Next question")
+
+    time.sleep(2) # Pause the game for 2 sec
+
+print(f"\nGame Over! Here is your score: {score}/{question_num}")
