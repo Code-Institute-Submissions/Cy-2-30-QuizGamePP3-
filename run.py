@@ -25,27 +25,6 @@ records = teams.get_all_values()
 
 
 
-#Game random fun facts and hints to the quiz
-fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be unlucky to eat a mince pie with a knife.", 
-            "Christmas pudding used to be a soup.", "Candy canes were invented to keep kids quiet in church.", 
-            "Instead of turkey at Christmas, it used to be a pigs head and mustard.","People in Japan eat fast-food chicken on Christmas day.",
-            "Father Christmas is called lots of different names all around the world.", "Christmas used to be banned in Scotland.", 
-            "In America, they play a game of 'hide the pickle'.", "In Peru, they celebrate Christmas day on Christmas eve.",
-
-            "In Sweden, they leave a coffee for Santa instead of cookies.","The smallest Christmas card ever made is invisible to the human eye.", 
-            "Prince Albert introduced the Christmas tree to England in 1800.", "The tinsel on your Christmas tree used to be made from real silver.", 
-            "The world record for a Christmas tree is 221 feet.", "Santa Claus makes 842 million stops on Christmas eve night.",
-            "London’s Trafalgar Square Christmas tree is a gift from Norway.", "The tree topper tradition began in Victorian times.", 
-            "Santa Claus is 1750 years old.", " The only light on Santa’s sleigh is Rudolph’s nose.", 
-
-            "Santa uses nine reindeer to pull his sleigh.", "Santa has 200 000 elves that help him get all the presents ready.",
-            "Christmas Wreaths are symbols of Jesus Christ.", "The song 'Jingle Bells' was sent into space.", 
-            "Mistletoe is named after the mistle thrush bird.", "Christmas carols are based on the English tradition of wassailing.",
-            "Robins are a popular symbol of Christmas because of the postmen.","It took the three kings 12 days to reach the baby Jesus Christ.",
-            "Evergreens have been a festive symbol since the time of the Romans and the Ancient Egyptians."," Xmas means the same as Christmas."]
-
-
-
 questions = [ 
     {"question" : "Where did the Christmas tree originate from? :", 
     "options"   : ["Germany.", "Ireland.", "Canada."], 
@@ -203,46 +182,76 @@ questions = [
     "answer"    : "Germany."}
     ]
 
-random_fact = random.choice(fun_facts) # becuase of clearing the screen random fact do not show !!!!! fix later
+#Game random fun facts and hints to the quiz
+fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be unlucky to eat a mince pie with a knife.", 
+            "Christmas pudding used to be a soup.", "Candy canes were invented to keep kids quiet in church.", 
+            "Instead of turkey at Christmas, it used to be a pigs head and mustard.","People in Japan eat fast-food chicken on Christmas day.",
+            "Father Christmas is called lots of different names all around the world.", "Christmas used to be banned in Scotland.", 
+            "In America, they play a game of 'hide the pickle'.", "In Peru, they celebrate Christmas day on Christmas eve.",
 
-print(Fore.YELLOW + "Did you know!" + Fore.CYAN)
-print("******************************" + Fore.GREEN)
-print(random_fact)
-print(Fore.CYAN + "******************************" + Fore.RESET)
+            "In Sweden, they leave a coffee for Santa instead of cookies.","The smallest Christmas card ever made is invisible to the human eye.", 
+            "Prince Albert introduced the Christmas tree to England in 1800.", "The tinsel on your Christmas tree used to be made from real silver.", 
+            "The world record for a Christmas tree is 221 feet.", "Santa Claus makes 842 million stops on Christmas eve night.",
+            "London’s Trafalgar Square Christmas tree is a gift from Norway.", "The tree topper tradition began in Victorian times.", 
+            "Santa Claus is 1750 years old.", " The only light on Santa’s sleigh is Rudolph’s nose.", 
+
+            "Santa uses nine reindeer to pull his sleigh.", "Santa has 200 000 elves that help him get all the presents ready.",
+            "Christmas Wreaths are symbols of Jesus Christ.", "The song 'Jingle Bells' was sent into space.", 
+            "Mistletoe is named after the mistle thrush bird.", "Christmas carols are based on the English tradition of wassailing.",
+            "Robins are a popular symbol of Christmas because of the postmen.","It took the three kings 12 days to reach the baby Jesus Christ.",
+            "Evergreens have been a festive symbol since the time of the Romans and the Ancient Egyptians."," Xmas means the same as Christmas."]
 
 random.shuffle(questions) # Chooses questions randomly from the dictionary
+random.shuffle(fun_facts) # becuase of clearing the screen random fact do not show !!!!! fix later
+
+
+
+
 
 score = 0
 guesses = 3
-question_num = 20
+question_num = 5
+
 timer_start = time.time()
 
 for i, question in enumerate(questions, 1):
     if i > question_num:
         break # Stops when questions reaches 20
 
-    #os.system('clear' if os.name == 'posix' else 'cls') # Clear terminal after each question
+    os.system('clear' if os.name == 'posix' else 'cls') # Clear terminal after each question
     
+    print(Fore.YELLOW + "Did you know!" + Fore.CYAN)
+    print("******************************" + Fore.GREEN)
+    print(f"{fun_facts[i - 1]}")
+    print(Fore.CYAN + "******************************" + Fore.RESET)
+
     print(f"\nQuestion {i}: {question['question']}\n")
     for j, option in enumerate(question['options'], 1):
         print(f"{j}. {option}") # Print number and option
 
-    player_answer = input("Input your answer (Please enter 1, 2, or 3) : ")
+    while True:
+        player_answer = input("Input your answer (Please enter 1, 2, or 3) : ")
     
-    if question['options'][int(player_answer) - 1] in question['answer']:
-            score += 1 # Adds a point for every correct answer 
-            # break stops the program once the correct answer is given
+        if player_answer.isdigit() and 1 <= int(player_answer) <= 3:
+            if question['options'][int(player_answer) - 1] in question['answer']:
+                score += 1 # Adds a point for every correct answer 
+                # break stops the program once the correct answer is given
+                break 
 
-    else:
-        print("Incorrect! Next question")
+            else:
+                print("Incorrect! Next question.")
+                break
+        
+        else:
+            print("Invalid Input! (Please enter 1, 2, or 3) : ")
 
-    time.sleep(2) # Pause the game for 2 sec
+time.sleep(1)
 
 # Calculates the total time taken to complete the game
-total_time = time.time() - timer_start
+timer_end = time.time() - timer_start
 
 #Display the player game results
 print("Game Over!")
 print(f"\nHere is your score: {score}/{question_num}")
-print(f"Score percentage: {score / question_num * 100:.2f}%")
-print(f"Time it took to complete: {total_time:.2f} seconds")
+print(f"Score percentage: {int(score / question_num * 100)}%")
+print(f"Time it took to complete: {timer_end:.2f} seconds")
