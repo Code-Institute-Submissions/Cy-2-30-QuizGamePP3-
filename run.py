@@ -279,3 +279,19 @@ print(f"Time it took to complete: {timer_end:.2f} seconds")
 
 new_player = [len(records) + 1, player_name, score, f"{int(score / question_num * 100)}%", f"{timer_end:.2f}"]
 ScoreBoard.append_row(new_player) #add records on google sheets
+
+view_scoreboard = input("Do you want to view the scoreboard for all played games? (yes/no): ").lower()
+
+if view_scoreboard == "yes":
+    # Fetch and display records from Google Sheets
+    print(Fore.YELLOW + "\n Players' Scorebord:")
+    
+    for record in records:
+        print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+
+end_game = input("Do you want to end the game? (yes/no): ").lower()
+
+# Checks if the player wants to end the game
+if end_game == "yes":
+    print("Thanks for playing! Goodbye.")
+    
