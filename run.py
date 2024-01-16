@@ -70,13 +70,13 @@ questions = [
     "options"   : ["Edward Johnson in the US in 1882.", "John Smith in the UK in 1750.", "Edward Dammes in Germany in 1950."], 
     "answer"    : "Edward Johnson in the US in 1882."}, 
     {"question" : "How much does the world's most expensive Christmas decoration cost? :", 
-    "options"   : ["", "", "The emu egg set in 24-carat gold cost £8.9 million."], #not finished 
+    "options"   : ["The emu egg set in 24-carat gold cost £8 million.", "The emu egg set in 24-carat gold cost £9 million.", "The emu egg set in 24-carat gold cost £8.9 million."], 
     "answer"    : "The emu egg set in 24-carat gold cost £8.9 million."}, 
     {"question" : "When did John Lewis open its online Christmas shop? :", 
     "options"   : ["31st July 2003.", "31st August 2023.", "31st December 2008."], 
     "answer"    : "31st August 2023."}, 
     {"question" : "Where is the UK's tallest Christmas tree situated? :", 
-    "options"   : ["", "", "Wakehurst, West Sussex."], #not finished 
+    "options"   : ["Cape Town", "Kildare", "Wakehurst, West Sussex."], 
     "answer"    : "Wakehurst, West Sussex."},  
 
     {"question" : "Where is the oldest Christmas market in the world?  :", 
@@ -224,7 +224,7 @@ fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be u
             "Evergreens have been a festive symbol since the time of the Romans and the Ancient Egyptians."," Xmas means the same as Christmas."]
 
 random.shuffle(questions) # Chooses questions randomly from the dictionary
-random.shuffle(fun_facts) # becuase of clearing the screen random fact do not show !!!!! fix later
+random.shuffle(fun_facts)
 
 
 
@@ -295,3 +295,4 @@ end_game = input("Do you want to end the game? (yes/no): ").lower()
 if end_game == "yes":
     print("Thanks for playing! Goodbye.")
     
+print("Press 'Start Game' button to play again.")
