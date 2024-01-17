@@ -302,7 +302,7 @@ player.save_player_info(records, score, question_num, timer_end)
 #new_player = [len(records) + 1, player_name, score, f"{int(score / question_num * 100)}%", f"{timer_end:.2f}"]
 #ScoreBoard.append_row(new_player) #add records on google sheets
 
-view_scoreboard = input("Do you want to view the scoreboard for all played games? (yes/no): ").lower()
+view_scoreboard = input(Fore.GREEN + "\nDo you want to view the scoreboard for all played games? (yes/no): " + RESET).lower()
 
 if view_scoreboard == "yes":
     # Fetch and display records from Google Sheets
@@ -325,4 +325,4 @@ if end_game == "yes":
     
 print("\nPress 'Start Game' button to play again.")
 
-os.system('clear' if os.name == 'posix' else 'cls')
+#os.system('clear' if os.name == 'posix' else 'cls')
