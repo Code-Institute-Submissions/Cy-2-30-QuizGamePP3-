@@ -208,7 +208,7 @@ random.shuffle(questions)
 random.shuffle(fun_facts)
 
 
-def main_opening():
+def main():
     """
     Game introduction
     Player name verification 
@@ -239,22 +239,23 @@ def main_opening():
     print(Fore.CYAN +" ******************************")
     print(Fore.GREEN + f" {player_name} welcome to... ")
     print(Fore.RED + " Who is in the Festive Spirit?" + Fore.GREEN + " quiz game!")
-    print(Fore.CYAN +" ******************************\n")
-    print("Here are the game information!")
-
+    print(Fore.CYAN + " ******************************\n")
+    print(Fore.YELLOW + " Here are the game information!\n")
+    
     time.sleep(2)
 
+    print(Fore.CYAN + " ******************************")
     print_game_rules()
 
-    start_game = input(Fore.GREEN + "\nDo you want to start the game? (yes/no): " + Fore.RESET).lower()
+    start_game = input(Fore.GREEN + "\n Do you want to start the game? (yes/no): " + Fore.RESET).lower()
 
     if start_game == "yes":
         quiz(ScoreBoard, questions, fun_facts, player_name)
     else:
-        print("Goodbye!")
+        print(" Goodbye!")
 
-if __name__ == "__main_opening__":
-    main_opening()
+if __name__ == "__main__":
+    main()
 
 
 
