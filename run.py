@@ -7,66 +7,26 @@ import os # Clears the terminal
 #import classes # All class objects file
 import time
 from classes import Player
-
+from methods import (
+    print_scoreboard,
+    print_end_game_results,
+    clear,
+    print_game_rules
+)
 
 SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive.file",
+        "https://www.googleapis.com/auth/drive"
+        ]
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('quizgamepp3') #file name
+SHEET = GSPREAD_CLIENT.open('quizgamepp3') 
+ScoreBoard = SHEET.worksheet('gameresults') 
 
-
-ScoreBoard = SHEET.worksheet('gameresults') #table name
-records = ScoreBoard.get_all_values() #pulls all the records from google sheet
-
-#sheet = ScoreBoard
-
-print(Fore.GREEN + "Welcome to the Christmas Quiz!")
-
-player_name = input("Enter your name(inlude a number and at least 3 letters): ")
-
-player = Player(player_name, ScoreBoard)
-
-while not player.validate_name():
-    print("Invalid name! Please correct: ")
-
-    if not player.validate_len():
-        print("Name must be more than 3 characters.")
-
-    elif not player.validate_alnum():
-        print("Name must have at least one number and alphabet.")  
-    
-    elif player.name_in_scoreboard():
-        print("Name already exists. Choose a different name.")
-    
-    player_name = input("Enter your name (inlude a number and at least 3 letters): ")
-    player = Player(player_name, ScoreBoard)
-
-# Checks if the player name has more than 3 charectors
-# Checks if the player name has number 
-# checks if the player name has alphabet
-#while len(player_name) <= 3 or not any(char.isdigit() for char in player_name) or not any(char.isalpha() for char in player_name):
-   # if len(player_name) <= 3:
-      #  print("Name has to be more than 3 characters.")
-   # elif not any(char.isdigit() for char in player_name):
-    #    print("Name must contain at least one number.")
-   # elif not any(char.isalpha() for char in player_name):
-      #  print("Name must contain at least one alphabet.")
-
-    #player_name = input(f"Please enter your name(inlude number and charector): ")
-
-    # Checks if the player name already exists in the Google Sheets
-   # scoreboard_names = [record[1] for record in records]
-  #  while player_name in scoreboard_names:
-      #  print("Name already exists! Please choose a different name.")
-     #   player_name = input(f"Please enter your name(inlude number and charector): ")
-
-
+# The quiz questions dictionary
 questions = [ 
     {"question" : "Where did the Christmas tree originate from? :", 
     "options"   : ["Germany.", "Ireland.", "Canada."], 
@@ -224,7 +184,7 @@ questions = [
     "answer"    : "Germany."}
     ]
 
-#Game random fun facts and hints to the quiz
+# Fun facts and hints to the quiz game array list
 fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be unlucky to eat a mince pie with a knife.", 
             "Christmas pudding used to be a soup.", "Candy canes were invented to keep kids quiet in church.", 
             "Instead of turkey at Christmas, it used to be a pigs head and mustard.","People in Japan eat fast-food chicken on Christmas day.",
@@ -243,22 +203,75 @@ fun_facts = ["Mince pies used to contain real minced beef.", "It is said to be u
             "Robins are a popular symbol of Christmas because of the postmen.","It took the three kings 12 days to reach the baby Jesus Christ.",
             "Evergreens have been a festive symbol since the time of the Romans and the Ancient Egyptians."," Xmas means the same as Christmas."]
 
-random.shuffle(questions) # Chooses questions randomly from the dictionary
+# Chooses questions randomly and facts randomly from the dictionary and array list
+random.shuffle(questions) 
 random.shuffle(fun_facts)
 
 
+def main_opening():
+    """
+    Game introduction
+    Player name verification 
+    """
+   
+    print(Fore.GREEN + "Welcome to the Christmas Quiz!")
+
+    player_name = input("Enter your name(inlude a number and at least 3 letters): ")
+    player = Player(player_name, ScoreBoard)
+
+    while not player.validate_name():
+        print("Invalid name! Please correct: ")
+
+        if not player.validate_len():
+            print("Name must be more than 3 characters.")
+
+        elif not player.validate_alnum():
+            print("Name must have at least one number and alphabet.")  
+        
+        elif player.name_in_scoreboard():
+            print("Name already exists. Choose a different name.")
+        
+        player_name = input("Enter your name (inlude a number and at least 3 letters): ")
+        player = Player(player_name, ScoreBoard)
+
+    clear()
+
+    print(Fore.CYAN +" ******************************")
+    print(Fore.GREEN + f" {player_name} welcome to... ")
+    print(Fore.RED + " Who is in the Festive Spirit?" + Fore.GREEN + " quiz game!")
+    print(Fore.CYAN +" ******************************\n")
+    print("Here are the game information!")
+
+    time.sleep(2)
+
+    print_game_rules()
+
+    start_game = input(Fore.GREEN + "\nDo you want to start the game? (yes/no): " + Fore.RESET).lower()
+
+    if start_game == "yes":
+        quiz(ScoreBoard, questions, fun_facts, player_name)
+    else:
+        print("Goodbye!")
+
+if __name__ == "__main_opening__":
+    main_opening()
 
 
 
-score = 0
-guesses = 3
-question_num = 5
+def quiz(ScoreBoard, questions, fun_facts, player_name):
+    """
+    Quiz questions game start
+    """
+    
+    score = 0
+    guesses = 3
+    question_num = 5
+    
+    timer_start = time.time() #start counting from game start
 
-timer_start = time.time()
-
-for i, question in enumerate(questions, 1):
-    if i > question_num:
-        break # Stops when questions reaches 20
+    for i, question in enumerate(questions, 1):
+        if i > question_num:
+            break # Stops when questions reaches 20
 
     os.system('clear' if os.name == 'posix' else 'cls') # Clear terminal after each question
     
@@ -286,43 +299,28 @@ for i, question in enumerate(questions, 1):
         else:
             print("Invalid Input! (Please enter 1, 2, or 3) : ")
 
-time.sleep(1)
+    time.sleep(1)
 
-# Calculates the total time taken to complete the game
-timer_end = time.time() - timer_start
+    # Calculates the total time taken to complete the game
+    timer_end = time.time() - timer_start
 
-#Display the player game results
-print("Game Over!")
-print(f"\n{player_name}, here is your score: {score}/{question_num}")
-print(f"Score percentage: {int(score / question_num * 100)}%")
-print(f"Time it took to complete: {timer_end:.2f} seconds")
 
-player.save_player_info(records, score, question_num, timer_end)
 
-#new_player = [len(records) + 1, player_name, score, f"{int(score / question_num * 100)}%", f"{timer_end:.2f}"]
-#ScoreBoard.append_row(new_player) #add records on google sheets
-
-view_scoreboard = input(Fore.GREEN + "\nDo you want to view the scoreboard for all played games? (yes/no): " + Fore.RESET).lower()
-
-if view_scoreboard == "yes":
-    # Fetch and display records from Google Sheets
-    print(Fore.YELLOW + "\n Players' Scorebord:")
+    player.save_player_info(records, score, question_num, timer_end)
     
-    for i,  record in enumerate(records, start= 1):
-        if i == 1:
-            print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
-        else:
-            print(f"{i-1} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+    end_game_results()
 
-    #all_players = Player.fetch_all_players(ScoreBoard)
-    #display_scoreboard(all_players)
+    display_scoreboard()
 
-end_game = input(Fore.GREEN + "\n Enter (yes) to end the game. : ").lower()
+    end_game = input(Fore.GREEN + "\n Enter (yes) to end the game. : ").lower()
 
-# Checks if the player wants to end the game
-if end_game == "yes":
-    print("Thanks for playing! Goodbye.")
+    # Checks if the player wants to end the game
+    if end_game == "yes":
+        print("Thanks for playing! Goodbye.")
     
-print("\nPress 'Start Game' button to play again.")
+    print("\nPress 'Start Game' button to play again.")
 
-#os.system('clear' if os.name == 'posix' else 'cls')
+    #os.system('clear' if os.name == 'posix' else 'cls')
+
+
+

@@ -1,21 +1,41 @@
 from colorama import Fore
-import classes
-import time 
 
-def gameIntro():
+#def validate_name(player):
+
+def print_scoreboard(records):
     """
-    Welcome message
+    Display statistics
     """
-    print(Fore.RED + "Welcome to... ")
-    print(Fore.GREEN + "Who is in the Festive Spirit?" + Fore.RED + " quiz game!")
-    print(Fore.CYAN +"******************************\n")
-    time.sleep(5)
 
-gameIntro()
+    #new_player = [len(records) + 1, player_name, score, f"{int(score / question_num * 100)}%", f"{timer_end:.2f}"]
+    #ScoreBoard.append_row(new_player) #add records on google sheets
+
+    view_scoreboard = input(Fore.GREEN + "\nDo you want to view the scoreboard for all played games? (yes/no): " + Fore.RESET).lower()
+
+    if view_scoreboard == "yes":
+        # Fetch and display records from Google Sheets
+        print(Fore.YELLOW + "\n Players' Scorebord:")
+        
+        for i,  record in enumerate(records, start= 1):
+            if i == 1:
+                print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+            else:
+                print(f"{i-1} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+
+        #all_players = Player.fetch_all_players(ScoreBoard)
+        #display_scoreboard(all_players)
+
+def print_end_game_results(player_name, score, question_num, timer_end):
+    """
+    Prints the game statisctic at the end
+    """
+    print("Game Over!")
+    print(f"\n{player_name}, here is your score: {score}/{question_num}")
+    print(f"Score percentage: {int(score / question_num * 100)}%")
+    print(f"Time it took to complete: {timer_end:.2f} seconds")
 
 
-
-def gameRules():
+def print_game_rules():
     """
     Game instructions and rules
     """
@@ -38,7 +58,7 @@ def gameRules():
     print(Fore.CYAN +"******************************\n")
     time.sleep(5)
     
-gameRules()
+
 
 
 
@@ -49,7 +69,6 @@ def checkNum():
     Checks for numbers in the name
     """
 
-checkNum()
 
 
 def checkCharc():
@@ -57,7 +76,7 @@ def checkCharc():
     Checks for number of charectors in the name
     """
 
-checkCharc()
+
 
 
 def questions():
@@ -65,7 +84,7 @@ def questions():
     It pulls questions and displays in
     """
 
-question()
+
 
 
 def guess():
@@ -73,20 +92,14 @@ def guess():
     Checks number of guesses
     """
 
-guess()
 
 
-def addStats():
+
+def clear():
     """
-    Add score to the google sheets
+    Clears the terminal
     """
+    os.system('clear' if os.name == 'posix' else 'cls') 
 
-addstats()
 
 
-def pullStats():
-    """
-    Pulls stats from google sheets 
-    """
-
-pullStats()
