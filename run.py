@@ -28,13 +28,23 @@ records = ScoreBoard.get_all_values() #pulls all the records from google sheet
 
 print(Fore.GREEN + "Welcome to the Christmas Quiz!")
 
-player_name = input("Enter your name(inlude number and charector): ")
+player_name = input("Enter your name(inlude a number and at least 3 letters): ")
 
 player = Player(player_name, ScoreBoard)
 
 while not player.validate_name():
-    print("Invalid name! Choose a different name.")
-    player_name = input("Enter your name (inlude number and charector): ")
+    print("Invalid name! Please correct: ")
+
+    if not player.validate_len():
+        print("Name must be more than 3 characters.")
+
+    elif not player.validate_alnum():
+        print("Name must have at least one number and alphabet.")  
+    
+    elif player.name_in_scoreboard():
+        print("Name already exists. Choose a different name.")
+    
+    player_name = input("Enter your name (inlude a number and at least 3 letters): ")
     player = Player(player_name, ScoreBoard)
 
 # Checks if the player name has more than 3 charectors
@@ -298,18 +308,21 @@ if view_scoreboard == "yes":
     # Fetch and display records from Google Sheets
     print(Fore.YELLOW + "\n Players' Scorebord:")
     
-    for record in records:
-        print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+    for i,  record in enumerate(records, start= 1):
+        if i == 1:
+            print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+        else:
+            print(f"{i-1} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
 
     #all_players = Player.fetch_all_players(ScoreBoard)
     #display_scoreboard(all_players)
 
-end_game = input("Do you want to end the game? (yes/no): ").lower()
+end_game = input(Fore.GREEN + "\n Enter (yes) to end the game. : ").lower()
 
 # Checks if the player wants to end the game
 if end_game == "yes":
     print("Thanks for playing! Goodbye.")
     
-print("Press 'Start Game' button to play again.")
+print("\nPress 'Start Game' button to play again.")
 
 os.system('clear' if os.name == 'posix' else 'cls')
