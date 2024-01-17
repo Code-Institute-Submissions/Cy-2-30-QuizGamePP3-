@@ -6,6 +6,7 @@ import os # Clears the terminal
 #import methods # All the methods file 
 #import classes # All class objects file
 import time
+from classes import Player
 
 
 SCOPE = [
@@ -23,28 +24,37 @@ SHEET = GSPREAD_CLIENT.open('quizgamepp3') #file name
 ScoreBoard = SHEET.worksheet('gameresults') #table name
 records = ScoreBoard.get_all_values() #pulls all the records from google sheet
 
+#sheet = ScoreBoard
+
 print(Fore.GREEN + "Welcome to the Christmas Quiz!")
 
-player_name = input("Please enter your name: ")
+player_name = input("Enter your name(inlude number and charector): ")
+
+player = Player(player_name, ScoreBoard)
+
+while not player.validate_name():
+    print("Invalid name! Choose a different name.")
+    player_name = input("Enter your name (inlude number and charector): ")
+    player = Player(player_name, ScoreBoard)
 
 # Checks if the player name has more than 3 charectors
 # Checks if the player name has number 
 # checks if the player name has alphabet
-while len(player_name) <= 3 or not any(char.isdigit() for char in player_name) or not any(char.isalpha() for char in player_name):
-    if len(player_name) <= 3:
-        print("Name has to be more than 3 characters.")
-    elif not any(char.isdigit() for char in player_name):
-        print("Name must contain at least one number.")
-    elif not any(char.isalpha() for char in player_name):
-        print("Name must contain at least one alphabet.")
+#while len(player_name) <= 3 or not any(char.isdigit() for char in player_name) or not any(char.isalpha() for char in player_name):
+   # if len(player_name) <= 3:
+      #  print("Name has to be more than 3 characters.")
+   # elif not any(char.isdigit() for char in player_name):
+    #    print("Name must contain at least one number.")
+   # elif not any(char.isalpha() for char in player_name):
+      #  print("Name must contain at least one alphabet.")
 
-    player_name = input(f"Please enter your name: ")
+    #player_name = input(f"Please enter your name(inlude number and charector): ")
 
     # Checks if the player name already exists in the Google Sheets
-    scoreboard_names = [record[1] for record in records]
-    while player_name in scoreboard_names:
-        print("Name already exists! Please choose a different name.")
-        player_name = input(f"Please enter your name: ")
+   # scoreboard_names = [record[1] for record in records]
+  #  while player_name in scoreboard_names:
+      #  print("Name already exists! Please choose a different name.")
+     #   player_name = input(f"Please enter your name(inlude number and charector): ")
 
 
 questions = [ 
@@ -277,8 +287,10 @@ print(f"\n{player_name}, here is your score: {score}/{question_num}")
 print(f"Score percentage: {int(score / question_num * 100)}%")
 print(f"Time it took to complete: {timer_end:.2f} seconds")
 
-new_player = [len(records) + 1, player_name, score, f"{int(score / question_num * 100)}%", f"{timer_end:.2f}"]
-ScoreBoard.append_row(new_player) #add records on google sheets
+player.save_player_info(records, score, question_num, timer_end)
+
+#new_player = [len(records) + 1, player_name, score, f"{int(score / question_num * 100)}%", f"{timer_end:.2f}"]
+#ScoreBoard.append_row(new_player) #add records on google sheets
 
 view_scoreboard = input("Do you want to view the scoreboard for all played games? (yes/no): ").lower()
 
@@ -289,6 +301,9 @@ if view_scoreboard == "yes":
     for record in records:
         print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
 
+    #all_players = Player.fetch_all_players(ScoreBoard)
+    #display_scoreboard(all_players)
+
 end_game = input("Do you want to end the game? (yes/no): ").lower()
 
 # Checks if the player wants to end the game
@@ -296,3 +311,5 @@ if end_game == "yes":
     print("Thanks for playing! Goodbye.")
     
 print("Press 'Start Game' button to play again.")
+
+os.system('clear' if os.name == 'posix' else 'cls')
