@@ -11,7 +11,8 @@ from methods import (
     print_scoreboard,
     print_end_game_results,
     clear,
-    print_game_rules
+    print_game_rules,
+    quiz
 )
 
 SCOPE = [
@@ -214,24 +215,35 @@ def main():
     Player name verification 
     """
    
-    print(Fore.GREEN + "Welcome to the Christmas Quiz!")
+    print(Fore.GREEN + " Welcome to the Christmas Quiz!")
+    print(Fore.CYAN +" ******************************")
+    print(Fore.YELLOW + " \n Here are the game information!\n")
+    print(Fore.CYAN +" ******************************")
+    print_game_rules()
+    time.sleep(2)
+    clear()
+    start_game = input(Fore.GREEN + "\n Do you want to start the game? (yes/no): " + Fore.RESET).lower()
 
-    player_name = input("Enter your name(inlude a number and at least 3 letters): ")
+    if start_game == "yes":
+        player_name = input(" Enter your name(inlude a number and at least 3 letters): ")
+    else:
+        print(" Goodbye!")
+   
     player = Player(player_name, ScoreBoard)
 
     while not player.validate_name():
-        print("Invalid name! Please correct: ")
+        print(" Invalid name! Please correct: ")
 
         if not player.validate_len():
-            print("Name must be more than 3 characters.")
+            print(" Name must be more than 3 characters.")
 
         elif not player.validate_alnum():
-            print("Name must have at least one number and alphabet.")  
+            print(" Name must have at least one number and alphabet.")  
         
         elif player.name_in_scoreboard():
-            print("Name already exists. Choose a different name.")
+            print(" Name already exists. Choose a different name.")
         
-        player_name = input("Enter your name (inlude a number and at least 3 letters): ")
+        player_name = input(" Enter your name (inlude a number and at least 3 letters): ")
         player = Player(player_name, ScoreBoard)
 
     clear()
@@ -240,22 +252,12 @@ def main():
     print(Fore.GREEN + f" {player_name} welcome to... ")
     print(Fore.RED + " Who is in the Festive Spirit?" + Fore.GREEN + " quiz game!")
     print(Fore.CYAN + " ******************************\n")
-    print(Fore.YELLOW + " Here are the game information!\n")
-    
     time.sleep(2)
-
-    print(Fore.CYAN + " ******************************")
-    print_game_rules()
-
-    start_game = input(Fore.GREEN + "\n Do you want to start the game? (yes/no): " + Fore.RESET).lower()
-
-    if start_game == "yes":
-        quiz(ScoreBoard, questions, fun_facts, player_name)
-    else:
-        print(" Goodbye!")
-
+    quiz(ScoreBoard, questions, fun_facts, player_name)
+    
 if __name__ == "__main__":
     main()
+
 
 
 
@@ -276,17 +278,17 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
 
     os.system('clear' if os.name == 'posix' else 'cls') # Clear terminal after each question
     
-    print(Fore.YELLOW + "Did you know!" + Fore.CYAN)
-    print("******************************" + Fore.GREEN)
+    print(Fore.YELLOW + " Did you know!" + Fore.CYAN)
+    print(" ******************************" + Fore.GREEN)
     print(f"{fun_facts[i - 1]}")
-    print(Fore.CYAN + "******************************" + Fore.RESET)
+    print(Fore.CYAN + " ******************************" + Fore.RESET)
 
     print(f"\nQuestion {i}: {question['question']}\n")
     for j, option in enumerate(question['options'], 1):
         print(f"{j}. {option}") # Print number and option
 
     while True:
-        player_answer = input("Input your answer (Please enter 1, 2, or 3) : ")
+        player_answer = input(" Input your answer (Please enter 1, 2, or 3) : ")
     
         if player_answer.isdigit() and 1 <= int(player_answer) <= 3:
             if question['options'][int(player_answer) - 1] in question['answer']:
@@ -294,18 +296,16 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
                 break 
 
             else:
-                print("Incorrect! Next question.")
+                print(" Incorrect! Next question.")
                 break
         
         else:
-            print("Invalid Input! (Please enter 1, 2, or 3) : ")
+            print(" Invalid Input! (Please enter 1, 2, or 3) : ")
 
     time.sleep(1)
 
     # Calculates the total time taken to complete the game
     timer_end = time.time() - timer_start
-
-
 
     player.save_player_info(records, score, question_num, timer_end)
     
@@ -317,11 +317,10 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
 
     # Checks if the player wants to end the game
     if end_game == "yes":
-        print("Thanks for playing! Goodbye.")
+        print(" Thanks for playing! Goodbye.")
     
-    print("\nPress 'Start Game' button to play again.")
+    print("\n Press 'Start Game' button to play again.")
 
     #os.system('clear' if os.name == 'posix' else 'cls')
-
 
 

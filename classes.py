@@ -8,6 +8,7 @@ class Player:
     def __init__(self, name, sheet):
         self.name = name
         self.sheet = sheet
+        self.validate_name()
 
 
     def validate_name(self):
@@ -21,6 +22,7 @@ class Player:
             and self.validate_alnum()
             and not self.name_in_scoreboard()
         )
+        pass
     
     def validate_len(self):
         """
@@ -40,6 +42,7 @@ class Player:
         """
         records = self.sheet.get_all_values()
         return self.name in [record[1] for record in records]
+        pass
 
     def save_player_info(self, records, score, question_num, timer_end):
         """
@@ -48,6 +51,7 @@ class Player:
         score_percentage = int(score / question_num * 100)
         new_player = [len(records) + 1, self.name, score, f"{score_percentage}%", f"{timer_end:.2f}"]
         self.sheet.append_row(new_player)
+        pass
 
     #def fetch_all_players(sheet):
         """
@@ -79,9 +83,9 @@ class Player:
 
 
 
-class Statistics:
-    def __init__(self, name, score, percentage, time, rank):
-        self.name = name
-        self.score = score
-        self.percentage = percentage
-        self.time = time
+#class Statistics:
+ #   def __init__(self, name, score, percentage, time, rank):
+  #      self.name = name
+   #     self.score = score
+    #    self.percentage = percentage
+     #   self.time = time

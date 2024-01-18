@@ -51,7 +51,7 @@
 
         /*Menu buttons container*/
         #menuButtons{
-            display: block;
+            /*display: block; This needs to be commented out for flex to work*/
             position: relative;
         }
 
@@ -59,46 +59,46 @@
         #info, 
         #stats, 
         #form, 
-        #terminalBtn/*,
-       #terminal*/{
+        #terminalBtn{
             display: none;
             position: relative;
         }
 
         /*Location and flow for the buttons*/
         .menu-box{
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            /*position: absolute; do not need this because the div is above terminal*/
+            display: flex; 
+            flex-direction: row;
+           /* align-items: center; this is not needed - makes no difference */
             justify-content: space-between;
             background-color: inherit;
             color: #011805ff;
             width: 700px;
-            height: 500px;
-            padding: 100px;
-            z-index: 13;
+           /* height: 500px; */
+           /* padding: 100px; */
+            /*z-index: 13;*/
         }
 
+        /*not needed anymore 
         #terminalBtn{
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             padding: 20px;
             width: 730px;
-        }
+        }*/
 
         /*Menu buttons*/
         .menu-btn{
-            font-size: 30px;
+            font-size: 16px; /*changed from 30*/
             text-align: center;
             color: #f4ece2ff;
             background-color: #9e3f27ff;
             border: 3px solid #4e6e30ff;
             box-shadow: -4px -2px 6px 4px  #c8a369ff, -4px -2px 6px 4px  #97b18eff, -4px -2px 6px 4px   #97b18eff;
-            border-radius: 14px;
-            width: 180px;
-            height: 50px;
+            border-radius: 8px; /*changed from 14*/
+            width: 100px; /*changed from 180*/
+            height: 20px; /*changed from 50*/
             padding: 10px;
         }
 
@@ -260,7 +260,7 @@
             box-shadow: -2px -1px 3px 2px #c8a369ff, -2px -1px 3px 2px #97b18eff, -2px -1px 3px 2px  #97b18eff;
             border: 2px solid #4e6e30ff;
             border-radius: 8px;
-            width: 140px;
+            width: 100px; /*changed from 140*/
             height: 40px;
             margin: 10px;
         } 
