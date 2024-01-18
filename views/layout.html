@@ -10,17 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
     <title>Python Terminal Quiz Game</title>
     <style>
-        /** Colors used
-        CSS HEX 
-            --fern-green: #4e6e30ff;        |BORDER COLOR ****
-            --dun: #e3cdb2ff;               |PAGE BACKGROUND ****
-            --cambridge-blue: #97b18eff;    |BORDER AND SHADOW COLOR ****
-            --dark-green: #011805ff;        |FONT COLOR ****
-            --lion: #c8a369ff;              |BORDER AND SHADOW COLOR ****
-            --chestnut: #9e3f27ff;          |BUTTONS COLOR ****
-            --linen: #f4ece2ff;             |WINDOW BACKGROUND AND FONT ON HOVER COLOR ****
-            --old-rose: #c98a85ff;          |HIGHLIGHT COLOR ****
-        */
        
         body {
             font-family: Arial, sans-serif;
@@ -38,7 +27,7 @@
             z-index: 1;
         }
 
-        /*Styling for all menu buttons information*/
+        /*Styling for all menu buttons information
         .btn-container{
             background-color: #f4ece2ff;;
             color: #011805ff;
@@ -47,58 +36,44 @@
             border-radius: 10px;
             width: 750px;
             height: 600px;
-        }
+        }*/
 
         /*Menu buttons container*/
         #menuButtons{
-            /*display: block; This needs to be commented out for flex to work*/
             position: relative;
         }
 
         /*Hides all menu buttons information*/
         #info, 
         #stats, 
-        #form, 
-        #terminalBtn{
+        #form,
+        .btn{
             display: none;
             position: relative;
         }
 
         /*Location and flow for the buttons*/
         .menu-box{
-            /*position: absolute; do not need this because the div is above terminal*/
             display: flex; 
             flex-direction: row;
-           /* align-items: center; this is not needed - makes no difference */
             justify-content: space-between;
             background-color: inherit;
             color: #011805ff;
             width: 700px;
-           /* height: 500px; */
-           /* padding: 100px; */
-            /*z-index: 13;*/
-        }
-
-        /*not needed anymore 
-        #terminalBtn{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
             padding: 20px;
-            width: 730px;
-        }*/
+        }
 
         /*Menu buttons*/
         .menu-btn{
-            font-size: 16px; /*changed from 30*/
+            font-size: 16px;
             text-align: center;
             color: #f4ece2ff;
             background-color: #9e3f27ff;
             border: 3px solid #4e6e30ff;
             box-shadow: -4px -2px 6px 4px  #c8a369ff, -4px -2px 6px 4px  #97b18eff, -4px -2px 6px 4px   #97b18eff;
-            border-radius: 8px; /*changed from 14*/
-            width: 100px; /*changed from 180*/
-            height: 20px; /*changed from 50*/
+            border-radius: 8px; 
+            width: 100px; 
+            height: 20px;
             padding: 10px;
         }
 
@@ -204,9 +179,6 @@
         #submitbtns{
             display: flex;
             flex-direction: row;
-            /*justify-content: space-around;
-            width: 300px;*/
-            /*padding: 20px;*/
             padding-left: 140px;
         }
 
@@ -252,22 +224,20 @@
 
         /*Button styling*/
         button {
-            font-size: medium;
+            font-size: 16px;
             text-align: center;
             color: #f4ece2ff;
-            text-transform: uppercase;
             background-color: #9e3f27ff;
-            box-shadow: -2px -1px 3px 2px #c8a369ff, -2px -1px 3px 2px #97b18eff, -2px -1px 3px 2px  #97b18eff;
+            box-shadow: -4px -2px 6px 4px #c8a369ff,-4px -2px 6px 4px #97b18eff,-4px -2px 6px 4px #97b18eff;
             border: 2px solid #4e6e30ff;
             border-radius: 8px;
-            width: 100px; /*changed from 140*/
-            height: 40px;
-            margin: 10px;
+            width: 124px; 
+            height: 46px;
         } 
 
         button:hover{
             background-color: #c98a85ff;
-            box-shadow: -2px -1px 3px 2px  #9e3f27ff;
+            box-shadow: -4px -2px 6px 4px #9e3f27ff;
             border: 2px solid #9e3f27ff;
             color: #011805ff;
         }
@@ -450,8 +420,6 @@
         .xterm-underline {
             text-decoration: underline;
         }
-
-        
     </style>
 </head>
 
