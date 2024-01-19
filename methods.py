@@ -1,7 +1,7 @@
 from colorama import Fore
 import os 
 import time
-from classes import Payer 
+from classes import Player 
 from flask import Flask, request, jsonify, render_template
 import gspread
 from google.oauth2.service_account import Credentials
@@ -70,7 +70,7 @@ def print_game_rules():
     print("\n to other players.")  
     print(Fore.CYAN + " ******************************\n")
 
-    time.sleep(2)
+    time.sleep(3)
 
     print(Fore.MAGENTA + " Extra Notes!")
     print(Fore.CYAN + " ******************************" + Fore.MAGENTA)
@@ -79,7 +79,7 @@ def print_game_rules():
     print("\n Keep your eyes open for those hints!") 
     print(Fore.CYAN + " ******************************\n")
 
-    time.sleep(2)
+    
     
 
 
@@ -162,5 +162,5 @@ def index():
 
     return render_template('index.html', data=data)
 
-__name__ == '__main__'
+if __name__ == '__main__':
     app.run(debug=True)

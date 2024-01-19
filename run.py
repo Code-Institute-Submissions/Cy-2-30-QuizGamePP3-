@@ -14,6 +14,7 @@ from methods import (
     print_game_rules,
     quiz
 )
+import sys
 
 SCOPE = [
         "https://www.googleapis.com/auth/spreadsheets",
@@ -26,6 +27,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('quizgamepp3') 
 ScoreBoard = SHEET.worksheet('gameresults') 
+records = ScoreBoard.get_all_values()
 
 # The quiz questions dictionary
 questions = [ 
@@ -217,20 +219,39 @@ def main():
    
     print(Fore.GREEN + " Welcome to the Christmas Quiz!")
     print(Fore.CYAN +" ******************************")
-    print(Fore.YELLOW + " \n Here are the game information!\n")
-    print(Fore.CYAN +" ******************************")
-    print_game_rules()
-    time.sleep(2)
-    clear()
-    start_game = input(Fore.GREEN + "\n Do you want to start the game? (yes/no): " + Fore.RESET).lower()
+    time.sleep(3)
 
-    if start_game == "yes":
-        player_name = input(" Enter your name(inlude a number and at least 3 letters): ")
-    else:
-        print(" Goodbye!")
-   
+    while True:
+        next = input(Fore.GREEN + f" Enter 'N' for 'Next' to continue: ")
+        if next.lower() == "n":
+            clear()
+            print(Fore.YELLOW + " \n Here is the game information!\n")
+            print(Fore.CYAN +" ******************************")
+            print_game_rules()
+            break
+        else:
+            print(" Invalid input!")
+            print(next) 
+    
+    time.sleep(3)
+    
+    while True:
+        start_game = input(Fore.GREEN + "\n Do you want to start the game? (yes/no): ")
+        if start_game.lower() == "yes":
+            clear()
+            player_name = input(" Enter your name(inlude a number and at least 3 letters): ")
+            break
+        elif start_game.lower() == "no":
+            print(Fore.YELLOW + " Goodbye!")
+            time.sleep(4)
+            clear()
+            print(Fore.GREEN + f"\n Press" + Fore.YELLOW +"'Start Game'" + Fore.GREEN + "button to play again.")
+            time.sleep(4)
+            sys.exit() 
+        else:
+            print("Invalid input! Do you want to start the game? (yes/no): ")
+    
     player = Player(player_name, ScoreBoard)
-
     while not player.validate_name():
         print(" Invalid name! Please correct: ")
 
@@ -245,20 +266,16 @@ def main():
         
         player_name = input(" Enter your name (inlude a number and at least 3 letters): ")
         player = Player(player_name, ScoreBoard)
-
-    clear()
-
+    
     print(Fore.CYAN +" ******************************")
     print(Fore.GREEN + f" {player_name} welcome to... ")
     print(Fore.RED + " Who is in the Festive Spirit?" + Fore.GREEN + " quiz game!")
     print(Fore.CYAN + " ******************************\n")
-    time.sleep(2)
+    time.sleep(3)
     quiz(ScoreBoard, questions, fun_facts, player_name)
     
 if __name__ == "__main__":
     main()
-
-
 
 
 def quiz(ScoreBoard, questions, fun_facts, player_name):
@@ -324,7 +341,7 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
     #os.system('clear' if os.name == 'posix' else 'cls')
 
 
-values = worksheet.get_all_values()
+    print(records)
 
-for row in values:
-    print(row)
+#for row in value:
+   # print(row)
