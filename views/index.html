@@ -172,6 +172,29 @@
             document.getElementById("form").style.display = "none";
         }
 
+        // Message to display at the form submission
+        function submit_form(){
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:5000/submit_form",
+                data: $("#yourFormId").serialize(), 
+                
+                success: function(response) {
+                    if (response.success) {
+                        alert('Thank you for your feedback. Form submitted!');
+                    } 
+
+                    else {
+                        alert('Form submission failed. Error: ' + response.message);
+                    }
+                },
+
+                error: function() {
+                    alert('Error submitting the form.');
+                }
+            });
+        }
+
         //Terminal settings 
         var term = new Terminal({
             cols: 80,
