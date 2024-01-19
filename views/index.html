@@ -99,7 +99,7 @@
                 
             <!--Contact window-->
             <div id="form"> 
-                <form>
+                <form action="http://127.0.0.1:5000/submit_form" method="post">
                     <fieldset>
                         <legend>Contact us here</legend>
                             <div class="form-column">
@@ -132,7 +132,7 @@
                     </fieldset>
 
                     <div class="row-form" id="submitbtns">
-                        <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="alert('Thank you for your feedback.')" action="">Submit</button>
+                        <button type="submit" id="submitForm" class="btn-small" value="Submit" onclick="submit_form()" action="">Submit</button>
                         <div role="button" class="btn-small menu-btn" onclick="closeForm()">Exit</div> 
                     </div>
                 </form>

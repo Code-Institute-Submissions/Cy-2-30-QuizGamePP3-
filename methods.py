@@ -2,6 +2,22 @@ from colorama import Fore
 import os 
 import time
 from classes import Payer 
+from flask import Flask, request, jsonify
+import gspread
+from google.oauth2.service_account import Credentials
+
+SCOPE = [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive.file",
+        "https://www.googleapis.com/auth/drive"
+        ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('quizgamepp3') 
+ScoreBoard = SHEET.worksheet('gameresults') 
+
 
 #def validate_name(player):
 
@@ -107,5 +123,30 @@ def clear():
     """
     os.system('clear' if os.name == 'posix' else 'cls') 
 
+app = Flask(__name__)
 
+@app.route('/submit_form', methods=['POST'])
 
+def submit_form():
+    """
+    On submsion of the form it sends and saves the information 
+    into into google sheets
+    """
+    try:
+        worksheet = SCOPED_CREDS.open('quizgamepp3').feedback
+
+        name = request.form.get('fname')
+        last_name = request.form.get('lname')
+        email = request.form.get('email')
+        message_heading = request.form.get('message')
+        message = request.form.get('feedback')
+
+        worksheet.append_row([name,last_name,email,message_heading,message])
+
+        return jsonify({'success': True, 'message':'Form submitted successfully!'})
+
+    except Exception as e:
+        return jsonify({'success': False, 'message': f'Error: {str(e)}'})
+
+if __name__ == '__main__':
+    app.run(port = 5000)
