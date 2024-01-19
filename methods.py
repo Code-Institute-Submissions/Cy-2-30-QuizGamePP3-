@@ -129,6 +129,7 @@ app = Flask(__name__)
 
 def submit_form():
     """
+    ERROR ON FORM SUBMISSION AS IT IS NOT SAVING ON TO GOOGLE SHEETS
     On submsion of the form it sends and saves the information 
     into into google sheets
     """
