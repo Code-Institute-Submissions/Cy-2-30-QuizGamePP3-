@@ -151,7 +151,7 @@ def submit_form():
         return jsonify({'success': False, 'message': f'Error: {str(e)}'})
 
 if __name__ == '__main__':
-    app.run(port = 5500)
+    app.run(port = 5000)
 
 app.route('/')
 def index():
