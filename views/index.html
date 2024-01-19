@@ -75,19 +75,41 @@
                     <div id="table-div">
                         <table id="stats-table">
                             <tr id="rows">
-                                <th id="prank">Rank</th>
-                                <th id="pname">Name</th>
-                                <th id="pscore">Score</th>
-                                <th id="pppecen">%</th>
-                                <th id="ptime">Time</th>
+                                {% for header in data[0] %}
+                                    <th id="prank">{{Rank}}</th>
+                                {% endfor %}
+                                {% for header in data[1] %}
+                                    <th id="pname">{{Name}}</th>
+                                {% endfor %}
+                                {% for header in data[2] %}
+                                    <th id="pscore">{{Score}}</th>
+                                {% endfor %}
+                                {% for header in data[3] %}
+                                    <th id="pppecen">{{%}}</th>
+                                {% endfor %}
+                                {% for header in data[4] %}
+                                    <th id="ptime">{{Time}}</th>
+                                {% endfor %}
                             </tr>
+                            {% for row in data[1:] %}
                             <tr id="newplayer">
-                                <td id="rank"></td> 
-                                <td id="name"></td>  
-                                <td id="score"></td> 
-                                <td id="%"></td> 
-                                <td id="time"></td> 
+                                {% for cell in row %}
+                                    <td id="rank">{{ cell }}</td> 
+                                {% endfor %}
+                                {% for cell in row %}
+                                    <td id="name">{{ cell }}</td> 
+                                {% endfor %} 
+                                {% for cell in row %}
+                                    <td id="score">{{ cell }}</td> 
+                                {% endfor %}
+                                {% for cell in row %}
+                                    <td id="%">{{ cell }}</td> 
+                                {% endfor %}
+                                {% for cell in row %}
+                                    <td id="time">{{ cell }}</td> 
+                                {% endfor %}
                             </tr>
+                            {% endfor %}
                         </table>    
                     </div>  
             
@@ -99,7 +121,7 @@
                 
             <!--Contact window-->
             <div id="form"> 
-                <form id="feedbackForm" action="http://127.0.0.1:5000/submit_form" method="post">
+                <form id="feedbackForm" action="http://127.0.0.1:5500/submit_form" method="post">
                     <fieldset>
                         <legend>Contact us here</legend>
                             <div class="form-column">

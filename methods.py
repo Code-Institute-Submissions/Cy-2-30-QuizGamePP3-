@@ -2,9 +2,10 @@ from colorama import Fore
 import os 
 import time
 from classes import Payer 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import gspread
 from google.oauth2.service_account import Credentials
+
 
 SCOPE = [
         "https://www.googleapis.com/auth/spreadsheets",
@@ -17,7 +18,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('quizgamepp3') 
 ScoreBoard = SHEET.worksheet('gameresults') 
-
+worksheet = ScoreBoard.get_all_values()
 
 #def validate_name(player):
 
@@ -134,7 +135,7 @@ def submit_form():
     into into google sheets
     """
     try:
-        worksheet = SCOPED_CREDS.open('quizgamepp3').feedback
+        #worksheet = SCOPED_CREDS.open('quizgamepp3').feedback NOT NECCESSARY ALREAD DECLARED 
 
         name = request.form.get('fname')
         last_name = request.form.get('lname')
@@ -150,4 +151,16 @@ def submit_form():
         return jsonify({'success': False, 'message': f'Error: {str(e)}'})
 
 if __name__ == '__main__':
-    app.run(port = 5000)
+    app.run(port = 5500)
+
+app.route('/')
+def index():
+    """
+    Pulls the data from google sheets to display on on the Scoreboard button window in html file
+    """
+    data = worksheet
+
+    return render_template('index.html', data=data)
+
+__name__ == '__main__'
+    app.run(debug=True)

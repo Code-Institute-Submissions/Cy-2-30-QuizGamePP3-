@@ -324,3 +324,7 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
     #os.system('clear' if os.name == 'posix' else 'cls')
 
 
+values = worksheet.get_all_values()
+
+for row in values:
+    print(row)
