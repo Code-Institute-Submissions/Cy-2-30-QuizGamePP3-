@@ -99,7 +99,7 @@
                 
             <!--Contact window-->
             <div id="form"> 
-                <form action="http://127.0.0.1:5000/submit_form" method="post">
+                <form id="feedbackForm" action="http://127.0.0.1:5000/submit_form" method="post">
                     <fieldset>
                         <legend>Contact us here</legend>
                             <div class="form-column">
@@ -172,16 +172,17 @@
             document.getElementById("form").style.display = "none";
         }
 
+        /// The code below is extracted from https://stackoverflow.com
         // Message to display at the form submission
         function submit_form(){
             $.ajax({
                 type: "POST",
                 url: "http://127.0.0.1:5000/submit_form",
-                data: $("#yourFormId").serialize(), 
+                data: $("#feedbackForm").serialize(), 
                 
                 success: function(response) {
                     if (response.success) {
-                        alert('Thank you for your feedback. Form submitted!');
+                        alert('Thank you for your feedback!');
                     } 
 
                     else {
