@@ -1,4 +1,4 @@
-![Festive Spirit, Chrismas Quiz](assets/images/logo.jpg)
+![Festive Spirit, Chrismas Quiz](assets/images/final.PNGg)
 
 Who is in the __Festive Spirit__, __Chrismas Quiz__.
 
