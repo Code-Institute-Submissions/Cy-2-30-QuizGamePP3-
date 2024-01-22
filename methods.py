@@ -98,7 +98,7 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
     player.save_player_info(records, score, question_num, timer_end)
     
     print_end_game_results(records, question_num, player_name, score, timer_end)
-    sleep(5)
+    time.sleep(5)
     print_scoreboard(records)
 
     end_game = input(Fore.GREEN + "\n Enter 'E' for Exit to end the game. : ").lower()
