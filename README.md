@@ -2,7 +2,7 @@
 
 Who is in the __Festive Spirit__, __Chrismas Quiz__.
 
-# Welcome to Python Project 3 Inpired by Chrismas Spirit. 
+# Welcome to Python Project 3 Inpired by Chrismas. 
 
 
 The project is a multiple question quiz game, created around the chrismas vocabulory and historic origin. It is a light-hearted fun game that can be played with friends or family. It is a fun and cheerful game, with educational fun facts. The programming languages used in this quiz are **HTML**, **CSS**, **Python** and **JavaScript**. To showcase what I have learned so far with the program.   
@@ -27,10 +27,11 @@ The project is a multiple question quiz game, created around the chrismas vocabu
         3. [About Us Window](#about-window)
         4. [Contact Us window](#contact-window)
     2. [Features](#features)
-        1. [Landing window](#landing-page)
-        2. [About ](#about-page)
-        3. [Game Page](#game-page)
-        4. [Contact Page](#contact-page)
+        1. [Landing window](#landing-window)
+        2. [Start Game](#start-game)
+        2. [Info Page](#info-page)
+        3. [Score Board Page](#score-board-page)
+        4. [Contact Us Page](#contact-us-page)
 3. [Technologies](#technologies)
     1. [Code Languages](#code-languages)
     2. [Frameworks Used](#frameworks-used)
@@ -81,7 +82,7 @@ The project is a multiple question quiz game, created around the chrismas vocabu
 
 
 ### Tarket Audience 
-The game is for anyone in the festive spirit. 
+The game is for anyone in the festive spirit or anyone who want to play a fun quiz game.
 
 
 ### Color Scheme Used 
@@ -90,14 +91,14 @@ The game is for anyone in the festive spirit.
 I choose chrismas theme to represent the festive seasonal spirit. The color choice of the images and colors used are chrismas colors inpired. 
 
 __CSS HEX__
-* __Fern-Green__: #4e6e30ff;
-* __Dun__: #e3cdb2ff;
-* __Cambridge-Blue__: #97b18eff;
-* __Dark-Green__: #011805ff;
-* __Lion__: #c8a369ff;
-* __hestnut__: #9e3f27ff;
-* __Linen__: #f4ece2ff;
-* __Old-Rose__: #c98a85ff;
+* __Fern-Green__: #4e6e30ff it is used around as the borders color.
+* __Dun__: #e3cdb2ff it is used as the background color. 
+* __Cambridge-Blue__: #97b18eff it is used to create the shadow effect on the menu window borders.  
+* __Dark-Green__: #011805ff it is used for the font. 
+* __Lion__: #c8a369ff it is used to create the shadow effect on the menu window borders. 
+* __hestnut__: #9e3f27ff it is used on the menu buttons. 
+* __Linen__: #f4ece2ff it is used as a background color for the menu windows. 
+* __Old-Rose__: #c98a85ff it is used ont the buttons, as the hover effect. 
 
 
 
@@ -131,11 +132,34 @@ Menu would be a drop down form displaying the information about the game.
 #### Game Window
 #### About Window 
 #### Contact Us Window 
+
+
 ### Features
-#### Landing Form
-#### Game Form
-#### Information Game Form
-#### Contact Us Form
+
+The game lands on the game window with the menu buttons above the game console. Each menu button is a dropdown window to display the information. 
+
+![Menu Buttons](assets/images/finallook/menubuttons.PNG)
+
+#### Landing Window
+
+![Opening Page](assets/images/finallook/gameopening.PNG)
+
+#### Start Game 
+
+The start game button refreshes the game console window and starts the game.
+
+![Start Game Button ](assets/images/finallook/startbutton.PNG)
+
+#### Info Page
+Info button leads to a dropdown window, displaying the game information. This include a brief explanationfor game inspiration, instructions how to play and hints for the game. At the bottom with an exit button, leading to the main window. 
+
+![Info Button](assets/images/finallook/infobutton.PNG)
+
+#### Score Board Page
+
+
+
+![]()
 
 
 
@@ -310,3 +334,11 @@ You can clone the repository by following these steps:
 
 [Table of Content](#table-of-content):arrow_up: 
 
+### Features Not Included
+* The game does not rank all the players score when displaying the score.
+* Menu chartflow has changed. 
+    * The menu buttons are located above the terminal.
+    * Each menu button (__Info, Score Board, Contact Us__) has dropdown window to display the information. The windows each has respective exit button leading back to main page.
+    * The __Contact Us__ form does not have a window on exit but a feedback message regarding the form submission.
+    * The form does not submit into google sheets. There was not enough time to resolve errors causing the form not to submit and on the next release the feature would be included. 
+* 
