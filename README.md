@@ -348,6 +348,48 @@ You can clone the repository by following these steps:
     * The __Contact Us__ form does not have a window on exit but a feedback message regarding the form submission.
     * The form does not submit into google sheets. There was not enough time to resolve errors causing the form not to submit and on the next release the feature would be included. 
 
-## Code Validating 
+### Technologies 
+
+#### Code Languages
+* HTML - structure.
+* CSS - styling.
+* Javascript - form submission and menu buttons.
+* Python - quiz.
+* Google Sheets APIs - player names and statistics
+* Shell - console
+
+#### Frame Work and Liabraries 
+* Python libraries - building the game.
+* [Chart](https://www.lucidchart.com) - game algorithym display.
+* [Images](https://tinypng.com/) - reduce the size of images.
+* [Game Fun Facts]( https://www.twinkl.ie/homework-help/festivals-and-cultural-celebrations/christmas/30-christmas-facts-for-kids) - all the game fun facts.
+* [Game Questions](https://www.housebeautiful.com/uk/lifestyle/a38528788/christmas-quiz-questions-answers/) - the quiz questions. 
+* [Color Palette](https://coolors.co/) - the app color theme.
+* [Testing Python Code](https://www.programiz.com/python-programming/online-compiler/) - testing the code throughout. 
+
+#### Acknowlegements
+* [Stackoverflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+* [Coding Ninjas](https://www.codingninjas.com)
+* [Geeks for geeks](https://www.geeksforgeeks.org)
+* [Tutorial Point](https://www.tutorialspoint.com)
+* [Real Python](https://realpython.com)
+* [Ask Python](https://www.askpython.com)
+* [Python Documents](https://docs.python.org)
+* [W3School](https://www.w3schools.com/)
+* [Bro Code](https://www.youtube.com/watch?v=zehwgTB0vV8)
+    * [](https://www.youtube.com/watch?v=yriw5Zh406s)
+* [Tech with Stephen](https://www.youtube.com/watch?v=YScd9FqGAZs)
+* [Giraffe Academy](https://www.youtube.com/watch?v=yVR8241iIac)
+
 
 ### Testing 
+
+#### Testing User Story
+
+* __Game Start__
+* __Game Introduction__
+* __Name Input__
+* __Quiz Questions__
+* __Quiz Score__
+* __Previous Game__
+
