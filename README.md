@@ -136,13 +136,15 @@ Menu would be a drop down form displaying the information about the game.
 
 ### Features
 
-The game lands on the game window with the menu buttons above the game console. Each menu button is a dropdown window to display the information. 
-
-![Menu Buttons](assets/images/finallook/menubuttons.PNG)
+<details><summary>The game lands on the game window with the menu buttons above the game console. Each menu button is a dropdown window to display the information.</summary>
 
 #### Landing Window
 
 ![Opening Page](assets/images/finallook/gameopening.PNG)
+
+#### Menu Options
+
+![Menu Buttons](assets/images/finallook/menubuttons.PNG)
 
 #### Start Game 
 
@@ -151,16 +153,23 @@ The start game button refreshes the game console window and starts the game.
 ![Start Game Button ](assets/images/finallook/startbutton.PNG)
 
 #### Info Page
-Info button leads to a dropdown window, displaying the game information. This include a brief explanationfor game inspiration, instructions how to play and hints for the game. At the bottom with an exit button, leading to the main window. 
+Info button leads to a dropdown window, displaying the game information. This include a brief explanation for game inspiration, instructions how to play and hints for the game. At the bottom with an exit button, leading to the back to the landing window. 
 
 ![Info Button](assets/images/finallook/infobutton.PNG)
 
 #### Score Board Page
 
+The score board dropdown button leads to a window with all the game statistics. However because of lack of time it displays an empty table and on the next release it will display the previous game scores.  
 
+![Score Board Button](assets/images/finallook/scoreboardbutton.PNG)
 
-![]()
+#### Contact Us Page
 
+The contact us button leads to a form that the player can provide the feedback about the game. The form is meant to send information into google sheets however because of time contrains the feature is not included. On the next release will be included. The form has a submit button at the bottom, on submission it provides the user the respond wether the form has been submitted or not. And the exit button leads back to the landing page.
+
+![Contact Us Button](assets/images/finallook/contactbutton.PNG)
+
+</details>
 
 
 ## Game Manual
@@ -175,11 +184,10 @@ The player would be asked to edit their name. The name would need to have a comb
 
 ### Main Menu
 
-Has the __Menu__ option for the player to choose from:- 
-* __Info__ - opens the information window, leads back to the __Menu__ and __Game__ . 
-* __Game__ - opens the terminal window and has the __Menu__ button on the top. 
-* __Thank you__- opens the after submitting the contact form and leads back to main __Menu__ . 
-
+* __Start Game Button__ - It refreshes the console window.
+* __Info Button__ - Opens the information dropdown window, leads back to the landing page. 
+* __Score Board Button__ Displays the game statistics. 
+* __Contact Us Button__- It opens the contact us form for players to give feedback.
 
 ### How the game works?
 
@@ -187,7 +195,7 @@ Has the __Menu__ option for the player to choose from:-
 * After, the user is requested to inputs their name and the name is verified with requirements of more than 3 letters and number combination. 
 * The user will go throught this loop until they fully meet the requirements.
 * When the requirements has been been met, the would be a welcome message. 
-* The first questio would appear. 
+* The first question would appear. 
 * It is a total 20 questions with fun facts appearing before each question. 
 * Fun facts are based on information about __Chrismas__.
 * When the user choose an option answer for the question, the answer would be verified.
@@ -210,8 +218,6 @@ The player has to answer 20 questions by choosing one answer from an option of e
 ### Stats
 
 Would compose of player's indivisual score, previous player's score ranking and compare the player to other players. The data would be stored on google sheets. 
-
-
 
  </details>
 
@@ -341,4 +347,7 @@ You can clone the repository by following these steps:
     * Each menu button (__Info, Score Board, Contact Us__) has dropdown window to display the information. The windows each has respective exit button leading back to main page.
     * The __Contact Us__ form does not have a window on exit but a feedback message regarding the form submission.
     * The form does not submit into google sheets. There was not enough time to resolve errors causing the form not to submit and on the next release the feature would be included. 
-* 
+
+## Code Validating 
+
+### Testing 
