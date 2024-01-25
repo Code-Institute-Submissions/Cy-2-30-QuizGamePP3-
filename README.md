@@ -20,12 +20,14 @@ The project is a multiple question quiz game, created around the chrismas vocabu
     2. [User Story](#user-story)
     3. [Typography](#typography)
     4. [Flowchat](#flowchat)
-2. [Project Design](#project-design)
-    1. [Planning Stage](planning-stage)
-        1. [Landing Window](#landing-window)
-        2. [Game Window](#game-window)
-        3. [About Us Window](#about-window)
-        4. [Contact Us window](#contact-window)
+2. [Game Design Flow](#game-design-flow)
+    1. [Start of Game](#start-of-game)
+        1. [Game Introduction](#game-introduction)
+        2. [Name Input](#name-input)
+        3. [Quiz](#quiz)
+        4. [Game End Score](#game-end-score)
+        5. [Players Score board](#players-score-board)
+        6. [Option to End](#option-to-end)
     2. [Features](#features)
         1. [Landing window](#landing-window)
         2. [Start Game](#start-game)
@@ -126,13 +128,22 @@ Menu would be a drop down form displaying the information about the game.
 
 
 
-## Project Design
-### Planning Stage
-#### Landing Window
-#### Game Window
-#### About Window 
-#### Contact Us Window 
+## Game Design Flow
+### Start of game
+![Main Start](assets/images/finallook/gameflow/mainintro.PNG)
+#### Game Introduction
+![Game Introductions](assets/images/finallook/gameflow/intro.PNG)
+#### 
+![Name Input](assets/images/finallook/gameflow/namevalidation.PNG)
+#### 
+![Quiz game questions](assets/images/finallook/gameflow/quiz.PNG)
+#### 
+![Game Score](assets/images/finallook/gameflow/gamescore.PNG)
 
+#### 
+![Players Scoreboard](assets/images/finallook/gameflow/statistics.PNG)
+#### 
+![Option to end Game](assets/images/finallook/gameflow/endgame.PNG)
 
 ### Features
 
@@ -377,7 +388,7 @@ You can clone the repository by following these steps:
 * [Python Documents](https://docs.python.org)
 * [W3School](https://www.w3schools.com/)
 * [Bro Code](https://www.youtube.com/watch?v=zehwgTB0vV8)
-    * [](https://www.youtube.com/watch?v=yriw5Zh406s)
+    * [Python Quiz](https://www.youtube.com/watch?v=yriw5Zh406s)
 * [Tech with Stephen](https://www.youtube.com/watch?v=YScd9FqGAZs)
 * [Giraffe Academy](https://www.youtube.com/watch?v=yVR8241iIac)
 
