@@ -2,6 +2,7 @@
 
 Who is in the __Festive Spirit__, __Chrismas Quiz__.
 
+
 # Welcome to Python Project 3 Inpired by Chrismas. 
 
 
@@ -16,34 +17,38 @@ The project is a multiple question quiz game, created around the chrismas vocabu
 ## Table of Content
 
 1. [User Experience](#user-experience)
-    1. [Project Goal](#project-goal)
+    1. [Project Goal](#project-goals)
     2. [User Story](#user-story)
-    3. [Typography](#typography)
-    4. [Flowchat](#flowchat)
+    3. [Target Audience](#tarket-audience)
+    4. [Flowchat](#flowchart)
 2. [Game Design Flow](#game-design-flow)
-    1. [Start of Game](#start-of-game)
-        1. [Game Introduction](#game-introduction)
-        2. [Name Input](#name-input)
-        3. [Quiz](#quiz)
-        4. [Game End Score](#game-end-score)
-        5. [Players Score Board](#players-score-board)
-        6. [Option to End Game](#option-to-end-game)
+    1. [Terminal](#terminal)
+        1. [Start of Game](#start-of-game)
+        2. [Game Introduction](#start-of-game)
+        3. [Name Input](#name-input)
+        4. [Quiz Game Questions](#quiz-game-questions)
+        5. [Game Score](#game-score)
+        6. [Players Score Board](#players-score-board)
+        7. [Option to End Game](#option-to-end-game)
     2. [Features](#features)
-        1. [Landing window](#landing-window)
+        1. [Landing Window](#landing-window)
         2. [Start Game](#start-game)
         2. [Info Page](#info-page)
         3. [Score Board Page](#score-board-page)
         4. [Contact Us Page](#contact-us-page)
-3. [Technologies](#technologies)
+3. [Deployment](deployment)  
+    1. [Heroku](#heroku)
+    2. [Clone Repository](#clone-repository)
+    3. [Fork Repository](#fork-repository)      
+4. [Technologies](#technologies)
     1. [Code Languages](#code-languages)
-    2. [Frameworks Used](#frameworks-used)
-    3. [Extra Support](#extra-support)
-    4. [Technologies used for testing](#technologies-used-for-testing)
-4. [Testing](#testing)
-    1. [Debugging](#debugging)
-    2. [Code Validation](#code-validation)
-6. [Deployment](deployment)
-7. [Acknowledgement](#acknowledgement)
+    2. [Frameworks and Libraries](#frame-work-and-libraries)
+5. [Testing](#testing)
+    1. [Technologies used for testing](#technologies-used-for-testing)
+    2. [Debugging]()
+    3. [Code Validation]()
+6. [Features Not Included](#features-not-included)
+7. [Acknowledgement](#acknowlegements)
 
 
 
@@ -69,7 +74,7 @@ The project is a multiple question quiz game, created around the chrismas vocabu
 
 
 
-### User Stories 
+### User Story 
 
 
 * As a user, I want to read information about the main objective of the game. 
@@ -84,7 +89,10 @@ The project is a multiple question quiz game, created around the chrismas vocabu
 
 
 ### Tarket Audience 
+
+
 The game is for anyone in the festive spirit or anyone who want to play a fun quiz game.
+
 
 
 ### Color Scheme Used 
@@ -103,18 +111,23 @@ __CSS HEX__
 * __Old-Rose__: #c98a85ff it is used ont the buttons, as the hover effect. 
 
 
-
 ![Color Palette](assets/images/color-palette.png)
-
-[Table of Content](#table-of-content):arrow_up: 
 
 
 
 ### Flowchart
-Menu would be a drop down form displaying the information about the game. 
+
+<details><summary>Click to view the game flowchart design.</summary> 
 
 ![Menu Flowchart](assets/flowchart/menu-flochart.png)
+
+
+
 #### Menu 
+
+
+Menu would be a drop down form displaying the information about the game.
+
 * __Info__ - diplays information about the game inspiration, rules, and how to play instructions. 
 * __Game__ - terminal game. 
 * __Contact__ - displays contact details for anyone who would like to reach out. 
@@ -122,6 +135,8 @@ Menu would be a drop down form displaying the information about the game.
 
 
 ![Game Flowchart](assets/flowchart/algorithm.png) 
+</details>
+
 
 [Table of Content](#table-of-content):arrow_up: 
 
@@ -129,48 +144,75 @@ Menu would be a drop down form displaying the information about the game.
 
 
 ## Game Design Flow
+
 <details><summary>Click to see the game design flow.</summary>
 
-### Start of game
+
+
+### Terminal
+
+
+#### Start of game
 
 ![Main Start](assets/images/finallook/gameflow/mainintro.PNG)
+
+
 
 #### Game Introduction
 
 ![Game Introductions](assets/images/finallook/gameflow/intro.PNG)
 
+
+
 #### Name Input
 
 ![Name Input](assets/images/finallook/gameflow/namevalidation.PNG)
+
+
 
 #### Quiz Game Questions
 
 ![Quiz game questions](assets/images/finallook/gameflow/quiz.PNG)
 
+
+
 #### Game Score
 
 ![Game Score](assets/images/finallook/gameflow/gamescore.PNG)
 
+
+
 #### Players Score Board
 
 ![Players Score Board](assets/images/finallook/gameflow/statistics.PNG)
+
+
 
 #### Option to End Game
 
 ![Option to end Game](assets/images/finallook/gameflow/endgame.PNG)
 </details>
 
+
+
+
 ### Features
 
 <details><summary>The game lands on the game window with the menu buttons above the game console. Each menu button is a dropdown window to display the information.</summary>
+
+
 
 #### Landing Window
 
 ![Opening Page](assets/images/finallook/gameopening.PNG)
 
+
+
 #### Menu Options
 
 ![Menu Buttons](assets/images/finallook/menubuttons.PNG)
+
+
 
 #### Start Game 
 
@@ -178,16 +220,23 @@ The start game button refreshes the game console window and starts the game.
 
 ![Start Game Button ](assets/images/finallook/startbutton.PNG)
 
+
+
 #### Info Page
+
 Info button leads to a dropdown window, displaying the game information. This include a brief explanation for game inspiration, instructions how to play and hints for the game. At the bottom with an exit button, leading to the back to the landing window. 
 
 ![Info Button](assets/images/finallook/infobutton.PNG)
+
+
 
 #### Score Board Page
 
 The score board dropdown button leads to a window with all the game statistics. However because of lack of time it displays an empty table and on the next release it will display the previous game scores.  
 
 ![Score Board Button](assets/images/finallook/scoreboardbutton.PNG)
+
+
 
 #### Contact Us Page
 
@@ -196,6 +245,10 @@ The contact us button leads to a form that the player can provide the feedback a
 ![Contact Us Button](assets/images/finallook/contactbutton.PNG)
 
 </details>
+
+
+[Table of Content](#table-of-content):arrow_up: 
+
 
 
 ## Game Manual
@@ -208,12 +261,14 @@ The contact us button leads to a form that the player can provide the feedback a
 
 The player would be asked to edit their name. The name would need to have a combination of more than 3 letters and numbers to be consired valid. Otherwise the player would be required to input their name until the name meets the requirements. 
 
+
 ### Main Menu
 
 * __Start Game Button__ - It refreshes the console window.
 * __Info Button__ - Opens the information dropdown window, leads back to the landing page. 
 * __Score Board Button__ Displays the game statistics. 
 * __Contact Us Button__- It opens the contact us form for players to give feedback.
+
 
 ### How the game works?
 
@@ -252,11 +307,13 @@ Would compose of player's indivisual score, previous player's score ranking and 
 
 
 
- ## Deployment 
+
+## Deployment 
 
 <details><summary>Click here to view the deployment instruction to Heroku Cloud.</summary>
 
 ### Heroku
+
 * Adding the project to [Heroku](https://dashboard.heroku.com/) would need to be done after the project has been completed building and the requiremnts file has been added with the project dependancies. 
 * To do this after coding has been complete, on the terminal type __pip3 freeze requiremnts.txt__ a list of required dependancies for the project would be listed. 
 * Copy and paste into the __requiremnts.txt. file__, add, commit and push to github. 
@@ -364,19 +421,16 @@ You can clone the repository by following these steps:
 
  </details>
 
+
 [Table of Content](#table-of-content):arrow_up: 
 
-### Features Not Included
-* The game does not rank all the players score when displaying the score.
-* Menu chartflow has changed. 
-    * The menu buttons are located above the terminal.
-    * Each menu button (__Info, Score Board, Contact Us__) has dropdown window to display the information. The windows each has respective exit button leading back to main page.
-    * The __Contact Us__ form does not have a window on exit but a feedback message regarding the form submission.
-    * The form does not submit into google sheets. There was not enough time to resolve errors causing the form not to submit and on the next release the feature would be included. 
+
 
 ### Technologies 
 
+
 #### Code Languages
+
 * HTML - structure.
 * CSS - styling.
 * Javascript - form submission and menu buttons.
@@ -384,7 +438,9 @@ You can clone the repository by following these steps:
 * Google Sheets APIs - player names and statistics
 * Shell - console
 
-#### Frame Work and Liabraries 
+
+#### Frame Work and Libraries 
+
 * Python libraries - building the game.
 * [Chart](https://www.lucidchart.com) - game algorithym display.
 * [Images](https://tinypng.com/) - reduce the size of images.
@@ -393,7 +449,51 @@ You can clone the repository by following these steps:
 * [Color Palette](https://coolors.co/) - the app color theme.
 * [Testing Python Code](https://www.programiz.com/python-programming/online-compiler/) - testing the code throughout. 
 
-#### Acknowlegements
+
+[Table of Content](#table-of-content):arrow_up: 
+
+
+
+## Testing 
+
+
+### Technologies Used for Testing
+
+* [Firefox Web Developer Tools](https://www.mozilla.org)
+* [Progamiz.Com](https://www.programiz.com/python-programming/online-compiler/)
+* [Python Tutor](https://pythontutor.com/)
+* [GitPod Shell](https://www.gitpod.io/docs/references/ides-and-editors/browser-terminal)
+
+
+
+### Testing User Story
+
+* __Game Start__
+* __Game Introduction__
+* __Name Input__
+* __Quiz Questions__
+* __Quiz Score__
+* __Previous Game__
+
+
+[Table of Content](#table-of-content):arrow_up: 
+
+
+
+## Features Not Included
+* The game does not rank all the players score when displaying the score.
+* Menu chartflow has changed. 
+    * The menu buttons are located above the terminal.
+    * Each menu button (__Info, Score Board, Contact Us__) has dropdown window to display the information. The windows each has respective exit button leading back to main page.
+    * The __Contact Us__ form does not have a window on exit but a feedback message regarding the form submission.
+    * The form does not submit into google sheets. There was not enough time to resolve errors causing the form not to submit and on the next release the feature would be included. 
+
+
+[Table of Content](#table-of-content):arrow_up: 
+
+
+
+## Acknowlegements
 * [Stackoverflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 * [Coding Ninjas](https://www.codingninjas.com)
 * [Geeks for geeks](https://www.geeksforgeeks.org)
@@ -408,14 +508,4 @@ You can clone the repository by following these steps:
 * [Giraffe Academy](https://www.youtube.com/watch?v=yVR8241iIac)
 
 
-### Testing 
-
-#### Testing User Story
-
-* __Game Start__
-* __Game Introduction__
-* __Name Input__
-* __Quiz Questions__
-* __Quiz Score__
-* __Previous Game__
-
+[Table of Content](#table-of-content):arrow_up: 
