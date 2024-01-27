@@ -47,8 +47,9 @@ The project is a multiple question quiz game, created around the chrismas vocabu
     1. [Technologies used for testing](#technologies-used-for-testing)
     2. [Debugging]()
     3. [Code Validation]()
-6. [Features Not Included](#features-not-included)
-7. [Acknowledgement](#acknowlegements)
+6. [Extra Features](#extra-features)
+7. [Features Not Included](#features-not-included)
+8. [Acknowledgement](#acknowlegements)
 
 
 
@@ -275,13 +276,13 @@ The player would be asked to edit their name. The name would need to have a comb
 * When the player press start, game intructions appears. 
 * After, the user is requested to inputs their name and the name is verified with requirements of more than 3 letters and number combination. 
 * The user will go throught this loop until they fully meet the requirements.
-* When the requirements has been been met, the would be a welcome message. 
+* When the requirements has been been met, there would be a welcome message. 
 * The first question would appear. 
 * It is a total 20 questions with fun facts appearing before each question. 
 * Fun facts are based on information about __Chrismas__.
 * When the user choose an option answer for the question, the answer would be verified.
-* The user is given 3 guesses thoughout the game to use, when they run out, there would be no more and the next question would automatically be appear without providing a second try.
-* For every correct answer the user user would get 1 point each. 
+* The user is given 3 guesses thoughout the game to use, when they run out, there would be no more and the next question would automatically appear without a second try.
+* For every correct answer the user would get 1 point each. 
 * At the end of 20 questions, the user name and score would be added on google sheets. 
 * The final score would be displayed together with previous player and raked according to the score and time to complete the game. 
 
@@ -476,6 +477,20 @@ You can clone the repository by following these steps:
 * __Previous Game__
 
 
+
+[Table of Content](#table-of-content):arrow_up: 
+
+
+
+## Extra Features 
+* Name input
+    * Only accepts more than 3 charectors during validation.
+    * Checks the existing names from google sheets and gives error if name is taken.
+* Game Score
+    * End of game displays at the end and user is geven an option to view previous game scores.
+
+
+
 [Table of Content](#table-of-content):arrow_up: 
 
 
@@ -483,10 +498,12 @@ You can clone the repository by following these steps:
 ## Features Not Included
 * The game does not rank all the players score when displaying the score.
 * Menu chartflow has changed. 
+
     * The menu buttons are located above the terminal.
     * Each menu button (__Info, Score Board, Contact Us__) has dropdown window to display the information. The windows each has respective exit button leading back to main page.
     * The __Contact Us__ form does not have a window on exit but a feedback message regarding the form submission.
     * The form does not submit into google sheets. There was not enough time to resolve errors causing the form not to submit and on the next release the feature would be included. 
+    * The name validation does not check if the name has numbers. 
 
 
 [Table of Content](#table-of-content):arrow_up: 
