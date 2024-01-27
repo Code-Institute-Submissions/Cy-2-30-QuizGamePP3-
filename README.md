@@ -26,8 +26,8 @@ The project is a multiple question quiz game, created around the chrismas vocabu
         2. [Name Input](#name-input)
         3. [Quiz](#quiz)
         4. [Game End Score](#game-end-score)
-        5. [Players Score board](#players-score-board)
-        6. [Option to End](#option-to-end)
+        5. [Players Score Board](#players-score-board)
+        6. [Option to End Game](#option-to-end-game)
     2. [Features](#features)
         1. [Landing window](#landing-window)
         2. [Start Game](#start-game)
@@ -129,21 +129,36 @@ Menu would be a drop down form displaying the information about the game.
 
 
 ## Game Design Flow
+<details><summary>Click to see the game design flow.</summary>
+
 ### Start of game
+
 ![Main Start](assets/images/finallook/gameflow/mainintro.PNG)
+
 #### Game Introduction
+
 ![Game Introductions](assets/images/finallook/gameflow/intro.PNG)
-#### 
+
+#### Name Input
+
 ![Name Input](assets/images/finallook/gameflow/namevalidation.PNG)
-#### 
+
+#### Quiz Game Questions
+
 ![Quiz game questions](assets/images/finallook/gameflow/quiz.PNG)
-#### 
+
+#### Game Score
+
 ![Game Score](assets/images/finallook/gameflow/gamescore.PNG)
 
-#### 
-![Players Scoreboard](assets/images/finallook/gameflow/statistics.PNG)
-#### 
+#### Players Score Board
+
+![Players Score Board](assets/images/finallook/gameflow/statistics.PNG)
+
+#### Option to End Game
+
 ![Option to end Game](assets/images/finallook/gameflow/endgame.PNG)
+</details>
 
 ### Features
 
