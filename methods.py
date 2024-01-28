@@ -89,7 +89,7 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
                     break
                 
             else:
-                print(" Invalid Input! (Please enter 1, 2, or 3) : ")
+                print(Fore.RED + " Invalid Input!" + Fore.RESET + "(Please enter 1, 2, or 3) : ")
 
         time.sleep(1)
 
