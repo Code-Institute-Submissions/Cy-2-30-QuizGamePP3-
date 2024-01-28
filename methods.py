@@ -41,7 +41,7 @@ def print_game_rules():
 
     time.sleep(4)
 
-    next()
+    continue_game()
     print(Fore.CYAN + " \n ******************************")
     print(Fore.MAGENTA + " Extra Notes!")
     print(Fore.CYAN + " ******************************" + Fore.MAGENTA)
@@ -85,7 +85,7 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
                     break 
 
                 else:
-                    print(" Incorrect! Next question.")
+                    print(Fore.RED + " Incorrect! Next question." + Fore.RESET)
                     break
                 
             else:
@@ -124,7 +124,8 @@ def print_end_game_results(records, question_num, player_name, score, timer_end)
     """
     Prints the game statisctic at the end
     """
-    print(" \nGame Over!")
+    print(Fore.RED + " \n Game Over!")
+    print(Fore.CYAN + " ******************************" + Fore.RESET)
     print(f"\n {player_name}, here is your score: {score}/{question_num}")
     print(f" Score percentage: {int(score / question_num * 100)}%")
     print(f" Time it took to complete: {timer_end:.2f} seconds")
@@ -134,24 +135,18 @@ def print_scoreboard(records):
     """
     Display statistics
     """
-
-    #new_player = [len(records) + 1, player_name, score, f"{int(score / question_num * 100)}%", f"{timer_end:.2f}"]
-    #ScoreBoard.append_row(new_player) #add records on google sheets
-
     view_scoreboard = input(Fore.GREEN + "\n Do you want to view the scoreboard for all played games? (yes/no): " + Fore.RESET).lower()
 
     if view_scoreboard == "yes":
         # Fetch and display records from Google Sheets
         print(Fore.YELLOW + "\n Players' Scorebord:")
+        print(Fore.CYAN + " ******************************" + Fore.YELLOW)
         
         for i,  record in enumerate(records, start= 1):
             if i == 1:
                 print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
             else:
                 print(f"{i-1} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
-
-        #all_players = Player.fetch_all_players(ScoreBoard)
-        #display_scoreboard(all_players)
 
 
 
@@ -161,18 +156,18 @@ def clear():
     """
     os.system('clear' if os.name == 'posix' else 'cls') 
 
-def next():
+def continue_game():
     """
     Offer an option for player to continue
     """
     while True:
-        next = input(Fore.GREEN + f" Enter 'N' for 'Next' to continue: ")
-        if next.lower() == "n":
+        user_input = input(Fore.GREEN + f" Enter 'N' for 'Next' to continue: ")
+        if user_input.lower() == "n":
             break
 
         else:
             print(" Invalid input!")
-            print(next) 
+        
 
         
 

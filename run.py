@@ -1,10 +1,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from colorama import Fore # Add color to the font 
-import random # Random selection
-import os # Clears the terminal
-#import methods # All the methods file 
-#import classes # All class objects file
+from colorama import Fore 
+import random 
+import os
 import time
 from classes import Player
 from methods import (
@@ -13,7 +11,7 @@ from methods import (
     clear,
     print_game_rules,
     quiz,
-    next
+    continue_game
 )
 import sys
 
@@ -222,7 +220,7 @@ def main():
     print(Fore.CYAN +" ******************************")
     time.sleep(3)
 
-    next()
+    continue_game()
     clear()
     print(Fore.YELLOW + " \n Here is the game information!\n")
     print(Fore.CYAN +" ******************************")
