@@ -39,9 +39,10 @@ def print_game_rules():
     print("\n to other players.")  
     print(Fore.CYAN + " \n ******************************\n")
 
-    time.sleep(4)
+    time.sleep(4) # Pause for few seconds
 
-    continue_game()
+    continue_game() # Option to continue
+
     print(Fore.CYAN + " \n ******************************")
     print(Fore.MAGENTA + " Extra Notes!")
     print(Fore.CYAN + " ******************************" + Fore.MAGENTA)
@@ -66,20 +67,21 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
         if i > question_num:
             break # Stops when questions reaches 20
     
-        clear()
-        print(Fore.YELLOW + " Did you know!" + Fore.CYAN)
+        clear() # Clear before each question is presented
+        print(Fore.YELLOW + " Did you know!" + Fore.CYAN) # Fun facts before each question
         print(" ******************************" + Fore.GREEN)
         print(f"{fun_facts[i - 1]}")
         print(Fore.CYAN + " ******************************" + Fore.RESET)
-
+        
+        # Print question with number  and option with numbers
         print(f"\nQuestion {i}: {question['question']}\n")
         for j, option in enumerate(question["options"], 1):
-            print(f"{j}. {option}")  # Print number and option
+            print(f"{j}. {option}")  
 
         while True:
             player_answer = input(" Input your answer (Please enter 1, 2, or 3) : ")
             
-            if player_answer.isdigit() and 1 <= int(player_answer) <= 3:
+            if player_answer.isdigit() and 1 <= int(player_answer) <= 3: # Only accept 1-3 number and any other is an error
                 if question["options"][int(player_answer) - 1] in question["answer"]:
                     score += 1 # Adds a point for every correct answer 
                     break 
@@ -93,12 +95,12 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
 
         time.sleep(1)
 
-    # Calculates the total time taken to complete the game
+    # Calculates the total time taken to complete the game in seconds
     timer_end = time.time() - timer_start
 
     player = Player(player_name, ScoreBoard)
     records = ScoreBoard.get_all_values()
-    player.save_player_info(records, score, question_num, timer_end)
+    player.save_player_info(records, score, question_num, timer_end) # Saves the player into google sheets
     
     print_end_game_results(records, question_num, player_name, score, timer_end)
     time.sleep(5)
@@ -149,12 +151,12 @@ def print_scoreboard(records):
                 print(f"{i-1} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
 
 
-
 def clear():
     """
     Clears the terminal
     """
     os.system('clear' if os.name == 'posix' else 'cls') 
+
 
 def continue_game():
     """

@@ -214,12 +214,15 @@ def main():
     """
     Game introduction
     Player name verification 
+    Start Game
     """
    
+    # Welcome message 
     print(Fore.GREEN + " Welcome to the Christmas Quiz!")
     print(Fore.CYAN +" ******************************")
     time.sleep(3)
 
+    # Giving the player an option to continue
     continue_game()
     clear()
     print(Fore.YELLOW + " \n Here is the game information!\n")
@@ -227,12 +230,14 @@ def main():
     print_game_rules()
     time.sleep(3)
     
+    # Giving the player an option to start or exit the game 
     while True:
         start_game = input(Fore.GREEN + "\n Do you want to start the game? (yes/no): ")
         if start_game.lower() == "yes":
             clear()
             player_name = input(" Enter your name(inlude a number and at least 3 letters): ")
             break
+
         elif start_game.lower() == "no":
             print(Fore.YELLOW + " Goodbye!")
             time.sleep(4)
@@ -240,30 +245,35 @@ def main():
             print(Fore.GREEN + f"\n Press" + Fore.YELLOW +"'Start Game'" + Fore.GREEN + "button to play again.")
             time.sleep(4)
             sys.exit() 
+
         else:
-            print("Invalid input! Do you want to start the game? (yes/no): ")
+            print(Fore.RED + "Invalid input! Do you want to start the game? (yes/no): " + Fore.RESET)
     
+    # Validate the player name 
     player = Player(player_name, ScoreBoard)
     while not player.validate_name():
-        print(" Invalid name! Please correct: ")
+        print(Fore.RED + " Invalid name! Please correct: " + Fore.RESET)
 
         if not player.validate_len():
-            print(" Name must be more than 3 characters.")
+            print(Fore.YELLOW + " Name must be more than 3 characters." + Fore.RESET)
 
-        elif not player.validate_alnum():
-            print(" Name must have at least one number and alphabet.")  
+        elif not player.validate_alnum(): # It is not checking for alphabets or number !!! fix later 
+            print(Fore.YELLOW + " Name must have at least one number and alphabet." + Fore.RESET)  
         
         elif player.name_in_scoreboard():
-            print(" Name already exists. Choose a different name.")
+            print(Fore.YELLOW + " Name already exists. Choose a different name." + Fore.RESET)
         
         player_name = input(" Enter your name (inlude a number and at least 3 letters): ")
         player = Player(player_name, ScoreBoard)
     
+    # Personalized introduction before game start
     print(Fore.CYAN +" ******************************")
     print(Fore.GREEN + f" {player_name} welcome to... ")
     print(Fore.RED + " Who is in the Festive Spirit?" + Fore.GREEN + " quiz game!")
     print(Fore.CYAN + " ******************************\n")
     time.sleep(3)
+    
+    # Start game 
     quiz(ScoreBoard, questions, fun_facts, player_name)
     
 if __name__ == "__main__":
