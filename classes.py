@@ -22,7 +22,7 @@ class Player:
     def __init__(self, name, ScoreBoard):
         self.name = name
         self.ScoreBoard = ScoreBoard
-        #self.validate_name()
+        self.validate_name()
 
 
     def validate_name(self):
@@ -66,40 +66,3 @@ class Player:
         new_player = [len(records) + 1, self.name, score, f"{score_percentage}%", f"{timer_end:.2f}"]
         self.ScoreBoard.append_row(new_player)
         pass
-
-    #def fetch_all_players(sheet):
-        """
-        Fetches the player information from google sheets
-        """
-        #records = sheet.get_all_values()
-        #return records
-    
-    #def get_new_player(self):
-        """
-        Returns the valid player name
-        """
-     #   return self.name
-
-       # while len(self.name) <= 3 or not self.name.isalnum() or self.name in scoreboard_names:
-        #    if len(player_name) <= 3: 
-         #       print("Name must contain at least one number.")
-          #  elif not self.name.isalnum():
-           #     print("Name must contain both alphabets and numbers")
-            #elif self.name in scoreboard_names:
-             #   print("Name already exists! Please choose a different name.")
-            #self.name = input(f"Please enter your name: ")
-         
-            #self.name = input(f"Please enter your name: ")   
-
-        #return self.name
-
-
-
-
-
-#class Statistics:
- #   def __init__(self, name, score, percentage, time, rank):
-  #      self.name = name
-   #     self.score = score
-    #    self.percentage = percentage
-     #   self.time = time

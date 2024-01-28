@@ -12,7 +12,8 @@ from methods import (
     print_end_game_results,
     clear,
     print_game_rules,
-    quiz
+    quiz,
+    next
 )
 import sys
 
@@ -221,18 +222,11 @@ def main():
     print(Fore.CYAN +" ******************************")
     time.sleep(3)
 
-    while True:
-        next = input(Fore.GREEN + f" Enter 'N' for 'Next' to continue: ")
-        if next.lower() == "n":
-            clear()
-            print(Fore.YELLOW + " \n Here is the game information!\n")
-            print(Fore.CYAN +" ******************************")
-            print_game_rules()
-            break
-        else:
-            print(" Invalid input!")
-            print(next) 
-    
+    next()
+    clear()
+    print(Fore.YELLOW + " \n Here is the game information!\n")
+    print(Fore.CYAN +" ******************************")
+    print_game_rules()
     time.sleep(3)
     
     while True:

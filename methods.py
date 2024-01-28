@@ -24,6 +24,7 @@ records = ScoreBoard.get_all_values()
 def print_game_rules():
     """
     Game instructions and rules
+    Game hints 
     """
     time.sleep(2)
     print(Fore.RED + " Game Rules!")
@@ -36,16 +37,18 @@ def print_game_rules():
     print("\n There is a timer when completing the questions.")
     print("\n The score percentage would be given at the end with ratings compared")
     print("\n to other players.")  
-    print(Fore.CYAN + " \n******************************")
+    print(Fore.CYAN + " \n ******************************\n")
 
     time.sleep(4)
 
+    next()
+    print(Fore.CYAN + " \n ******************************")
     print(Fore.MAGENTA + " Extra Notes!")
     print(Fore.CYAN + " ******************************" + Fore.MAGENTA)
     print("\n There are random facts about the game, ")
     print("\n Which some of them give hints to some questions in the game.")
     print("\n Keep your eyes open for those hints!") 
-    print(Fore.CYAN + " \n******************************\n")
+    print(Fore.CYAN + " \n ******************************\n")
 
 
 def quiz(ScoreBoard, questions, fun_facts, player_name):
@@ -63,32 +66,32 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
         if i > question_num:
             break # Stops when questions reaches 20
     
-    clear()
-    print(Fore.YELLOW + " Did you know!" + Fore.CYAN)
-    print(" ******************************" + Fore.GREEN)
-    print(f"{fun_facts[i - 1]}")
-    print(Fore.CYAN + " ******************************" + Fore.RESET)
+        clear()
+        print(Fore.YELLOW + " Did you know!" + Fore.CYAN)
+        print(" ******************************" + Fore.GREEN)
+        print(f"{fun_facts[i - 1]}")
+        print(Fore.CYAN + " ******************************" + Fore.RESET)
 
-    print(f"\nQuestion {i}: {question['question']}\n")
-    for j, option in enumerate(question["options"], 1):
-        print(f"{j}. {option}")  # Print number and option
+        print(f"\nQuestion {i}: {question['question']}\n")
+        for j, option in enumerate(question["options"], 1):
+            print(f"{j}. {option}")  # Print number and option
 
-    while True:
-        player_answer = input(" Input your answer (Please enter 1, 2, or 3) : ")
-    
-        if player_answer.isdigit() and 1 <= int(player_answer) <= 3:
-            if question["options"][int(player_answer) - 1] in question["answer"]:
-                score += 1 # Adds a point for every correct answer 
-                break 
+        while True:
+            player_answer = input(" Input your answer (Please enter 1, 2, or 3) : ")
+            
+            if player_answer.isdigit() and 1 <= int(player_answer) <= 3:
+                if question["options"][int(player_answer) - 1] in question["answer"]:
+                    score += 1 # Adds a point for every correct answer 
+                    break 
 
+                else:
+                    print(" Incorrect! Next question.")
+                    break
+                
             else:
-                print(" Incorrect! Next question.")
-                break
-        
-        else:
-            print(" Invalid Input! (Please enter 1, 2, or 3) : ")
+                print(" Invalid Input! (Please enter 1, 2, or 3) : ")
 
-    time.sleep(1)
+        time.sleep(1)
 
     # Calculates the total time taken to complete the game
     timer_end = time.time() - timer_start
@@ -101,20 +104,21 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
     time.sleep(5)
     print_scoreboard(records)
 
-    end_game = input(Fore.GREEN + "\n Enter 'E' for Exit to end the game. : ").lower()
+    while True:
+        end_game = input(Fore.GREEN + "\n Enter 'E' for Exit to end the game. : ")
+        # Checks if the player wants to end the game
+        if end_game.lower() == "E":
+            print(Fore.YELLOW + " Goodbye!")
+            time.sleep(4)
+            clear()
+            print(Fore.GREEN + f"\n Press" + Fore.YELLOW +"'Start Game'" + Fore.GREEN + "button to play again.")
+            time.sleep(4)
+            sys.exit() 
 
-    # Checks if the player wants to end the game
-    if end_game == "E":
-        print(" Thanks for playing! Goodbye.")
-    
-        print(Fore.GREEN + f"\n Press" + Fore.YELLOW +"'Start Game'" + Fore.GREEN + "button to play again.")
-        time.sleep(4)
-        sys.exit() 
+        else:
+            print(" Invalid input!")
+            print(end_game)
 
-    #print(records)
-
-#for row in value:
-   # print(row)
 
 def print_end_game_results(records, question_num, player_name, score, timer_end):
     """
@@ -157,7 +161,20 @@ def clear():
     """
     os.system('clear' if os.name == 'posix' else 'cls') 
 
+def next():
+    """
+    Offer an option for player to continue
+    """
+    while True:
+        next = input(Fore.GREEN + f" Enter 'N' for 'Next' to continue: ")
+        if next.lower() == "n":
+            break
 
+        else:
+            print(" Invalid input!")
+            print(next) 
+
+        
 
 app = Flask(__name__)
 
@@ -192,6 +209,7 @@ if __name__ == '__main__':
 app.route('/')
 def index():
     """
+    ERROR!!! IT IS NOT WORKING
     Pulls the data from google sheets to display on on the Scoreboard button window in html file
     """
     data = worksheet
@@ -200,3 +218,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
