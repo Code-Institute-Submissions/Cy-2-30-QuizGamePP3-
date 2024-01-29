@@ -88,9 +88,9 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
 
                 else:
                     print(Fore.RED + " Incorrect! Try Again." + Fore.RESET)
-                    guesses  -= 1
+                    guesses  -= 1 # Reduces number of guesses
                     if guesses  == 0:
-                        print(Fore.RED + f" Out of guesses! Next question." + Fore.RESET)    
+                        print(Fore.RED + " Out of guesses! Next question." + Fore.RESET)    
                         break
                 
             else:
@@ -107,21 +107,8 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
     
     print_end_game_results(records, question_num, player_name, score, timer_end)
     time.sleep(5)
+    # Prints the score board from google sheets
     print_scoreboard(records)
-
-    while True:
-        end_game = input(Fore.GREEN + "\n Enter 'E' for Exit to end the game. : ")
-        # Checks if the player wants to end the game
-        if end_game.lower() == "E":
-            print(Fore.YELLOW + " Goodbye!")
-            time.sleep(4)
-            clear()
-            print(Fore.GREEN + f"\n Press" + Fore.YELLOW +"'Start Game'" + Fore.GREEN + "button to play again.")
-            time.sleep(4)
-            sys.exit() 
-
-        else:
-            print( Fore.RED + " Invalid input!")
 
 
 def print_end_game_results(records, question_num, player_name, score, timer_end):
@@ -139,18 +126,34 @@ def print_scoreboard(records):
     """
     Display statistics
     """
-    view_scoreboard = input(Fore.GREEN + "\n Do you want to view the scoreboard for all played games? (yes/no): " + Fore.RESET).lower()
+    while True:
+        view_scoreboard = input(Fore.GREEN + "\n Do you want to view the scoreboard for all played games? (yes/no): " + Fore.RESET)
+        if view_scoreboard.lower() == "yes":
+            # Fetch and display records from Google Sheets
+            print(Fore.YELLOW + "\n Players' Scorebord:")
+            print(Fore.CYAN + " ******************************" + Fore.YELLOW)
+            
+            for i,  record in enumerate(records, start= 1):
+                if i == 1:
+                    print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+                else:
+                    print(f"{i-1} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+            break
 
-    if view_scoreboard == "yes":
-        # Fetch and display records from Google Sheets
-        print(Fore.YELLOW + "\n Players' Scorebord:")
-        print(Fore.CYAN + " ******************************" + Fore.YELLOW)
-        
-        for i,  record in enumerate(records, start= 1):
-            if i == 1:
-                print(f"{record[0]} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
-            else:
-                print(f"{i-1} | {record[1]} | {record[2]} | {record[3]} | {record[4]}")
+        elif view_scoreboard.lower() == "no":
+            while True:
+                end_game = input(Fore.GREEN + "\n Enter 'E' for Exit to end the game. : ")
+                # Checks if the player wants to end the game
+                if end_game.lower() == "e":
+                    print(Fore.YELLOW + " Goodbye!")
+                    time.sleep(4)
+                    clear()
+                    print(Fore.GREEN + f"\n Press" + Fore.YELLOW +"'Start Game'" + Fore.GREEN + "button to play again.")
+                    time.sleep(4)
+                    sys.exit() 
+
+                else:
+                    print( Fore.RED + " Invalid input!")
 
 
 def clear():
