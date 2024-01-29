@@ -58,7 +58,7 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
     """
     score = 0
     guesses = 3
-    question_num = 5
+    question_num = 20
     timer_start = time.time() #start counting from game start
 
     clear()
@@ -89,8 +89,10 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
                 else:
                     print(Fore.RED + " Incorrect! Try Again." + Fore.RESET)
                     guesses  -= 1 # Reduces number of guesses
+
                     if guesses  == 0:
                         print(Fore.RED + " Out of guesses! Next question." + Fore.RESET)    
+                        #time.sleep(3)
                         break
                 
             else:
