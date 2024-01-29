@@ -87,8 +87,11 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
                     break 
 
                 else:
-                    print(Fore.RED + " Incorrect! Next question." + Fore.RESET)
-                    break
+                    print(Fore.RED + " Incorrect! Try Again." + Fore.RESET)
+                    guesses  -= 1
+                    if guesses  == 0:
+                        print(Fore.RED + f" Out of guesses! Next question." + Fore.RESET)    
+                        break
                 
             else:
                 print(Fore.RED + " Invalid Input!" + Fore.RESET + "(Please enter 1, 2, or 3) : ")
@@ -118,8 +121,7 @@ def quiz(ScoreBoard, questions, fun_facts, player_name):
             sys.exit() 
 
         else:
-            print(" Invalid input!")
-            print(end_game)
+            print( Fore.RED + " Invalid input!")
 
 
 def print_end_game_results(records, question_num, player_name, score, timer_end):

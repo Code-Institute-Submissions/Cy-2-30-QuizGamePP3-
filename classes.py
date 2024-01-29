@@ -23,8 +23,7 @@ class Player:
         self.name = name
         self.ScoreBoard = ScoreBoard
         self.validate_name()
-
-
+    
     def validate_name(self):
         """
         Returns valid verified 3 charectors
