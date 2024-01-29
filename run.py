@@ -275,6 +275,21 @@ def main():
     
     # Start game 
     quiz(ScoreBoard, questions, fun_facts, player_name)
+
+    while True:
+        end_game = input(Fore.GREEN + "\n Enter 'E' for Exit to end the game. : ")
+        # Checks if the player wants to end the game
+        if end_game.lower() == "e":
+            print(Fore.YELLOW + " Goodbye!")
+            time.sleep(4)
+            clear()
+            print(Fore.GREEN + f"\n Press" + Fore.YELLOW +"'Start Game'" + Fore.GREEN + "button to play again.")
+            time.sleep(4)
+            sys.exit() 
+
+        else:
+            print( Fore.RED + " Invalid input!")
+
     
 if __name__ == "__main__":
     main()
