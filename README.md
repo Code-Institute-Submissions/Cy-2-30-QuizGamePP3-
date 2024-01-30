@@ -45,8 +45,6 @@ The project is a multiple question quiz game, created around the chrismas vocabu
     2. [Frameworks and Libraries](#frame-work-and-libraries)
 5. [Testing](#testing)
     1. [Technologies used for testing](#technologies-used-for-testing)
-    2. [Debugging]()
-    3. [Code Validation]()
 6. [Extra Features](#extra-features)
 7. [Features Not Included](#features-not-included)
 8. [Acknowledgement](#acknowlegements)
@@ -464,17 +462,6 @@ You can clone the repository by following these steps:
 * [Progamiz.Com](https://www.programiz.com/python-programming/online-compiler/)
 * [Python Tutor](https://pythontutor.com/)
 * [GitPod Shell](https://www.gitpod.io/docs/references/ides-and-editors/browser-terminal)
-
-
-
-### Testing User Story
-
-* __Game Start__
-* __Game Introduction__
-* __Name Input__
-* __Quiz Questions__
-* __Quiz Score__
-* __Previous Game__
 
 
 
